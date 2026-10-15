@@ -2,12 +2,10 @@ name: Deploy VSMECAP
 on:
   push:
     branches: [main]
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,21 +22,23 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=8192
         run: |
           cd frontend
-          echo "Fixing broken favicon..."
-          sed -i '/data:[STRIPPED] public/index.html || true
+          cat > public/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en"><head><meta charset="utf-8" /><link rel="icon" href="%PUBLIC_URL%/favicon.ico" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>VSMECAP</title></head><body><div id="root"></div></body></html>
+          HTML
           rm -rf node_modules package-lock.json
           npm install -g yarn
           yarn install
           yarn build
+          touch build/.nojekyll
+          ls -lh build/ | tail -20
       - name: Add CNAME
         run: |
-          mkdir -p frontend/build
           if [ -f CNAME ]; then cp CNAME frontend/build/CNAME; else echo "vsmecap.com" > frontend/build/CNAME; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/build
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
