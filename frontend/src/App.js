@@ -2,65 +2,36 @@ import React from "react";
 
 export default function App() {
   return (
-    <div style={{fontFamily:"Inter, system-ui, Arial", background:"#fff", color:"#111", lineHeight:1.5}}>
-      <div style={{maxWidth:"1000px", margin:"0 auto", padding:"24px"}}>
+    <div style={{fontFamily:"Inter, system-ui, Arial", background:"#fff", color:"#111", lineHeight:1.45}}>
+      <div style={{maxWidth:"1100px", margin:"0 auto", padding:"24px"}}>
+        
         <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
-          <div style={{fontWeight:900, fontSize:"22px"}}>vsmecap</div>
-          <div style={{fontSize:"11px", border:"1px solid #16a34a", color:"#16a34a", padding:"6px 10px", borderRadius:"20px", fontWeight:700}}>EU 2026/1560 COMPLIANT • VALUE CHAIN CAP</div>
+          <div style={{fontWeight:900, fontSize:"22px"}}>vsmecap.com</div>
+          <div style={{fontSize:"11px", border:"1px solid #16a34a", color:"#16a34a", padding:"6px 10px", borderRadius:"20px", fontWeight:800}}>EU 2026/1560 • VALUE CHAIN CAP OS • FY2027</div>
         </div>
 
-        <div style={{marginTop:"70px"}}>
-          <h1 style={{fontSize:"48px", lineHeight:0.95, fontWeight:900, letterSpacing:"-1.5px", maxWidth:"700px"}}>
-            VSME B1–B11 is your own data only. No subcontractor chase.
-          </h1>
-          <p style={{marginTop:"18px", fontSize:"17px", color:"#444", maxWidth:"620px"}}>
-            If you have fewer than 1,000 employees you are a <b>protected undertaking</b> under EU Directive (EU) 2026/470 + Regulation (EU) 2026/1560. Large corporates cannot legally demand more than VSME from you.
-          </p>
+        <div style={{marginTop:"64px"}}>
+          <h1 style={{fontSize:"52px", lineHeight:0.9, fontWeight:900, letterSpacing:"-1.5px", maxWidth:"720px"}}>The cap that stops spreadsheet chaos. <span style={{color:"#16a34a"}}>£30k ticket, 90% margin.</span></h1>
+          <p style={{marginTop:"16px", fontSize:"18px", color:"#444", maxWidth:"680px"}}>If you have {'<'}1,000 employees + {'<'}€450m you are a <b>protected undertaking</b> under Directive 2026/470. Large reporters cannot demand more than VSME Basic from you. Basic is <b>Scope 1+2 only, your own walls</b>. No subcontractor chase needed.</p>
         </div>
 
-        <div style={{marginTop:"32px", background:"#fef2f2", border:"1px solid #fecaca", borderRadius:"12px", padding:"16px"}}>
-          <b style={{color:"#991b1b"}}>The nightmare scenario the cap was designed to prevent:</b>
-          <div style={{fontSize:"14px", color:"#7f1d1d", marginTop:"6px"}}>
-            A large client sending a 200-question custom Excel and forcing you to collect B1–B11 from hundreds of your own subcontractors. This is explicitly prohibited. B1–B11 has no Scope 3.
+        <div style={{marginTop:"24px", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))", gap:"10px", fontSize:"12px"}}>
+          <div style={{background:"#f5f5f5", borderRadius:"10px", padding:"12px"}}><b>FY2027:</b> Mandatory CSRD only for {'>'}1,000 staff + {'>'}€450m turnover — reports in 2028</div>
+          <div style={{background:"#fef2f2", borderRadius:"10px", padding:"12px", border:"1px solid #fecaca"}}><b>Cap in force:</b> CSRD company cannot require value-chain undertaking ≤1,000 staff to provide more than VSME</div>
+          <div style={{background:"#f0fdf4", borderRadius:"10px", padding:"12px", border:"1px solid #bbf7d0"}}><b>Value chain = direct + indirect:</b> ESRS 1 para 67 — T0 can ask T2 directly, even without contract, but only capped to VSME</div>
+        </div>
+
+        <div style={{marginTop:"36px", display:"grid", gridTemplateColumns:"1fr 1fr", gap:"12px"}}>
+          <div style={{border:"1px solid #eee", borderRadius:"14px", padding:"16px", opacity:0.5}}>
+            <div style={{fontSize:"11px", fontWeight:800}}>OLD ILLEGAL MODEL</div>
+            <div style={{fontSize:"13px", marginTop:"6px"}}>T0 → T1 → T1 must collect B1-B11 from T2 → forward to T0. Banned cascade. T1 doesn't need T2 for Basic.</div>
+          </div>
+          <div style={{border:"2px solid #111", borderRadius:"14px", padding:"16px"}}>
+            <div style={{fontSize:"11px", fontWeight:800}}>NEW CAP-COMPLIANT MODEL</div>
+            <div style={{fontSize:"13px", marginTop:"6px"}}><b>T0 → T1 (capped)</b> and <b>T0 → T2 (capped, indirect allowed)</b><br/>T1 → sponsors free vsmecap to T2 (goodwill, not demand). T1 own B1-B11 = own bills/HR only.</div>
           </div>
         </div>
 
-        <div style={{marginTop:"40px", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:"14px"}}>
-          <div style={{border:"1px solid #eee", borderRadius:"14px", padding:"18px"}}>
-            <div style={{fontSize:"11px", fontWeight:800, color:"#888"}}>1. B1–B11 SCOPE</div>
-            <h3 style={{marginTop:"6px"}}>Scope 1 + 2 only. Scope 3 excluded.</h3>
-            <p style={{fontSize:"13px", color:"#555"}}>Basic Module focuses only on your direct emissions and purchased electricity/heating. You report from your own energy bills and HR records. No supply chain data collection needed.</p>
-          </div>
-          <div style={{border:"2px solid #111", borderRadius:"14px", padding:"18px"}}>
-            <div style={{fontSize:"11px", fontWeight:800}}>2. YOUR RIGHT TO SAY NO</div>
-            <h3 style={{marginTop:"6px"}}>Legal right to refuse.</h3>
-            <p style={{fontSize:"13px", color:"#555"}}>Under the Value Chain Cap (EU) 2026/1560, a CSRD company cannot demand ESG data beyond VSME from you. If they send a massive custom spreadsheet, you can legally refuse and hand them your standard VSME Basic report.</p>
-          </div>
-          <div style={{border:"1px solid #eee", borderRadius:"14px", padding:"18px"}}>
-            <div style={{fontSize:"11px", fontWeight:800, color:"#888"}}>3. C1–C9 SAFE HARBOR</div>
-            <h3 style={{marginTop:"6px"}}>3-year transition.</h3>
-            <p style={{fontSize:"13px", color:"#555"}}>Even if you voluntarily do Comprehensive Module (C1–C9) which does look at value chains, EU allows you to explain efforts to get data if it is too difficult, rather than collect thousands of spreadsheets.</p>
-          </div>
-        </div>
-
-        <div style={{marginTop:"50px"}}>
-          <h2 style={{fontSize:"26px", fontWeight:800}}>How vsmecap works — cap-compliant</h2>
-          <div style={{marginTop:"14px", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))", gap:"12px", fontSize:"14px"}}>
-            <div><b>1. Connect internal data</b><br/><span style={{color:"#666"}}>Import energy bills, HR records. No subcontractor outreach.</span></div>
-            <div><b>2. Generate B1–B11</b><br/><span style={{color:"#666"}}>Your own VSME Basic + L1 hash anchor.</span></div>
-            <div><b>3. Generate refusal pack</b><br/><span style={{color:"#666"}}>Auto-letter citing 2026/1560 + 2026/470 to refuse excessive requests.</span></div>
-          </div>
-        </div>
-
-        <div style={{marginTop:"40px", borderTop:"1px solid #eee", paddingTop:"20px", display:"flex", gap:"12px"}}>
-          <a href="mailto:hello@vsmecap.com" style={{background:"#111", color:"#fff", padding:"12px 18px", borderRadius:"10px", textDecoration:"none", fontWeight:700}}>Request Protected Undertaking Demo</a>
-          <div style={{fontSize:"12px", color:"#888", paddingTop:"8px"}}>For undertakings &lt;1000 employees • No company names used</div>
-        </div>
-
-        <div style={{marginTop:"40px", fontSize:"11px", color:"#999"}}>
-          vsmecap.com is a reporting tool. Not legal advice. Based on EFRAG VSME Standard, Commission Delegated Regulation (EU) 2026/1560, Directive (EU) 2026/470 (Omnibus). Basic Module B1–B11 = own operations, Scope 3 excluded.
-        </div>
-      </div>
-    </div>
-  );
-}
+        <div style={{marginTop:"44px"}}>
+          <h2 style={{fontSize:"28px", fontWeight:800}}>Pricing — Hold £30k at Enterprise</h2>
+          <div style={{margin
