@@ -29,3 +29,11 @@ Single-page investor site for vsmecap.com — VSMECAP™ SME Sustainability Data
 ## Backlog
 - P1: Confirm LinkedIn URL is correct (user said "replace if different")
 - P2: Point vsmecap.com DNS at deployment when going live
+
+## Update (2026-10-15, iteration 2)
+- Floating back-to-top button: 48px black circle, white ↑, appears after 300px scroll, smooth scroll to top
+- T1 wording: replaced "substantially cheaper" with reference cost model wording; added pricing disclaimer note under Business Model
+- Business Model table → Basic/Standard/Premium cards with qualification criteria (employees/turnover/supplier counts, DPA SOC 2 on Premium)
+- Product T0/T1/T2 kickers updated with size/turnover bands
+- LinkedIn: exact URL linkedin.com/in/salil-patankar-94892a367, 36px #0A66C2 SVG icon only
+- Note: edits to public/index.html require `sudo supervisorctl restart frontend` (dev server caches it)

@@ -106,6 +106,13 @@
   footer .disclaimer{margin-top:14px;font-size:12px;max-width:760px;}
   footer a{color:var(--ink-soft);}
 
+  #back-to-top{
+    position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;
+    background:#111;color:#fff;border:none;font-size:20px;line-height:1;cursor:pointer;
+    display:none;align-items:center;justify-content:center;z-index:50;font-family:inherit;
+  }
+  #back-to-top.visible{display:flex;}
+
   @media (max-width:860px){
     .grid-3,.grid-4{grid-template-columns:1fr;}
     h1{font-size:32px;}
@@ -164,7 +171,7 @@
       <p class="section-intro">A single reporting spine from the largest enterprises down to the smallest subcontractors in their value chains.</p>
       <div class="grid-3">
         <div class="card" data-testid="product-t0-card">
-          <div class="card-kicker">T0 · LARGE ENTERPRISE</div>
+          <div class="card-kicker">T0 · LARGE ENTERPRISE · &gt;1000 EMPLOYEES OR &gt;€500M TURNOVER</div>
           <h3>Proposed Workiva-compatible Premium Connector</h3>
           <ul>
             <li>Wdata tables (<span class="mono">vsmecap_reports</span>)</li>
@@ -174,15 +181,15 @@
           <div class="note">Subject to partner approval and listing.</div>
         </div>
         <div class="card" data-testid="product-t1-card">
-          <div class="card-kicker">T1 · MID-MARKET COLLECTOR · 250–1000 · PAID</div>
+          <div class="card-kicker">T1 · MID-MARKET COLLECTOR · 250–1000 EMPLOYEES · €50–500M TURNOVER · PAID</div>
           <h3>£30k platform + £99 / £199 / £299 per supplier</h3>
           <ul>
-            <li>Substantially cheaper than incumbent per-supplier rating costs in the reference scenario — not a universal 10x</li>
+            <li>Reference cost model based on disclosed per-supplier rating pricing in selected public sources — illustrative, not universal — actual savings depend on incumbent scope, methodology and volume</li>
             <li>2 hours vs days to complete</li>
           </ul>
         </div>
         <div class="card" data-testid="product-t2-card">
-          <div class="card-kicker">T2 · SMALL SUBCONTRACTOR · UNDER 250 · FREE</div>
+          <div class="card-kicker">T2 · SMALL SUBCONTRACTOR · &lt;250 EMPLOYEES · &lt;€50M TURNOVER · FREE</div>
           <h3>Free reporter</h3>
           <ul>
             <li>11 modules, VSME B1–B11</li>
@@ -300,22 +307,30 @@
       <div class="section-label">BUSINESS MODEL</div>
       <h2 data-testid="business-model-heading">Simple platform-plus-per-supplier pricing</h2>
       <p class="section-intro">A separate product line, priced per deployment.</p>
-      <table data-testid="business-model-table">
-        <thead>
-          <tr><th>Tier</th><th>Annual price</th><th>Composition</th></tr>
-        </thead>
-        <tbody>
-          <tr data-testid="pricing-intro-row">
-            <td class="strong">Intro</td><td>£39,900</td><td>£30k platform + 100 × £99</td>
-          </tr>
-          <tr data-testid="pricing-standard-row">
-            <td class="strong">Standard</td><td>£49,900</td><td>£30k platform + 100 × £199</td>
-          </tr>
-          <tr data-testid="pricing-enterprise-row">
-            <td class="strong">Enterprise</td><td>£89,900</td><td>£60k platform + 100 × £299</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="grid-3">
+        <div class="card" data-testid="pricing-basic-card">
+          <div class="card-kicker">BASIC</div>
+          <div class="big">£39,900</div>
+          <p>£30k platform + 100 × £99</p>
+          <div class="note">Qualifies if &lt;250 employees AND turnover &lt;€50m AND 1–50 suppliers.</div>
+        </div>
+        <div class="card" data-testid="pricing-standard-card">
+          <div class="card-kicker">STANDARD</div>
+          <div class="big">£49,900</div>
+          <p>£30k platform + 100 × £199</p>
+          <div class="note">Qualifies if 250–1000 employees OR turnover €50–500m AND 51–150 suppliers.</div>
+        </div>
+        <div class="card" data-testid="pricing-premium-card">
+          <div class="card-kicker">PREMIUM</div>
+          <div class="big">£89,900</div>
+          <p>£60k platform + 100 × £299</p>
+          <div class="note">Qualifies if &gt;1000 employees OR turnover &gt;€500m AND 151+ suppliers. DPA, SOC 2.</div>
+        </div>
+      </div>
+      <div class="callout" data-testid="pricing-disclaimer">
+        Pricing is a reference model for illustration — final ACV subject to scope, integration and
+        assurance-readiness. Not a claim of being universally cheaper.
+      </div>
     </div>
   </section>
 
@@ -414,8 +429,14 @@
         VSME B1–B11 collection and evidence workflow. VSME is the wedge; the passport is the
         company. Trademark filing pending, Classes 9 and 42.
       </p>
-      <a class="btn btn-outline" data-testid="about-linkedin-button"
-         href="https://www.linkedin.com/in/salilpatankar" target="_blank" rel="noopener">View LinkedIn Profile — Salil Patankar</a>
+      <a data-testid="about-linkedin-button" href="https://www.linkedin.com/in/salil-patankar-94892a367"
+         target="_blank" rel="noopener" aria-label="Salil Patankar on LinkedIn"
+         style="display:inline-flex;width:36px;height:36px;">
+        <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="3" fill="#0A66C2"/>
+          <path fill="#ffffff" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/>
+        </svg>
+      </a>
     </div>
   </section>
 
@@ -466,6 +487,8 @@
   </div>
 </footer>
 
+<button id="back-to-top" data-testid="back-to-top-button" aria-label="Back to top" title="Back to top">↑</button>
+
 <script>
   document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -476,6 +499,14 @@
     var subject = 'VSMECAP enquiry - ' + interest;
     var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\nInterest: ' + interest + '\n';
     window.location.href = 'mailto:info@vsmecap.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+
+  var backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) { backToTop.classList.add('visible'); } else { backToTop.classList.remove('visible'); }
+  });
+  backToTop.addEventListener('click', function () {
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
   });
 </script>
 
