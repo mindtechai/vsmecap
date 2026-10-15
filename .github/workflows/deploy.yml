@@ -14,27 +14,47 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Force clean working App
+        run: |
+          cd frontend
+          cat > public/index.html <<'HTML'
+          <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>VSMECAP</title></head><body><div id="root"></div></body></html>
+          HTML
+          cat > src/index.js <<'JS'
+          import React from 'react';
+          import ReactDOM from 'react-dom/client';
+          import App from './App';
+          const root = ReactDOM.createRoot(document.getElementById('root'));
+          root.render(<App />);
+          JS
+          cat > src/App.js <<'JS'
+          import React from 'react';
+          export default function App(){
+            return (
+              <div style={{padding:"40px", fontFamily:"Arial, sans-serif"}}>
+                <h1 style={{fontSize:"40px"}}>vsmecap.com is LIVE</h1>
+                <p>TLS is provisioning (1 of 3) - once green, lock will show.</p>
+                <p>B1-B11 Value Chain Cap OS for Flannery etc.</p>
+              </div>
+            );
+          }
+          JS
       - name: Build frontend
         env:
           CI: false
           GENERATE_SOURCEMAP: false
           DISABLE_ESLINT_PLUGIN: true
-          NODE_OPTIONS: --max-old-space-size=8192
         run: |
           cd frontend
-          cat > public/index.html <<'HTML'
-          <!DOCTYPE html>
-          <html lang="en"><head><meta charset="utf-8" /><link rel="icon" href="%PUBLIC_URL%/favicon.ico" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>VSMECAP</title></head><body><div id="root"></div></body></html>
-          HTML
           rm -rf node_modules package-lock.json
           npm install -g yarn
           yarn install
           yarn build
+          ls -lh build/
+          ls -lh build/static/js/ | head -20
           touch build/.nojekyll
-          ls -lh build/ | tail -20
       - name: Add CNAME
-        run: |
-          if [ -f CNAME ]; then cp CNAME frontend/build/CNAME; else echo "vsmecap.com" > frontend/build/CNAME; fi
+        run: echo "vsmecap.com" > frontend/build/CNAME
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
