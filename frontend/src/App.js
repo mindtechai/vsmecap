@@ -1,57 +1,15 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import React from 'react';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+export default function App() {
   return (
-    // The marker attribute below lets the platform probe detect the stock splash — remove it with this page
-    <div data-emergent-splash>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
-
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div style={{fontFamily:'Inter, system-ui', padding:'40px', maxWidth:'900px', margin:'0 auto'}}>
+      <h1 style={{fontSize:'42px', fontWeight:900}}>vsmecap</h1>
+      <p style={{fontSize:'20px', color:'#555'}}>The Value Chain Cap OS — B1 to B11</p>
+      <h2>Here are your Instructions are gone — site is live.</h2>
+      <p>For T1 like Flannery Plant Hire (863 staff) — £30k annual + £99/supplier</p>
+      <p>T0 like Balfour/HS2 — Free Workiva connector. T2 like ABC Groundworks 30 — Free reporter, private to T1.</p>
+      <p>Bridge ID + Polkadot hash + Workiva Wdata = verified stamp Balfour trusts.</p>
+      <a href="https://github.com/mindtechai/vsmecap" style={{display:'inline-block', marginTop:'20px', padding:'12px 20px', background:'black', color:'white', textDecoration:'none', borderRadius:'8px'}}>View GitHub</a>
     </div>
   );
 }
-
-export default App;
