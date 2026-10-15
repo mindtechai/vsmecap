@@ -37,3 +37,9 @@ Single-page investor site for vsmecap.com — VSMECAP™ SME Sustainability Data
 - Product T0/T1/T2 kickers updated with size/turnover bands
 - LinkedIn: exact URL linkedin.com/in/salil-patankar-94892a367, 36px #0A66C2 SVG icon only
 - Note: edits to public/index.html require `sudo supervisorctl restart frontend` (dev server caches it)
+
+## Update (2026-10-15, iteration 3)
+- Back-to-top restyled: rgba(18,18,18,0.35) + backdrop blur 6px + 1px rgba(255,255,255,0.3) border, hover rgba(18,18,18,0.65)
+- Scroll-to-top fixed: id="top" moved to header; click does scrollIntoView(block:start) + window.scrollTo(0, smooth) — header now included
+- Mobile fixes: html/body overflow-x hidden, wrap 1100px, nav gap clamp, h1 clamp(28px,6vw,42px), grids 1fr and 16px padding under 600px, tables scroll-x under 600px (exit table was 463px overflow)
+- Verified at 390px: 0 page-level overflow, button styles + click confirmed (testing_agent tool not available in this environment; verified via Playwright screenshots)

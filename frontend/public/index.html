@@ -18,6 +18,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:auto;}
+  html,body{overflow-x:hidden;width:100%;}
   body{
     background:var(--bg);
     color:var(--ink);
@@ -26,7 +27,7 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;width:100%;box-sizing:border-box;}
   a{color:inherit;}
 
   /* Header */
@@ -34,7 +35,7 @@
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;flex-wrap:wrap;}
   .logo{font-weight:700;font-size:19px;letter-spacing:0.04em;text-decoration:none;}
   .logo sup{font-size:10px;color:var(--ink-faint);}
-  nav{display:flex;gap:22px;flex-wrap:wrap;}
+  nav{display:flex;gap:clamp(10px,3vw,22px);flex-wrap:wrap;}
   nav a{text-decoration:none;font-size:14px;color:var(--ink-soft);}
   nav a:hover{color:var(--accent-dark);}
   .btn{
@@ -54,7 +55,7 @@
     color:var(--accent-dark);border:1px solid var(--accent);border-radius:3px;
     padding:6px 12px;margin-bottom:28px;
   }
-  h1{font-size:44px;line-height:1.15;font-weight:700;letter-spacing:-0.01em;max-width:720px;}
+  h1{font-size:clamp(28px,6vw,42px);line-height:1.15;font-weight:700;letter-spacing:-0.01em;max-width:720px;}
   .hero-sub{margin-top:24px;max-width:680px;color:var(--ink-soft);font-size:18px;}
   .hero-ctas{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;}
   .trust-row{
@@ -108,22 +109,26 @@
 
   #back-to-top{
     position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;
-    background:#111;color:#fff;border:none;font-size:20px;line-height:1;cursor:pointer;
+    background:rgba(18,18,18,0.35);color:#fff;border:1px solid rgba(255,255,255,0.3);
+    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    font-size:20px;line-height:1;cursor:pointer;
     display:none;align-items:center;justify-content:center;z-index:50;font-family:inherit;
   }
+  #back-to-top:hover{background:rgba(18,18,18,0.65);}
   #back-to-top.visible{display:flex;}
 
-  @media (max-width:860px){
+  @media (max-width:600px){
     .grid-3,.grid-4{grid-template-columns:1fr;}
-    h1{font-size:32px;}
+    .wrap{padding:0 16px;}
     section{padding:56px 0;}
     .hero{padding:64px 0 56px;}
+    table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
   }
 </style>
 </head>
 <body>
 
-<header>
+<header id="top">
   <div class="wrap header-inner">
     <a href="#top" class="logo" data-testid="header-logo">VSMECAP<sup>™</sup></a>
     <nav data-testid="header-nav">
@@ -139,7 +144,7 @@
   </div>
 </header>
 
-<main id="top">
+<main>
 
   <!-- HERO -->
   <div class="hero">
@@ -506,7 +511,8 @@
     if (window.scrollY > 300) { backToTop.classList.add('visible'); } else { backToTop.classList.remove('visible'); }
   });
   backToTop.addEventListener('click', function () {
-    document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('top').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
