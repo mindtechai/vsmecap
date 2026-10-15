@@ -30,7 +30,7 @@ next-env.d.ts
 dist/
 dist
 
-# Environment files (comprehensive coverage)
+# Environment files are deployment configuration — tracked intentionally (Emergent auto-updates values at deploy time)
 
 *token.json*
 *credentials.json*
@@ -83,9 +83,6 @@ android-sdk/
 
 # overlay black-box crash/user-report dumps — session data, never history
 **/.emergent/recordings/
-.env
-.env.*
-*.env
 credentials.json
 *.key
 .credentials
