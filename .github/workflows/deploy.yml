@@ -24,11 +24,12 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=8192
         run: |
           cd frontend
+          echo "Fixing broken favicon..."
+          sed -i '/data:[STRIPPED] public/index.html || true
           rm -rf node_modules package-lock.json
           npm install -g yarn
           yarn install
           yarn build
-          ls -lh build | head -20
       - name: Add CNAME
         run: |
           mkdir -p frontend/build
