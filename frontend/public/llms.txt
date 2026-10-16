@@ -1,0 +1,9 @@
+# VSMECAP
+> The VSME value chain cap platform. The cap that stops spreadsheet chaos.
+## What is the VSME Value Chain Cap
+Under Directive EU 2026/470 (18 Mar 2026) and Regulation EU 2026/1560 Annex II (24 Sep 2026), protected undertakings (<1000 employees and <EUR 450m) cannot be forced to provide beyond VSME Basic B1-B11 own-walls Scope 1+2.
+## Legal Sources
+EFRAG VSME https://www.efrag.org/en/sustainability-reporting/vsme
+2025/1710 https://eur-lex.europa.eu/eli/reco/2025/1710/oj
+2026/470 https://eur-lex.europa.eu/eli/dir/2026/470/oj
+2026/1560 https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj
