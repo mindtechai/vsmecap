@@ -1,35 +1,57 @@
-import React from "react";
-
-export default function App() {
+import React, { useState, useEffect } from "react";
+export default function App(){
+  const [showTop,setShowTop]=useState(false);
+  const [form,setForm]=useState({name:"",company:"",email:"",phone:"",interest:"Investor"});
+  useEffect(()=>{const h=()=>setShowTop(window.scrollY>300);window.addEventListener('scroll',h);return()=>window.removeEventListener('scroll',h)},[]);
+  const send=()=>{
+    if(!form.name||!form.email||!form.phone) return alert("Full Name, Email and Phone are required for verification.");
+    const body=`Name: ${form.name}%0D%0ACompany: ${form.company}%0D%0AEmail: ${form.email}%0D%0APhone: ${form.phone}%0D%0AInterest: ${form.interest}%0D%0A%0D%0ARequesting Investment Pack - I understand vetting for real person ID and NDA is required.`;
+    window.location.href=`mailto:info@vsmecap.com?subject=VSMECAP Deck Request - ${form.interest}&body=${body}`;
+  };
   return (
-    <div style={{fontFamily:"Inter,Arial,sans-serif", background:"#fff", color:"#111"}}>
-      <div style={{maxWidth:"1200px", margin:"0 auto", padding:"16px 24px", display:"flex", justifyContent:"space-between", alignItems:"center", borderBottom:"1px solid #eee"}}>
-        <b style={{fontSize:"18px"}}>vsmecap.com</b>
-        <div style={{display:"flex", gap:"12px", alignItems:"center"}}>
-          <span style={{fontSize:"10px", fontWeight:800, border:"1px solid #16a34a", color:"#16a34a", padding:"6px 10px", borderRadius:"999px"}}>EU 2026/1560 • FY2027 READY</span>
-          <a href="mailto:hello@vsmecap.com" style={{background:"#111", color:"#fff", padding:"8px 14px", borderRadius:"10px", fontSize:"13px", textDecoration:"none"}}>Contact</a>
-        </div>
-      </div>
-
-      <div style={{maxWidth:"1200px", margin:"0 auto", padding:"48px 24px 80px"}}>
-        <h1 style={{fontSize:"64px", fontWeight:900, lineHeight:".9", letterSpacing:"-2px", margin:0}}>The cap that stops<br/>spreadsheet chaos.<br/><span style={{color:"#16a34a"}}>Built for the 1,000-employee cap.</span></h1>
-        <p style={{maxWidth:"640px", fontSize:"18px", color:"#555", marginTop:"20px"}}>If you have &lt;1,000 employees you are a <b>protected undertaking</b> under Directive 2026/470. Large reporters cannot demand more than <b>VSME Basic B1-B11 — Scope 1+2 own bills/HR only</b>. T0 can ask T2 directly (ESRS 1 para 67 indirect allowed) but capped to Basic.</p>
-
-        <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"16px", marginTop:"36px"}}>
-          <div style={{border:"1px solid #eee", background:"#fafafa", borderRadius:"16px", padding:"20px"}}><div style={{fontSize:"11px", fontWeight:800, color:"#999"}}>OLD ILLEGAL — BANNED</div><b>T0→T1→must collect T2→forward — banned</b></div>
-          <div style={{border:"2px solid #111", borderRadius:"16px", padding:"20px"}}><div style={{fontSize:"11px", fontWeight:800}}>NEW CAP-COMPLIANT — vsmecap OS</div><b>T0→T1 capped and T0→T2 capped (indirect allowed)</b><br/><small>T0 CAN ask T2 directly per ESRS 1 para 67. T1 sponsors free tool to T2.</small></div>
+    <div style={{fontFamily:"Inter,Arial", background:"#fff", color:"#111"}}>
+      {showTop&&<div onClick={()=>window.scrollTo({top:0,behavior:'smooth'})} style={{position:"fixed",bottom:24,right:24,width:48,height:48,borderRadius:"50%",background:"#111",color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,cursor:"pointer",zIndex:99}}>↑</div>}
+      <div style={{maxWidth:1120,margin:"0 auto",padding:"14px 24px",display:"flex",justifyContent:"space-between",borderBottom:"1px solid #eee",position:"sticky",top:0,background:"#fff",zIndex:10}}><b>vsmecap.com</b><span style={{fontSize:10,fontWeight:800,border:"1px solid #00C08B",color:"#00C08B",padding:"6px 10px",borderRadius:999}}>EU 2026/1560 • FY2027 READY</span></div>
+      <div style={{maxWidth:1120,margin:"0 auto",padding:"40px 24px 80px"}}>
+        <h1 style={{fontSize:62,lineHeight:".9",margin:0,fontWeight:900}}>The cap that stops<br/>spreadsheet chaos.<br/><span style={{color:"#00C08B"}}>Built for the 1,000-employee cap.</span></h1>
+        <p style={{maxWidth:640,color:"#555",marginTop:20}}>If you have &lt;1,000 employees you are a <b>protected undertaking</b> under Directive 2026/470. Large reporters cannot demand more than <b>VSME Basic B1-B11 — own bills/HR only, Scope 1+2</b>. No subcontractor spreadsheets for B1-B11. Right to refuse massive Excel under value chain cap Regulation (EU) 2026/1560. 3-year safe harbor for Comprehensive.</p>
+        
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16,marginTop:32}}>
+          <div style={{border:"1px solid #eee",background:"#fafafa",borderRadius:16,padding:20}}><small><b>OLD ILLEGAL</b></small><br/>T0→T1→must collect T2→forward — banned</div>
+          <div style={{border:"2px solid #111",borderRadius:16,padding:20}}><small><b>NEW CAP-COMPLIANT</b></small><br/><b>T0→T1 capped and T0→T2 capped (indirect allowed per ESRS 1 para 67)</b><br/><small>T1 produces own B1-B11 + auto refusal letter. Sponsors free tool to T2 for T2's own protection.</small></div>
         </div>
 
-        <h2 style={{marginTop:"56px", fontSize:"28px", fontWeight:800}}>Pricing for protected undertakings &lt;1,000</h2>
-        <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))", gap:"16px", marginTop:"20px"}}>
-          <div style={{border:"2px solid #111", borderRadius:"16px", padding:"20px"}}><b>T0 Compliance</b><div style={{fontSize:"28px", fontWeight:900, margin:"8px 0"}}>£30k/yr</div><small>Audit trail you only asked Basic</small></div>
-          <div style={{border:"1px solid #e5e7eb", borderRadius:"16px", padding:"20px"}}><b>Starter &lt;100</b><div style={{fontSize:"28px", fontWeight:900, margin:"8px 0"}}>£4.9k/yr</div><small>Own B1-B11 + 10 refusal letters + L1 hash</small></div>
-          <div style={{border:"1px solid #e5e7eb", borderRadius:"16px", padding:"20px"}}><b>Growth 100-500</b><div style={{fontSize:"28px", fontWeight:900, margin:"8px 0"}}>£14.9k/yr</div><small>Own B1-B11 + 50 sponsored T2s</small></div>
-          <div style={{border:"1px solid #16a34a", background:"#f0fdf4", borderRadius:"16px", padding:"20px"}}><b>Enterprise 500-999</b><div style={{fontSize:"28px", fontWeight:900, margin:"8px 0"}}>£30k/yr</div><small>Own B1-B11 + 200 sponsored T2s — not required, that's why it wins work</small></div>
+        <h2 style={{marginTop:48}}>Three tiers, one passport</h2>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:16}}>
+          <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20}}><small style={{color:"#00C08B",fontWeight:800}}>T0 LARGE &gt;1000 OR &gt;€500m</small><br/><b>Proposed Workiva-compatible Premium Connector</b><br/><small>Wdata (vsmecap_reports), Chains, Green/Amber/Red. Subject to approval.</small></div>
+          <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20}}><small style={{color:"#00C08B",fontWeight:800}}>T1 MID 250-1000 & €50-500m</small><br/><b>£30k platform + £99/£199/£299 per supplier</b><br/><small>Reference cost model based on disclosed per-supplier rating pricing in selected public sources — illustrative, not universal. Own B1-B11 only. 2 hours vs days.</small></div>
+          <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20}}><small style={{color:"#00C08B",fontWeight:800}}>T2 SMALL &lt;250 & &lt;€50m FREE</small><br/><b>Free reporter</b><br/><small>11 modules B1-B11. Free for own protection.</small></div>
         </div>
 
-        <div style={{marginTop:"40px", background:"#111", color:"#fff", borderRadius:"20px", padding:"24px"}}>Why Enterprise pays £30k when not required: If your 200 T2s have nothing when T0 asks them directly in 2027-28, T0 flags them as risk and you can't deliver. £30k is supply chain insurance.</div>
-        <div style={{marginTop:"40px", fontSize:"12px", color:"#888"}}>vsmecap.com — Value Chain Cap OS. Contact: hello@vsmecap.com</div>
+        <h2 style={{marginTop:48}}>Simple platform-plus-per-supplier pricing</h2>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))",gap:16}}>
+          <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20}}><small style={{color:"#00C08B",fontWeight:800}}>BASIC £39,900</small><br/><small>£30k + 100×£99. Qualifies if &lt;250 AND &lt;€50m AND 1-50 suppliers.</small></div>
+          <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20}}><small style={{color:"#00C08B",fontWeight:800}}>STANDARD £49,900</small><br/><small>£30k + 100×£199. Qualifies if 250-1000 OR €50-500m AND 51-150 suppliers.</small></div>
+          <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20}}><small style={{color:"#00C08B",fontWeight:800}}>PREMIUM £89,900</small><br/><small>£60k + 100×£299. Qualifies if &gt;1000 OR &gt;€500m AND 151+ suppliers. DPA, SOC2.</small></div>
+        </div>
+        <div style={{background:"#f8fafc",borderLeft:"3px solid #00C08B",padding:12,marginTop:12,fontSize:13}}>Pricing is a reference model for illustration — final ACV subject to scope, integration and assurance-readiness. Not a claim of being universally cheaper.</div>
+
+        <h2 style={{marginTop:48}}>About</h2>
+        <p><b>Salil Patankar — Founder, VSMECAP, London, UK</b><br/><small>Building SME Sustainability Data Passport. VSME is wedge, passport is company. Classes 9,42 pending.</small></p>
+        <a href="https:[STRIPPED 590 bytes]
+
+        <h2>Contact — Investor Deck gated</h2>
+        <div style={{border:"1px solid #e5e7eb",borderRadius:16,padding:20,maxWidth:640}}>
+          <label><small>Full Name *</small><br/><input value={form.name} onChange={e=>setForm({...form,name:e.target.value})} style={{width:"100%",padding:10,margin:"6px 0 12px",border:"1px solid #ddd",borderRadius:8}}/></label>
+          <label><small>Company *</small><br/><input value={form.company} onChange={e=>setForm({...form,company:e.target.value})} style={{width:"100%",padding:10,margin:"6px 0 12px",border:"1px solid #ddd",borderRadius:8}}/></label>
+          <label><small>Email *</small><br/><input value={form.email} onChange={e=>setForm({...form,email:e.target.value})} style={{width:"100%",padding:10,margin:"6px 0 12px",border:"1px solid #ddd",borderRadius:8}}/></label>
+          <label><small>Phone No *</small><br/><input placeholder="+44..." value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} style={{width:"100%",padding:10,margin:"6px 0 12px",border:"1px solid #ddd",borderRadius:8}}/></label>
+          <label><small>Interest *</small><br/><select value={form.interest} onChange={e=>setForm({...form,interest:e.target.value})} style={{width:"100%",padding:10,margin:"6px 0 12px",border:"1px solid #ddd",borderRadius:8}}><option>Investor</option><option>Partner</option><option>Customer</option></select></label>
+          <div style={{background:"#f0fdf4",border:"1px solid #bbf7d0",padding:12,borderRadius:8,fontSize:12}}><b>For Investment Deck:</b> Deck is NOT on site. All enquiries shall be vetted for real person IDs and only upon signing NDA will you get the pack. We will call to verify SEIS/EIS eligibility and suitability. Please include contact number — we will call to verify before sending. Phone is used only for verification — not marketing.</div>
+          <button onClick={send} style={{marginTop:12,background:"#00C08B",color:"#fff",padding:"10px 16px",borderRadius:10,border:"none",fontWeight:700,cursor:"pointer"}}>Send via Email</button>
+        </div>
+
+        <div style={{borderTop:"1px solid #eee",marginTop:64,paddingTop:16,fontSize:11,color:"#888"}}>© 2026 VSMECAP, London, UK · info@vsmecap.com · Proposed Workiva-compatible connector subject to review. TAM illustrative, not independently validated. Investment materials only after verification + NDA — not a public offer.</div>
       </div>
     </div>
   );
