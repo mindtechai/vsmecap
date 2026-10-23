@@ -1,74 +1,148 @@
+import { useState } from "react";
 import { CONTACT_MAILTO, NAV_LINKS } from "@/data/content";
-import { ChainLogo } from "@/components/ChainLogo";
 
 const pillClass = {
-  blue: "rounded-full bg-[#1E40AF] px-3 py-1 text-[11px] font-bold tracking-wider text-white",
-  black: "rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white",
+  blue: "rounded-full bg-[#1E40AF] px-3 py-1 text-[11px] font-bold tracking-wider text-white block text-center",
+  black: "rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white block text-center",
 };
 
-export const Header = () => (
-  <header id="top" className="sticky top-0 z-40 border-b border-[#e4e7ea] bg-white">
-    <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
-      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-4">
-        <a href="#top" data-testid="header-logo" className="flex items-center gap-3">
-          <ChainLogo size={34} />
-          <span>
-            <span className="block text-[17px] font-bold tracking-wide text-[#26292e]">
-              VSMECAP
-            </span>
-            <span className="block text-[10px] font-semibold tracking-[0.14em] text-[#767c85]">
-              VSMECAP AUDIT-READY 2026 — VERIFIED SME CHAIN CAPITAL
-            </span>
-          </span>
-        </a>
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            data-testid="badge-uk-companies"
-            className="rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white"
-          >
-            UK COMPANIES • 45 FTE GENERIC
-          </span>
-          <span
-            data-testid="badge-first-mover"
-            className="rounded-full bg-[#0D9488] px-3 py-1 text-[11px] font-bold tracking-wider text-white"
-          >
-            FIRST-MOVER
-          </span>
-          <a
-            data-testid="header-contact-button"
-            href={CONTACT_MAILTO}
-            className="rounded-md bg-[#0F172A] px-4 py-2 text-[13px] font-bold tracking-wide text-white hover:bg-[#1e293b]"
-          >
-            CONTACT
+export const Header = () => {
+  // 🍔 State to track if the mobile hamburger menu dropdown is open
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <header id="top" className="sticky top-0 z-40 border-b border-[#e4e7ea] bg-white">
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
+        
+        {/* 🔝 TOP ROW: LOGO, BADGES & HAMBURGER */}
+        <div className="flex items-center justify-between py-4">
+          
+          {/* 🔍 RESPONSIVE LOGO AREA */}
+          <a href="#top" data-testid="header-logo" className="flex items-center">
+            {/* 💻 Desktop View (lg screens and up): Show the full logo image */}
+            <img 
+              className="hidden lg:block h-11 w-auto object-contain" 
+              src="/vsmecap_logo_transparent_800.png" 
+              alt="VSMECAP Logo" 
+            />
+            {/* 📱 Mobile & iPad View (below lg screens): Swap to the clean square favicon image */}
+            <img 
+              className="block lg:hidden h-10 w-auto object-contain" 
+              src="/vsmecap_favicon_transparent_512.png" 
+              alt="VSMECAP Icon" 
+            />
           </a>
+
+          {/* 💻 DESKTOP BADGES & CONTACT BUTTON (Hidden on mobile and iPad screens) */}
+          <div className="hidden lg:flex items-center gap-2">
+            <span
+              data-testid="badge-uk-companies"
+              className="rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white"
+            >
+              UK COMPANIES • 45 FTE GENERIC
+            </span>
+            <span
+              data-testid="badge-first-mover"
+              className="rounded-full bg-[#0D9488] px-3 py-1 text-[11px] font-bold tracking-wider text-white"
+            >
+              FIRST-MOVER
+            </span>
+            <a
+              data-testid="header-contact-button"
+              href={CONTACT_MAILTO}
+              className="rounded-md bg-[#0F172A] px-4 py-2 text-[13px] font-bold tracking-wide text-white hover:bg-[#1e293b] transition-colors"
+            >
+              CONTACT
+            </a>
+          </div>
+
+          {/* 🍔 HAMBURGER INTERACTIVE TOGGLE BUTTON (Visible only on mobile/iPad layout) */}
+          <div className="flex items-center lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none transition-colors"
+              aria-label="Toggle menu"
+            >
+              {!isOpen ? (
+                // 3 horizontal lines (Menu Closed Icon)
+                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                // Cross mark indicator (Menu Open Icon)
+                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* 💻 DESKTOP NAV LINKS PANEL (Inline layout: Hidden completely on mobile and iPads) */}
+        <nav
+          data-testid="pill-nav"
+          className="hidden lg:flex flex-wrap items-center gap-x-4 gap-y-2 pb-3"
+        >
+          {NAV_LINKS.map((l) =>
+            l.pill ? (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                data-testid={`nav-${l.id}`}
+                className={pillClass[l.pill]}
+              >
+                {l.label}
+              </a>
+            ) : (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                data-testid={`nav-${l.id}`}
+                className="text-[12px] font-semibold tracking-wide text-[#4b5058] hover:text-[#00996f] transition-colors"
+              >
+                {l.label}
+              </a>
+            ),
+          )}
+        </nav>
+      </div>
+
+      {/* 📱 MOBILE DROPDOWN BOX (Revealed seamlessly via state when hamburger is active) */}
+      <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-gray-100 bg-[#f8fafc] shadow-inner`}>
+        <div className="space-y-2 px-4 py-4">
+          
+          {/* Menu Items Loop */}
+          {NAV_LINKS.map((l) => (
+            <a
+              key={l.id}
+              href={`#${l.id}`}
+              onClick={() => setIsOpen(false)} // Auto-closes panels on click links
+              className={
+                l.pill 
+                  ? `${pillClass[l.pill]} w-full max-w-xs mx-auto py-2`
+                  : "block text-center text-[14px] font-semibold tracking-wide text-[#4b5058] hover:text-[#00996f] py-2 rounded-md hover:bg-gray-100 transition-colors"
+              }
+            >
+              {l.label}
+            </a>
+          ))}
+
+          {/* Quick Contact option container inside mobile portal drawer */}
+          <div className="pt-4 border-t border-gray-200 flex flex-col gap-2 items-center">
+            <span className="text-[11px] font-bold text-gray-400 tracking-wider">
+              UK COMPANIES • 45 FTE GENERIC
+            </span>
+            <a
+              href={CONTACT_MAILTO}
+              onClick={() => setIsOpen(false)}
+              className="w-full max-w-xs text-center rounded-md bg-[#0F172A] py-2.5 text-[13px] font-bold text-white hover:bg-[#1e293b]"
+            >
+              CONTACT US
+            </a>
+          </div>
         </div>
       </div>
-      <nav
-        data-testid="pill-nav"
-        className="flex flex-wrap items-center gap-x-4 gap-y-2 pb-3"
-      >
-        {NAV_LINKS.map((l) =>
-          l.pill ? (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              data-testid={`nav-${l.id}`}
-              className={pillClass[l.pill]}
-            >
-              {l.label}
-            </a>
-          ) : (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              data-testid={`nav-${l.id}`}
-              className="text-[12px] font-semibold tracking-wide text-[#4b5058] hover:text-[#00996f]"
-            >
-              {l.label}
-            </a>
-          ),
-        )}
-      </nav>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
