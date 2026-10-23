@@ -1,7 +1,3 @@
-import { CONTACT_MAILTO } from "@/data/content";
-
-import { Privacy } from "./Closing"; // Only keep this import line if Privacy is split here
-
 export const Footer = () => (
   <footer className="bg-[#f8fafc] border-t border-[#e4e7ea] py-16">
     <div className="mx-auto max-w-[1100px] px-4 text-center sm:px-6 flex flex-col items-center gap-6">
@@ -24,7 +20,6 @@ export const Footer = () => (
   </footer>
 );
 
-// If your file also includes the Privacy component underneath, leave it exactly like this:
 export const Privacy = () => (
   <section id="privacy" className="bg-white py-10 border-t border-gray-100">
     <div className="mx-auto max-w-[1100px] px-4 text-center text-[12px] text-gray-400">
@@ -32,4 +27,3 @@ export const Privacy = () => (
     </div>
   </section>
 );
-
