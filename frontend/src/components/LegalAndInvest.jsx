@@ -1,35 +1,47 @@
 import { Section } from "@/components/Section";
-import { DECK_MAILTO } from "@/data/content";
+import { LEGAL_BASIS } from "@/data/content";
+
+const Card = ({ title, children }) => (
+  <div className="rounded-md border border-[#e4e7ea] bg-white p-6">
+    <h3 className="text-[15px] font-bold text-[#26292e]">{title}</h3>
+    <div className="mt-2 text-[13.5px] leading-relaxed text-[#4b5058]">{children}</div>
+  </div>
+);
 
 export const LegalAndInvest = () => (
-  <Section
-    id="legal-basis"
-    label="LEGAL BASIS"
-    title="Voluntary by law, demanded by counterparties"
-    intro="Recommendation (EU) 2025/1710 keeps VSME voluntary and makes external assurance optional (¶14–16). Demand arrives contractually — through buyers, lenders and public procurement."
-  >
-    <div
-      id="investment"
-      data-testid="investment-card"
-      className="scroll-mt-32 rounded-lg bg-[#0F172A] p-8 sm:p-12"
+  <>
+    {/* 🌐 Unified Legal Basis Framework Row */}
+    <Section
+      id="legal-basis"
+      label="LEGAL BASIS"
+      title="Regulatory Compliance Foundations"
+      intro="Structured parameters tracking the absolute baseline of European sustainability architecture and data requirements."
     >
-      <p className="text-[12px] font-bold tracking-[0.14em] text-[#00C08B]">
-        INVESTMENT DECK — NDA GATED
-      </p>
-      <h3 className="mt-4 max-w-[560px] text-[24px] font-bold leading-snug text-white sm:text-[28px]">
-        The full model, pricing and 45 FTE Generic unit economics are in the deck.
-      </h3>
-      <p className="mt-4 max-w-[560px] text-[14px] leading-relaxed text-[#94a3b8]">
-        Shared with qualified investors and design partners after a mutual NDA. Request it by
-        email — it opens your mail client addressed to us.
-      </p>
-      <a
-        data-testid="request-deck-nda-button"
-        href={DECK_MAILTO}
-        className="mt-8 inline-block rounded-md bg-[#00C08B] px-6 py-3 text-[13px] font-bold tracking-wider text-white hover:bg-[#00a87a]"
-      >
-        REQUEST INVESTMENT DECK (NDA)
-      </a>
-    </div>
-  </Section>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {LEGAL_BASIS.map((lb, i) => (
+          <Card key={i} title={lb.title}>
+            {lb.desc}
+          </Card>
+        ))}
+      </div>
+    </Section>
+
+    {/* 📈 Investment Proposition Infrastructure */}
+    <Section
+      id="investment"
+      label="INVESTMENT"
+      title="Commercialization Strategy"
+      intro="Accelerating compliance delivery models through secured API pipelines and structured data validation grids."
+      tint="bg-[#fafafa]"
+    >
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <Card title="Strategic Roadmap">
+          VSMECAP transitions annual regulatory obligations into real-time, automated verification feeds directly linked to financial underwriting nodes.
+        </Card>
+        <Card title="Capital Efficiency">
+          By locking field parameters to the machine-readable efrg:vsm_e schemas, our code blocks prevent user migration friction and deliver a true market moat.
+        </Card>
+      </div>
+    </Section>
+  </>
 );
