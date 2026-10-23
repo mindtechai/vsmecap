@@ -1,5 +1,5 @@
 import { Section } from "@/components/Section";
-import { MOAT_CARDS, PRODUCT_STEPS, DRAFT_NOTE } from "@/data/content";
+import { MOAT_CARDS, PRODUCT_STEPS, WHY_NOW_SECTIONS, MARKET_DYNAMICS } from "@/data/content";
 
 const Card = ({ testid, kicker, title, children }) => (
   <div
@@ -18,22 +18,18 @@ export const UkCompanies = () => (
   <Section
     id="uk-companies"
     label="UK COMPANIES"
-    title="45 FTE Generic — built for the typical UK SME"
-    intro="A fixed template for companies around 45 FTE, so reporting stops being a consultancy project."
-    note={DRAFT_NOTE}
+    title="Non-Listed Enterprise Framework — Built for Scale"
+    intro="A standardized verification schema configured strictly for non-listed enterprises under 250 employees, transforming reporting from a manual consultancy into an automated compliance flow."
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
       <Card testid="uk-micro-card" kicker="TEMPLATE" title="Micro-undertaking friendly">
-        One questionnaire sized for micro and small undertakings. No consulting hours, no
-        custom scoping — the defaults match how a 45-FTE UK company actually operates.
+        One optimized pipeline sized for micro, small, and medium undertakings. No consulting hours, no custom scoping—the architecture maps directly to how non-listed businesses actually operate under official EFRAG directives.
       </Card>
       <Card testid="uk-meter-card" kicker="DATA" title="MPAN/MPRN meter ingestion">
-        Electricity and gas meters are pulled directly by MPAN/MPRN identifier. Utility
-        invoices fill the gaps — no manual meter-reading spreadsheets.
+        Electricity and gas utility meters are ingested directly via digital MPAN/MPRN network identifiers. Integrated data layers fill compliance gaps automatically—eliminating manual record spreadsheets.
       </Card>
       <Card testid="uk-scope-card" kicker="BOUNDARY" title="Own-walls Scope 1 + 2">
-        The default boundary is what the company controls: its own premises, vehicles and
-        purchased energy. Scope 1 and Scope 2, computed and evidenced.
+        The system isolates your explicit operational boundaries: physical premises, fleet vehicles, and purchased energy values. Scope 1 and location-based Scope 2 are structurally computed, hashed, and evidenced.
       </Card>
     </div>
   </Section>
@@ -44,17 +40,15 @@ export const PublicSector = () => (
     id="public-sector"
     label="PUBLIC SECTOR"
     title="Procurement-ready carbon reporting"
-    intro="A supplier pack mapped to the data points public buyers ask for."
+    intro="A supplier pack mapped to the exact data points public buyers and corporate supply-chain procurement teams request."
     tint="bg-[#fafafa]"
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
       <Card testid="public-ppn-card" kicker="PPN 06/21" title="Mapped to Carbon Reduction Plans">
-        The pack aligns to PPN 06/21 CRP requirements — baseline and current-year emissions,
-        Scope 1, Scope 2 and the defined subset of Scope 3, with evidence attached.
+        The data pack aligns cleanly to PPN 06/21 CRP frameworks—auditing baseline records, current-year operational emissions, Scope 1, Scope 2, and the defined subset of Scope 3 with validation hashes attached.
       </Card>
       <Card testid="public-buyer-card" kicker="BUYERS" title="One pack, every tender">
-        Suppliers generate the pack once and reuse it across frameworks and tenders, instead
-        of re-answering carbon questionnaires for each bid.
+        Suppliers generate their machine-readable ledger once and reuse it across multiple procurement frameworks, avoiding the need to re-answer tedious questionnaires for each independent bid.
       </Card>
     </div>
   </Section>
@@ -65,7 +59,7 @@ export const Product = () => (
     id="product"
     label="PRODUCT"
     title="The verification chain"
-    intro="Three steps from raw records to an audit-ready pack."
+    intro="Three structured operational steps from raw source records to an official audit-ready compliance pack."
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
       {PRODUCT_STEPS.map((s) => (
@@ -87,25 +81,21 @@ export const WhyNow = () => (
   <Section
     id="why-now"
     label="WHY NOW"
-    title="A published standard, a dated recommendation"
+    title="A published standard, a synchronized transition timeline"
     tint="bg-[#fafafa]"
   >
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-      <Card testid="why-now-ec-card" kicker="EUROPEAN COMMISSION" title="Recommendation (EU) 2025/1710">
-        Adopted 30 July 2025 — C(2025) 4984 final. The Commission recommends VSME as the
-        voluntary reference for SME sustainability reporting and as the value-chain cap for
-        what large companies should ask of SMEs.
-      </Card>
-      <Card testid="why-now-efrag-card" kicker="EFRAG" title="VSME standard, December 2024">
-        EFRAG delivered the final VSME standard in December 2024: a Basic module (B1–B11) and
-        a Comprehensive module (C1–C9), designed to be proportionate for non-listed SMEs.
-      </Card>
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+      {WHY_NOW_SECTIONS.map((wn, i) => (
+        <Card key={i} testid={`why-now-card-${i + 1}`} kicker="REGULATION" title={wn.title}>
+          {wn.desc}
+        </Card>
+      ))}
     </div>
   </Section>
 );
 
 export const Moat = () => (
-  <Section id="moat" label="MOAT" title="Four compounding advantages" note={DRAFT_NOTE}>
+  <Section id="moat" label="MOAT" title="Four compounding advantages">
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {MOAT_CARDS.map((c, i) => (
         <Card key={c.title} testid={`moat-card-${i + 1}`} title={c.title}>
@@ -121,9 +111,8 @@ export const Market = () => (
     id="market"
     label="MARKET"
     title="The blueprint matrix"
-    intro="Sized bottom-up. The full model ships with the investor deck under NDA."
+    intro="Sized bottom-up. The comprehensive validation model ships exclusively with the investor deck under NDA."
     tint="bg-[#fafafa]"
-    note={DRAFT_NOTE}
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
       <div
@@ -133,29 +122,23 @@ export const Market = () => (
         <p className="text-[11px] font-bold tracking-[0.12em] text-[#767c85]">TAM</p>
         <p className="mt-3 text-[24px] font-bold text-[#26292e]">Under NDA</p>
         <p className="mt-2 text-[13.5px] text-[#4b5058]">
-          Global SME sustainability-reporting spend. Shared in the investor deck under NDA.
+          Global non-listed enterprise compliance spend. Shared in the primary investor deck under NDA conditions.
         </p>
       </div>
-      <div
-        data-testid="market-sam-card"
-        className="rounded-md border border-[#e4e7ea] bg-white p-6"
-      >
-        <p className="text-[11px] font-bold tracking-[0.12em] text-[#767c85]">SAM</p>
-        <p className="mt-3 text-[24px] font-bold text-[#26292e]">UK SME — 5.5M</p>
-        <p className="mt-2 text-[13.5px] text-[#4b5058]">
-          5.5 million UK SMEs exposed to value-chain sustainability data requests.
-        </p>
-      </div>
-      <div
-        data-testid="market-som-card"
-        className="rounded-md border border-[#00C08B] bg-white p-6"
-      >
-        <p className="text-[11px] font-bold tracking-[0.12em] text-[#00996f]">SOM — ENTRY</p>
-        <p className="mt-3 text-[24px] font-bold text-[#26292e]">45 FTE Generic</p>
-        <p className="mt-2 text-[13.5px] text-[#4b5058]">
-          The wedge: the typical ~45-FTE UK company, served by one fixed, low-friction template.
-        </p>
-      </div>
+      
+      {MARKET_DYNAMICS.map((md, i) => (
+        <div
+          key={i}
+          data-testid={`market-dynamic-card-${i}`}
+          className={`rounded-md border p-6 bg-white ${i === 1 ? 'border-[#00C08B]' : 'border-[#e4e7ea]'}`}
+        >
+          <p className={`text-[11px] font-bold tracking-[0.12em] ${i === 1 ? 'text-[#00996f]' : 'text-[#767c85]'}`}>
+            {i === 0 ? "SAM" : "SOM — ENTRY"}
+          </p>
+          <p className="mt-3 text-[20px] font-bold text-[#26292e] leading-tight">{md.title}</p>
+          <p className="mt-2 text-[13.5px] text-[#4b5058] leading-relaxed">{md.desc}</p>
+        </div>
+      ))}
     </div>
   </Section>
 );
