@@ -38,7 +38,7 @@ export const Header = () => {
               data-testid="badge-uk-companies"
               className="rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white whitespace-nowrap"
             >
-              UK COMPANIES • 45 FTE GENERIC
+              VSME COMPLIANT • <250 EMPLOYEES
             </span>
             <span
               data-testid="badge-first-mover"
@@ -124,7 +124,7 @@ export const Header = () => {
           ))}
           <div className="pt-4 border-t border-gray-200 flex flex-col gap-2 items-center">
             <span className="text-[10px] font-bold text-gray-400 tracking-wider">
-              UK COMPANIES • 45 FTE GENERIC
+             VSME COMPLIANT • <250 EMPLOYEES
             </span>
             <a
               href={CONTACT_MAILTO}
