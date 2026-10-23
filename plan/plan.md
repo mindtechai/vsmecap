@@ -1,35 +1,35 @@
-# VSMECAP Frontend — CRA/CRACO to Vite Migration
+# VSMECAP — Push to GitHub: Manual Runbook
 
-The VSMECAP single-page site's React frontend is migrated from Create React App / CRACO to Vite, so it compiles natively on Node 22/24 and deploys cleanly on Vercel. The page itself does not change: same design, same sections, same behaviour — only the build toolchain underneath is swapped, and the result is committed and pushed to GitHub.
+The migrated Vite codebase (committed on local `main` as "chore: migrate frontend from craco to vite for node 22/24 compatibility") is pushed to github.com/mindtechai/vsmecap by the owner, from the workspace terminal, overwriting the remote `main` branch as already approved.
 
 ## Who it's for
-- The site owner, who wants builds that run on modern Node (22/24) on Vercel without CRA legacy workarounds
-- Investors, partners and SME visitors, who should notice no difference when visiting the page
+- The site owner, who will run the push themselves because token pasting is restricted in the chat UI
+- No one else — nothing on the page or in the codebase changes
 
 ## Core features and experience
-- **Identical page output**: the v1.2 site (header, ticker, hero, B1–B11 and C1–C9 modules, all sections, FAQs, privacy, footer, scroll-to-top) renders exactly as it does today
-- **Vite build pipeline**: `vite` and `@vitejs/plugin-react` replace `react-scripts` and `@craco/craco`; `index.html` moves to the frontend root with a module script entry and no `%PUBLIC_URL%` placeholders
-- **Standard scripts**: `start` runs the Vite dev server, `build` produces the `build` output folder (kept as `build` so Vercel paths match), `preview` serves the production build
-- **Environment variables converted**: any `REACT_APP_` variables become `VITE_`, with code references switched from `process.env` to `import.meta.env` (the current page makes no API calls, so this is precautionary)
-- **Live preview preserved**: the Emergent preview keeps serving the site on the same port via the Vite dev server
-- **Committed and pushed**: changes are committed and pushed to the already-configured GitHub remote, main branch
+- **Everything is already staged**: local `main` holds the complete Vite migration commit; `origin` is set to https://github.com/mindtechai/vsmecap.git; git identity is configured (Salil Patankar <salil@proactiveconsultancy.co.uk>)
+- **Exact runbook the owner runs** in the workspace terminal:
+  1. `cd /app`
+  2. `git push --force origin main`
+  3. When prompted: Username = `mindtechai`, Password = the GitHub token (the fine-grained PAT once its Contents: Read and Write permission is active, or a classic token with `repo` scope)
+  4. Expected result: `+ ... main -> main (forced update)`
+- **Verification step (agent-run afterwards, read-only)**: `git ls-remote origin main` to confirm the remote tip matches the local commit
+- **Force push consequence, already approved**: the existing remote commit on `main` (repo-creation README) is discarded and replaced by this codebase's history
 
 ## User flow
-Unchanged for visitors: land on hero, use pill nav, scroll the page, use mailto CTAs and scroll-to-top. For the owner: push to main → Vercel builds with Vite on Node 22/24 → site deploys without errors.
+Owner opens the workspace terminal → runs the two commands → enters credentials when prompted → remote main now matches local main → agent verifies the remote tip on request → Vercel can import the repo (root `frontend`, output `build`, Node 22/24).
 
 ## UI/UX feel
-No visual change. The migration is invisible by design; a successful migration is one nobody notices.
+No visual or product change. This is a git operation only; visitors and the preview are untouched.
 
 ## Implementation phases
-- **Phase 1 (built now — MVP)**: complete toolchain migration per the approved steps — remove react-scripts/craco, install Vite packages, create vite.config.js (with the existing `@` → `src` import alias preserved and dev server kept on the preview port), move and update index.html, convert env var naming, update scripts, verify a clean production build, confirm the preview renders identically, commit and push to main
-- **Phase 2**: connect or re-point the Vercel project to the migrated repo, confirm a production deploy on Node 22/24, set any `VITE_` variables in Vercel if ever needed
-- **Phase 3**: resume content work — draft copy review pass, favicon, SEO meta polish, and eventually pointing vsmecap.com at the deployment
+- **Phase 1 (now — MVP)**: hand over the runbook above; nothing is executed by the agent. On the owner's word afterwards, the agent runs the read-only verification (`git ls-remote`) to confirm the push landed
+- **Phase 2**: connect the Vercel project to mindtechai/vsmecap (root directory `frontend`, build output `build`, Node 22/24) and confirm the first production deploy
+- **Phase 3**: resume content work — draft copy review pass, favicon, SEO meta polish, then point vsmecap.com at the deployment
 
 ## Assumptions
-- The git remote in this workspace is already configured with working push credentials, and pushing to `main` directly is acceptable (no PR flow) — confirmed by user
-- The Emergent preview should keep working via the Vite dev server on the same port — confirmed by user
-- Build output stays in the `build` directory to match existing Vercel deployment paths — per user's spec
-- `react-scripts` and `@craco/craco` are fully removed rather than kept as fallback; CRACO config is deleted
-- The current frontend code makes no live API calls, so env conversion is naming-only and no behaviour depends on `REACT_APP_BACKEND_URL` at runtime; the `.env` value is preserved under the new `VITE_` name for future use
-- No changes to the backend, the page content, or any copy are in scope
-- The existing `@/` import alias used across components must keep working after migration
+- The owner runs the push personally; the agent never handles a token again — decided by the user
+- Force-overwriting remote `main` is accepted; its single existing commit is disposable — confirmed by the user
+- The fine-grained token's Contents permission will be fixed by the owner before pushing, or a classic `repo`-scope token will be used instead — owner's choice, not the plan's
+- The workspace terminal (code server) is available to the owner for running the commands
+- No code, copy or config changes are in scope; the local commit is final for this push
