@@ -20,11 +20,11 @@ export const NAV_LINKS = [
   { id: "privacy", label: "PRIVACY" },
 ];
 
+// 🌐 LEGISLATIVE COMPLIANT TICKER WITH VISUAL 🔴 X DIVIDERS
 export const TICKER_ITEMS = [
-  "AUDIT-READY OUTPUT — VSMECAP IS NOT A CERTIFIED OR OFFICIAL EFRAG PLATFORM",
-  "COMPLIANCE PIPELINE ALIGNED WITH EFRAG LATEST OCTOBER 2026 OUTREACH REVISIONS",
-  "RECOMMENDATION (EU) 2025/1710 ¶14–16 — VSME IS VOLUNTARY; EXTERNAL ASSURANCE IS OPTIONAL, NOT REQUIRED",
-  "CHAIN-VERIFIED EVIDENCE • XBRL-TRACEABLE DISCLOSURES • LONDON, UK",
+  "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
+  "INTERNAL TEMPLATE V1.2 – 13 MAY 2026 – TIMESTAMP 2026-05-13T09:41:00Z UTC",
+  "REC 14 SELF-DECLARATION SUFFICIENT 🔴 X REC 15-16 EXTERNAL ASSURANCE VIA LICENSED AUDITOR WHERE REQUIRED",
 ];
 
 export const BASIC_MODULES = [
@@ -66,7 +66,6 @@ export const MOAT_CARDS = [
   { title: "Bank API Moat", desc: "Automated, secure links to utility feeds and business account data transition annual compliance checks into a continuous, data-driven utility stream." },
 ];
 
-// 🌟 UPDATED SECTIONS FOR HIGH-REGULATORY SPECIFICITY
 export const WHY_NOW_SECTIONS = [
   { title: "Value Chain Trickle Down", desc: "Under CSRD corporate regulations, major EU and UK entities must request Scope 3 data from supply-chain vendors. Small businesses fail procurement loops without standardized disclosures." },
   { title: "The November 2026 Transition", desc: "As confirmed by EFRAG's recent outreach summits, November 2026 marks the official release of the digital taxonomy and conversion architectures, demanding immediate data compliance." },
