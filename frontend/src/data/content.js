@@ -1,6 +1,5 @@
 export const CONTACT_MAILTO = "mailto:info@vsmecap.com";
-export const DECK_MAILTO =
-  "mailto:info@://vsmecap.com";
+export const DECK_MAILTO = "mailto:info@://vsmecap.com";
 
 export const NAV_LINKS = [
   { id: "basic", label: "B1-B11 Modules", pill: "blue" },
@@ -17,14 +16,13 @@ export const NAV_LINKS = [
   { id: "about", label: "ABOUT US" },
   { id: "risk", label: "RISK AND LIMITATIONS" },
   { id: "faqs", label: "FAQS" },
-  { id: "privacy", label: "PRIVACY" },
+  { id: "privacy", label: "PRIVACY" }
 ];
 
-// 🌐 LEGISLATIVE COMPLIANT TICKER WITH VISUAL 🔴 X DIVIDERS
 export const TICKER_ITEMS = [
   "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
   "INTERNAL TEMPLATE V1.2 – 13 MAY 2026 – TIMESTAMP 2026-05-13T09:41:00Z UTC",
-  "REC 14 SELF-DECLARATION SUFFICIENT 🔴 X REC 15-16 EXTERNAL ASSURANCE VIA LICENSED AUDITOR WHERE REQUIRED",
+  "REC 14 SELF-DECLARATION SUFFICIENT 🔴 X REC 15-16 EXTERNAL ASSURANCE VIA LICENSED AUDITOR WHERE REQUIRED"
 ];
 
 export const BASIC_MODULES = [
@@ -38,7 +36,7 @@ export const BASIC_MODULES = [
   { code: "B8", title: "Workforce — general characteristics", desc: "Standardized headcount breakdowns by Full-Time Equivalent (FTE) parameters, employment contract type, gender distribution, and geographic locales." },
   { code: "B9", title: "Workforce — health and safety", desc: "Frequency tracking of recordable occupational accidents, work-related illnesses, and fatal workplace incident metrics for own personnel." },
   { code: "B10", title: "Workforce — remuneration, bargaining and training", desc: "Internal wage gap percentiles, formal collective-bargaining safety coverage, and average annual professional training allocations per employee." },
-  { code: "B11", title: "Convictions and fines", desc: "Formal transparency log tracking legal convictions, operational regulatory citations, and institutional fines related to bribery or corruption." },
+  { code: "B11", title: "Convictions and fines", desc: "Formal transparency log tracking legal convictions, operational regulatory citations, and institutional fines related to bribery or corruption." }
 ];
 
 export const COMPREHENSIVE_MODULES = [
@@ -50,20 +48,20 @@ export const COMPREHENSIVE_MODULES = [
   { code: "C6", title: "Human rights policies and processes", points: "3 data points", desc: "Formally codified human rights due diligence architectures, non-retaliation operational channels, and systemic grievance remediation paths." },
   { code: "C7", title: "Severe human rights incidents", points: "2 data points", desc: "Transparency declaration of material human rights grievances, supply chain labor disruptions, and subsequent legal corrective actions." },
   { code: "C8", title: "Revenues from certain sectors", points: "2 data points", desc: "Calculation of revenue exposures linked directly to EU Benchmark Exclusion lists and sensitive fossil fuel or high-impact resource sectors." },
-  { code: "C9", title: "Gender diversity in governance", points: "1 data point", desc: "The exact balance ratio tracking gender representation within the enterprise's highest administrative or governing body." },
+  { code: "C9", title: "Gender diversity in governance", points: "1 data point", desc: "The exact balance ratio tracking gender representation within the enterprise's highest administrative or governing body." }
 ];
 
 export const PRODUCT_STEPS = [
   { step: "01", title: "Ingest", desc: "Seamlessly map smart utility meter points (MPAN/MPRN), payroll archives, and structural invoice data into an EFRAG-compliant Voluntary Standard structural grid." },
   { step: "02", title: "Verify chain hash", desc: "Secure input verification architectures execute SHA-256 cryptographic hashes, establishing immutable lineage from raw document directly to field output." },
-  { step: "03", title: "Output audit-ready pack", desc: "Compile complete, machine-readable digital ledgers native-mapped to official Inline XBRL, JSON, and CSV efrg:vsm_e taxonomy specifications." },
+  { step: "03", title: "Output audit-ready pack", desc: "Compile complete, machine-readable digital ledgers native-mapped to official Inline XBRL, JSON, and CSV efrg:vsm_e taxonomy specifications." }
 ];
 
 export const MOAT_CARDS = [
   { title: "XBRL Taxonomy Lock", desc: "Direct structural schema integration with official efrg:vsm_e tags creates high data friction, meaning data migration demands total schema remodeling." },
-  { title: "Chain Verification", desc: "Cryptographic hash lineage links source material to outputs. While standard applications provide editable cell values, VSMECAP yields verified technical trails." },
-  { title: "EFRAG Standard Framework", desc: "Tailored directly for non-listed enterprises under 250 employees. Employs tight operational boundaries and automated ingestion systems out of reach for generalist platforms." },
-  { title: "Bank API Moat", desc: "Automated, secure links to utility feeds and business account data transition annual compliance checks into a continuous, data-driven utility stream." },
+  { title: "Chain Verification", desc: "Cryptographic hash lineage links source material to outputs. VSMECAP yields verified technical trails." },
+  { title: "EFRAG Standard Framework", desc: "Tailored directly for non-listed enterprises under 250 employees. Employs tight operational boundaries and automated ingestion systems." },
+  { title: "Bank API Moat", desc: "Automated, secure links to utility feeds and business account data transition annual compliance checks into a continuous, data-driven utility stream." }
 ];
 
 export const WHY_NOW_SECTIONS = [
@@ -78,7 +76,7 @@ export const MARKET_DYNAMICS = [
 ];
 
 export const LEGAL_BASIS = [
-  { title: "Recommendation (EU) 2025/1710", desc: "Establishes the explicit legal blueprint for voluntary sustainability reports. While reporting remains non-mandatory, commercial supply chains enforce strict contractual compliance rules." },
+  { title: "Recommendation (EU) 2025/1710", desc: "Establishes the explicit legal blueprint for voluntary sustainability reports. Commercial supply chains enforce strict contractual compliance rules." },
   { title: "EFRAG Digital Taxonomy Standard", desc: "Provides the structured data framework specifying the exact format for machine-readable templates across Inline XBRL, XBRL-JSON, and XBRL-CSV protocols." }
 ];
 
@@ -88,7 +86,9 @@ export const RISKS = [
   { title: "Input data quality", desc: "Outputs are only as complete as client inputs. Missing meter, invoice or HR records limit the pack's coverage." },
   { title: "Early-stage venture", desc: "Pre-revenue. No partner agreements are signed, and named relationships should not be assumed." },
   { title: "Competitive response", desc: "Incumbent ESG platforms may ship comparable SME modules, narrowing the first-mover window." },
-  { title: "Bank API dependencies", desc: "Open-banking and meter data access depends on third-party APIs, accreditation and their commercial terms." },
+  { title: "Bank API dependencies", desc: "Open-banking and meter data access depends on third-party APIs, accreditation and their commercial terms." }
 ];
 
 export const FAQS = [
+  { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps to the public EFRAG VSME standard. It is not certified, endorsed or operated by EFRAG." },
+  { q: "Is VSME reporting mandatory?", a: "No. Recommendation (EU) 2025/1710 keeps VSME voluntary. Pressure arrives through procurement frameworks asking for it." },
