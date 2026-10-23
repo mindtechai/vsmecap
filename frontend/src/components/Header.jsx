@@ -2,61 +2,60 @@ import { useState } from "react";
 import { CONTACT_MAILTO, NAV_LINKS } from "@/data/content";
 
 const pillClass = {
-  blue: "rounded-full bg-[#1E40AF] px-3 py-1 text-[11px] font-bold tracking-wider text-white block text-center",
-  black: "rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white block text-center",
+  blue: "rounded-full bg-[#1E40AF] px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-white block text-center whitespace-nowrap",
+  black: "rounded-full bg-[#0F172A] px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-white block text-center whitespace-nowrap",
 };
 
 export const Header = () => {
-  // 🍔 State to track if the mobile hamburger menu dropdown is open
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header id="top" className="sticky top-0 z-40 border-b border-[#e4e7ea] bg-white">
+    <header id="top" className="sticky top-0 z-40 border-b border-[#e4e7ea] bg-white w-full">
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
         
-        {/* 🔝 TOP ROW: LOGO, BADGES & HAMBURGER */}
+        {/* TOP BRANDING BAR ROW */}
         <div className="flex items-center justify-between py-4">
           
-          {/* 🔍 RESPONSIVE LOGO AREA */}
+          {/* BRANDING LOGO AREA */}
           <a href="#top" data-testid="header-logo" className="flex items-center">
-            {/* 💻 Desktop View (lg screens and up): Show the full logo image */}
+            {/* Desktop View (Enlarged for visual balance) */}
             <img 
-              className="hidden lg:block h-11 w-auto object-contain" 
+              className="hidden lg:block h-14 w-auto object-contain" 
               src="/vsmecap_logo_transparent_800.png" 
-              alt="VSMECAP Logo" 
+              alt="VSMECAP Corporate Logo" 
             />
-            {/* 📱 Mobile & iPad View (below lg screens): Swap to the clean square favicon image */}
+            {/* Mobile & iPad View */}
             <img 
               className="block lg:hidden h-10 w-auto object-contain" 
               src="/vsmecap_favicon_transparent_512.png" 
-              alt="VSMECAP Icon" 
+              alt="VSMECAP Icon Logo" 
             />
           </a>
 
-          {/* 💻 DESKTOP BADGES & CONTACT BUTTON (Hidden on mobile and iPad screens) */}
+          {/* DESKTOP METADATA BADGES & PRIMARY ACTION */}
           <div className="hidden lg:flex items-center gap-2">
             <span
               data-testid="badge-uk-companies"
-              className="rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white"
+              className="rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white whitespace-nowrap"
             >
               UK COMPANIES • 45 FTE GENERIC
             </span>
             <span
               data-testid="badge-first-mover"
-              className="rounded-full bg-[#0D9488] px-3 py-1 text-[11px] font-bold tracking-wider text-white"
+              className="rounded-full bg-[#0D9488] px-3 py-1 text-[11px] font-bold tracking-wider text-white whitespace-nowrap"
             >
               FIRST-MOVER
             </span>
             <a
               data-testid="header-contact-button"
               href={CONTACT_MAILTO}
-              className="rounded-md bg-[#0F172A] px-4 py-2 text-[13px] font-bold tracking-wide text-white hover:bg-[#1e293b] transition-colors"
+              className="rounded-md bg-[#0F172A] px-4 py-2 text-[13px] font-bold tracking-wide text-white hover:bg-[#1e293b] transition-colors whitespace-nowrap"
             >
               CONTACT
             </a>
           </div>
 
-          {/* 🍔 HAMBURGER INTERACTIVE TOGGLE BUTTON (Visible only on mobile/iPad layout) */}
+          {/* PORTABLE DEVICE INTERACTIVE MENU TOGGLE BUTTON */}
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -65,12 +64,10 @@ export const Header = () => {
               aria-label="Toggle menu"
             >
               {!isOpen ? (
-                // 3 horizontal lines (Menu Closed Icon)
                 <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
-                // Cross mark indicator (Menu Open Icon)
                 <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -79,10 +76,10 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* 💻 DESKTOP NAV LINKS PANEL (Inline layout: Hidden completely on mobile and iPads) */}
+        {/* COMPRESSED SINGLE-LINE DESKTOP LINKS GRID */}
         <nav
           data-testid="pill-nav"
-          className="hidden lg:flex flex-wrap items-center gap-x-4 gap-y-2 pb-3"
+          className="hidden lg:flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5 pb-3 border-t border-gray-100 pt-2.5 mt-1"
         >
           {NAV_LINKS.map((l) =>
             l.pill ? (
@@ -99,7 +96,7 @@ export const Header = () => {
                 key={l.id}
                 href={`#${l.id}`}
                 data-testid={`nav-${l.id}`}
-                className="text-[12px] font-semibold tracking-wide text-[#4b5058] hover:text-[#00996f] transition-colors"
+                className="text-[11px] font-semibold tracking-tight text-[#4b5058] hover:text-[#00996f] transition-colors whitespace-nowrap"
               >
                 {l.label}
               </a>
@@ -108,35 +105,31 @@ export const Header = () => {
         </nav>
       </div>
 
-      {/* 📱 MOBILE DROPDOWN BOX (Revealed seamlessly via state when hamburger is active) */}
-      <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-gray-100 bg-[#f8fafc] shadow-inner`}>
-        <div className="space-y-2 px-4 py-4">
-          
-          {/* Menu Items Loop */}
+      {/* MOBILE PORTAL DRAWER DRAWDOWNS */}
+      <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-gray-100 bg-[#f8fafc] shadow-inner w-full`}>
+        <div className="space-y-2 px-4 py-4 max-w-md mx-auto">
           {NAV_LINKS.map((l) => (
             <a
               key={l.id}
               href={`#${l.id}`}
-              onClick={() => setIsOpen(false)} // Auto-closes panels on click links
+              onClick={() => setIsOpen(false)}
               className={
                 l.pill 
-                  ? `${pillClass[l.pill]} w-full max-w-xs mx-auto py-2`
-                  : "block text-center text-[14px] font-semibold tracking-wide text-[#4b5058] hover:text-[#00996f] py-2 rounded-md hover:bg-gray-100 transition-colors"
+                  ? `${pillClass[l.pill]} w-full py-2 text-[11px]`
+                  : "block text-center text-[13px] font-semibold tracking-wide text-[#4b5058] hover:text-[#00996f] py-2 rounded-md hover:bg-gray-100 transition-colors"
               }
             >
               {l.label}
             </a>
           ))}
-
-          {/* Quick Contact option container inside mobile portal drawer */}
           <div className="pt-4 border-t border-gray-200 flex flex-col gap-2 items-center">
-            <span className="text-[11px] font-bold text-gray-400 tracking-wider">
+            <span className="text-[10px] font-bold text-gray-400 tracking-wider">
               UK COMPANIES • 45 FTE GENERIC
             </span>
             <a
               href={CONTACT_MAILTO}
               onClick={() => setIsOpen(false)}
-              className="w-full max-w-xs text-center rounded-md bg-[#0F172A] py-2.5 text-[13px] font-bold text-white hover:bg-[#1e293b]"
+              className="w-full text-center rounded-md bg-[#0F172A] py-2 text-[13px] font-bold text-white hover:bg-[#1e293b]"
             >
               CONTACT US
             </a>
