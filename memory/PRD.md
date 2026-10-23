@@ -61,3 +61,13 @@ Page fully rebuilt as React + Tailwind per approved v1.2 plan. Replaces the inve
 ## Backlog
 - P1: user copy review pass (all card/FAQ text marked draft), favicon, SEO meta polish
 - P2: deploy + point vsmecap.com; optional hosted NDA deck download
+
+## Update (2026-10-23) — CRA/CRACO → Vite 6 migration
+- react-scripts/@craco/craco/cra-template removed; vite@6.4.5 + @vitejs/plugin-react@4 added
+- vite.config.js: @ alias → src, dev+preview port 3000 (strict, allowedHosts all, wss HMR :443), build.outDir = build
+- index.html moved to frontend root (module entry /src/main.jsx); index.js→main.jsx, App.js→App.jsx; craco.config.js + plugins/health-check deleted; rollup 2.x resolution removed
+- .env: VITE_BACKEND_URL added (REACT_APP_BACKEND_URL kept)
+- yarn build clean (2.5s, build/index.html + assets); preview verified identical (all testids, 0 mobile overflow)
+- Committed on main: f552489 "chore: migrate frontend from craco to vite for node 22/24 compatibility"
+- Git: origin = https://github.com/mindtechai/vsmecap.git; identity = Salil Patankar <salil@proactiveconsultancy.co.uk>
+- PUSH PENDING: user's fine-grained PAT lacks Contents:Write (API write test 403); user will push manually with force (overwrite remote main): cd /app && git push --force origin main
