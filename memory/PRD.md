@@ -43,3 +43,21 @@ Single-page investor site for vsmecap.com — VSMECAP™ SME Sustainability Data
 - Scroll-to-top fixed: id="top" moved to header; click does scrollIntoView(block:start) + window.scrollTo(0, smooth) — header now included
 - Mobile fixes: html/body overflow-x hidden, wrap 1100px, nav gap clamp, h1 clamp(28px,6vw,42px), grids 1fr and 16px padding under 600px, tables scroll-x under 600px (exit table was 463px overflow)
 - Verified at 390px: 0 page-level overflow, button styles + click confirmed (testing_agent tool not available in this environment; verified via Playwright screenshots)
+
+## REBUILD (2026-10-23) — Production Spec v1.2
+Page fully rebuilt as React + Tailwind per approved v1.2 plan. Replaces the investor one-pager (pricing/traction/use-of-funds removed).
+- Sticky header: chain logo, badges (UK COMPANIES • 45 FTE GENERIC black pill, FIRST-MOVER teal), black CONTACT mailto button
+- Pill nav strip (B1-B11 blue #1E40AF, C1-C9 black + 13 section links), regulatory marquee ticker (#0F172A, only animation)
+- Hero: CSS/SVG chain logo, VERIFYING SME CHAIN CAPITAL title, terminal-style chain-hash/XBRL block
+- B1–B11 (blue) + C1–C9 (amber) module cards with efrg:vsm_e{code}_disclosure tags — DRAFT copy
+- UK Companies (45 FTE Generic, MPAN/MPRN, own-walls S1+2), Public Sector (PPN 06/21), Product 3-step chain
+- Why Now (Rec 2025/1710 C(2025) 4984 final, EFRAG Dec 2024), Moat 4 cards, Market (TAM NDA / SAM 5.5M / SOM 45 FTE)
+- Legal Basis + black Investment card with REQUEST INVESTMENT DECK (NDA) mailto
+- Partners & About (Salil Patankar, LinkedIn icon linkedin.com/in/salil-patankar-94892a367)
+- 6 red-outlined risk cards, 12 FAQ cards, Privacy (Effective 13 May 2026), dark footer #0F172A
+- Scroll-top button retained (translucent, 300px threshold, smooth)
+- All copy in src/data/content.js for easy Phase-2 edits
+- Verified: all testids present, 0 mobile overflow, ticker + scroll-top functional (Playwright)
+## Backlog
+- P1: user copy review pass (all card/FAQ text marked draft), favicon, SEO meta polish
+- P2: deploy + point vsmecap.com; optional hosted NDA deck download
