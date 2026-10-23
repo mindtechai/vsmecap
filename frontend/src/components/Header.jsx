@@ -2,8 +2,8 @@ import { useState } from "react";
 import { CONTACT_MAILTO, NAV_LINKS } from "@/data/content";
 
 const pillClass = {
-  blue: "rounded-full bg-[#1E40AF] px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-white block text-center whitespace-nowrap",
-  black: "rounded-full bg-[#0F172A] px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-white block text-center whitespace-nowrap",
+  blue: "rounded-full bg-[#1E40AF] px-2 py-0.5 text-[10px] font-bold tracking-wider text-white block text-center whitespace-nowrap",
+  black: "rounded-full bg-[#0F172A] px-2 py-0.5 text-[10px] font-bold tracking-wider text-white block text-center whitespace-nowrap",
 };
 
 export const Header = () => {
@@ -18,7 +18,7 @@ export const Header = () => {
           
           {/* BRANDING LOGO AREA */}
           <a href="#top" data-testid="header-logo" className="flex items-center">
-            {/* Desktop View (Enlarged for visual balance) */}
+            {/* Desktop View */}
             <img 
               className="hidden lg:block h-14 w-auto object-contain" 
               src="/vsmecap_logo_transparent_800.png" 
@@ -38,7 +38,7 @@ export const Header = () => {
               data-testid="badge-uk-companies"
               className="rounded-full bg-[#0F172A] px-3 py-1 text-[11px] font-bold tracking-wider text-white whitespace-nowrap"
             >
-              VSME COMPLIANT • <250 EMPLOYEES
+              VSME COMPLIANT • &lt;250 EMPLOYEES
             </span>
             <span
               data-testid="badge-first-mover"
@@ -79,7 +79,7 @@ export const Header = () => {
         {/* COMPRESSED SINGLE-LINE DESKTOP LINKS GRID */}
         <nav
           data-testid="pill-nav"
-          className="hidden lg:flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5 pb-3 border-t border-gray-100 pt-2.5 mt-1"
+          className="hidden lg:flex flex-wrap items-center justify-between gap-x-1.5 gap-y-1.5 pb-3 border-t border-gray-100 pt-2.5 mt-1"
         >
           {NAV_LINKS.map((l) =>
             l.pill ? (
@@ -105,7 +105,7 @@ export const Header = () => {
         </nav>
       </div>
 
-      {/* MOBILE PORTAL DRAWER DRAWDOWNS */}
+      {/* MOBILE PORTAL DRAWER DROPDOWNS */}
       <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-gray-100 bg-[#f8fafc] shadow-inner w-full`}>
         <div className="space-y-2 px-4 py-4 max-w-md mx-auto">
           {NAV_LINKS.map((l) => (
@@ -124,7 +124,7 @@ export const Header = () => {
           ))}
           <div className="pt-4 border-t border-gray-200 flex flex-col gap-2 items-center">
             <span className="text-[10px] font-bold text-gray-400 tracking-wider">
-             VSME COMPLIANT • <250 EMPLOYEES
+              VSME COMPLIANT • &lt;250 EMPLOYEES
             </span>
             <a
               href={CONTACT_MAILTO}
