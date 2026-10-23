@@ -5,7 +5,7 @@ export const Hero = () => (
   >
     <div className="mx-auto max-w-[820px] px-4 text-center sm:px-6">
       
-      {/* 🌟 Brand Icon */}
+      {/* Brand Icon Layout */}
       <div className="flex justify-center">
         <img 
           className="h-20 w-20 object-contain drop-shadow-[0_0_15px_rgba(13,148,136,0.15)] animate-fade-in" 
@@ -25,10 +25,10 @@ export const Hero = () => (
       </h1>
       
       <p className="mx-auto mt-6 max-w-[660px] text-[15.5px] leading-relaxed text-[#4b5058]">
-        Built directly upon the transition framework from the original VSME recommendation to the finalized <strong>Voluntary Standard (VS)</strong>. Engineered to support the incoming <strong>November 2026 EFRAG Schema &amp; Migration Engine</strong> for non-listed enterprises.
+        Built directly upon the transition framework from the original VSME recommendation to the finalized <strong>Voluntary Standard (VS)</strong>. Engineered to support the incoming <strong>November 2026 EFRAG Schema &amp; Migration Engine</strong> for non-listed enterprises under 250 employees.
       </p>
       
-      {/* 📊 Real-Time Interactive Live Stats Alert Banner */}
+      {/* Real-Time Interactive Live Stats Alert Banner */}
       <div className="mx-auto mt-6 max-w-[640px] flex items-center justify-center gap-2 bg-[#f0fdfa] border border-[#ccfbf1] rounded-full py-1.5 px-4">
         <span className="flex h-2 w-2 relative">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75"></span>
