@@ -81,7 +81,7 @@ export const WhyNow = () => (
   <Section
     id="why-now"
     label="WHY NOW"
-    title="A published standard, a synchronized transition timeline"
+    title="A published standard, a dated recommendation"
     tint="bg-[#fafafa]"
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
