@@ -21,8 +21,8 @@ export const NAV_LINKS = [
 
 export const TICKER_ITEMS = [
   "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
-  "INTERNAL TEMPLATE V1.2 – 13 MAY 2026 – TIMESTAMP 2026-05-13T09:41:00Z UTC",
-  "REC 14 SELF-DECLARATION SUFFICIENT 🔴 X REC 15-16 EXTERNAL ASSURANCE VIA LICENSED AUDITOR WHERE REQUIRED"
+  "DIRECT ECOVADIS INGESTION COMPATIBLE 🔴 X AUTOMATED UP TO 75 POINTS CREDITS",
+  "EFRAG VALUE CHAIN CAP COMPLIANT — PROTECTING NON-LISTED UNDERTAKINGS UNDER 250 EMPLOYEES"
 ];
 
 export const BASIC_MODULES = [
@@ -48,36 +48,36 @@ export const COMPREHENSIVE_MODULES = [
   { code: "C6", title: "Human rights policies", points: "3 data points", desc: "Formally codified human rights due diligence architectures and grievance channels." },
   { code: "C7", title: "Human rights incidents", points: "2 data points", desc: "Transparency declaration of material human rights grievances and corrective actions." },
   { code: "C8", title: "Sector revenues", points: "2 data points", desc: "Calculation of revenue exposures linked directly to EU Benchmark Exclusion lists." },
-  { code: "C9", title: "Governance diversity", points: "1 data point", desc: "The exact balance ratio tracking gender representation within the highest governing body." }
+  { code: "C9", title: "Gender diversity in governance", points: "1 data point", desc: "The exact balance ratio tracking gender representation within the highest governing body." }
 ];
 
 export const PRODUCT_STEPS = [
-  { step: "01", title: "Ingest", desc: "Seamlessly map utility meter points (MPAN/MPRN) into an EFRAG-compliant structural grid." },
+  { step: "01", title: "Ingest", desc: "Seamlessly map utility meter points (MPAN/MPRN) and internal records into an EFRAG-compliant structural grid." },
   { step: "02", title: "Verify chain hash", desc: "Verification architectures execute SHA-256 cryptographic hashes from document to output." },
   { step: "03", title: "Output pack", desc: "Compile digital ledgers native-mapped to official Inline XBRL, JSON, and CSV specifications." }
 ];
 
 export const MOAT_CARDS = [
   { title: "XBRL Taxonomy Lock", desc: "Direct structural schema integration with official efrg:vsm_e tags creates high data switching friction." },
-  { title: "Chain Verification", desc: "Cryptographic hash lineage links source material to outputs, yielding verified technical trails." },
-  { title: "EFRAG Framework", desc: "Tailored directly for non-listed enterprises under 250 employees with automated ingestion systems." },
+  { title: "EcoVadis 75pt Ingestion", desc: "Standardized mapping structures match EcoVadis ingestion loops, unlocking instant scoring credits up to 75/100 points." },
+  { title: "Value Chain Cap Armor", desc: "Tailored to enforce the legal right of true SMEs to say no to custom, bloated enterprise questionnaires." },
   { title: "Bank API Moat", desc: "Automated links to utility feeds transition annual compliance into a continuous utility stream." }
 ];
 
 export const WHY_NOW_SECTIONS = [
-  { title: "Value Chain Trickle Down", desc: "Under CSRD corporate regulations, major entities must request Scope 3 data from supply-chain vendors." },
-  { title: "November 2026 Transition", desc: "November 2026 marks the official release of the digital taxonomy and conversion architectures." },
-  { title: "Capital Allocation", desc: "Lending institutions are actively embedding EFRAG ESG frameworks into credit risk evaluations." }
+  { title: "Value Chain Cap Enforced", desc: "Large corporations cannot legally pass down complex, out-of-scope ESG requests to subcontractors under 250 employees." },
+  { title: "EcoVadis Automated Credits", desc: "EcoVadis has officially integrated the VSME framework, rewarding standard compliance with immediate, verifiable scoring tier bumps." },
+  { title: "Capital Allocation Moats", desc: "Lending institutions and commercial banks are actively embedding EFRAG ESG frameworks into mid-market risk evaluations." }
 ];
 
 export const MARKET_DYNAMICS = [
-  { title: "The Market Gap", desc: "Over 99% of UK and European enterprises operate as non-listed small-to-medium undertakings." },
-  { title: "1,500+ Stakeholders", desc: "EFRAG outreach event demonstrated a sharp spike in interest from procurement executives." }
+  { title: "The Non-Listed Market Gap", desc: "Over 99% of European and UK enterprises operate as non-listed small-to-medium undertakings under 250 employees." },
+  { title: "1,500+ Registered Enterprise Stakeholders", desc: "EFRAG's Brussels Outreach Event demonstrated a sharp spike in real market interest from procurement networks." }
 ];
 
 export const LEGAL_BASIS = [
-  { title: "Recommendation (EU) 2025/1710", desc: "Establishes the explicit legal blueprint for voluntary sustainability reports." },
-  { title: "Digital Taxonomy Standard", desc: "Provides the structured data framework specifying machine-readable templates." }
+  { title: "EFRAG VSME Framework", desc: "The official voluntary reporting standard specifying the precise datapoints allowed under value chain limitations." },
+  { title: "CSRD Value Chain Cap", desc: "Statutory European framework protecting non-listed SMEs from excessive data disclosure requests from enterprise clients." }
 ];
 
 export const RISKS = [
@@ -91,15 +91,8 @@ export const RISKS = [
 
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard framework." },
-  { q: "Is VSME reporting mandatory?", a: "No. Recommendation (EU) 2025/1710 keeps VSME voluntary. Space pressure arrives through value chains." },
-  { q: "What is the difference between Annex I and Annex II?", a: "Annex I is the Basic module. Annex II is the Comprehensive module reported where requested." },
-  { q: "Does a VSMECAP pack count as assurance?", a: "No. The pack is audit-ready and traceable. Formal external assurance must come from licensed auditors." },
-  { q: "What is a chain hash?", a: "Each source document and disclosure is hashed, allowing an auditor to trace figures back to inputs." },
-  { q: "What data do I need to start?", a: "Typically utility meter identifiers (MPAN/MPRN), energy invoices, and basic operational metrics." },
-  { q: "How long does deployment take?", a: "Standard pipeline setups complete ingestion mapping arrays within 48 hours of source linking." },
-  { q: "Can we export reports for UK public tenders?", a: "Yes. All ledger exports structurally align with PPN 06/21 carbon reduction guidelines." },
-  { q: "Who retains ownership of data?", a: "The reporting enterprise retains absolute data governance. Mappings are secure and fully hashed." },
-  { q: "Are Scope 3 supply chain values tracked completely?", a: "Yes, our modules support proportionate value-chain fields to answer corporate requests." },
-  { q: "What happens if EFRAG modifies taxonomy specs?", a: "VSMECAP conversion tables update dynamically to ensure format parity with future schemas." },
+  { q: "What is the Value Chain Cap?", a: "It is a legal shield protecting non-listed SMEs under 250 employees. Large corporate buyers cannot demand data points that exceed official VSME parameters." },
+  { q: "Does VSMECAP integrate with EcoVadis?", a: "Yes. Submitting your VSMECAP Basic Module report can automatically grant your business up to 75 out of 100 points on relevant EcoVadis reporting indicators." },
+  { q: "What is a chain hash?", a: "Each source document and disclosure is hashed, allowing an auditor to trace figures back to inputs without managing loose spreadsheets." },
   { q: "Is software installation required?", a: "No. VSMECAP runs as an automated web-based cloud pipeline via secure ingestion streams." }
 ];
