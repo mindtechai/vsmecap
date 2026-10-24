@@ -4,32 +4,32 @@ import { MOAT_CARDS, PRODUCT_STEPS, WHY_NOW_SECTIONS, MARKET_DYNAMICS } from "@/
 const Card = ({ testid, kicker, title, children }) => (
   <div
     data-testid={testid}
-    className="rounded-md border border-[#e4e7ea] bg-white p-6"
+    className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm"
   >
     {kicker && (
-      <p className="mb-3 text-[11px] font-bold tracking-[0.12em] text-[#00996f]">{kicker}</p>
+      <p className="mb-3 text-[11px] font-bold tracking-[0.12em] text-[#00996f] uppercase">{kicker}</p>
     )}
-    <h3 className="text-[15px] font-bold text-[#26292e]">{title}</h3>
-    <div className="mt-2 text-[13.5px] leading-relaxed text-[#4b5058]">{children}</div>
+    <h3 className="text-[15px] font-bold text-[#0F172A]">{title}</h3>
+    <div className="mt-2 text-[13.5px] leading-relaxed text-slate-500 font-medium">{children}</div>
   </div>
 );
 
 export const UkCompanies = () => (
   <Section
     id="uk-companies"
-    label="UK COMPANIES"
+    label="UK &amp; EU ENTERPRISES"
     title="Non-Listed Enterprise Framework — Built for Scale"
-    intro="A standardized verification schema configured strictly for non-listed enterprises under 250 employees, transforming reporting from a manual consultancy into an automated compliance flow."
+    intro="A standardized verification schema configured strictly for non-listed undertakings under 250 employees, enforcing your legal value chain cap protections."
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-      <Card testid="uk-micro-card" kicker="TEMPLATE" title="Micro-undertaking friendly">
-        One optimized pipeline sized for micro, small, and medium undertakings. No consulting hours, no custom scoping—the architecture maps directly to how non-listed businesses actually operate under official EFRAG directives.
+      <Card testid="uk-micro-card" kicker="Value Chain Cap" title="SME Regulatory Protection">
+        Under official EFRAG guidelines, companies under 250 employees are legally shielded from excessive corporate ESG demands. Hand them your standard VSME report instead.
       </Card>
-      <Card testid="uk-meter-card" kicker="DATA" title="MPAN/MPRN meter ingestion">
-        Electricity and gas utility meters are ingested directly via digital MPAN/MPRN network identifiers. Integrated data layers fill compliance gaps automatically—eliminating manual record spreadsheets.
+      <Card testid="uk-meter-card" kicker="EcoVadis Ingestion" title="Up to 75 Points Automated Credit">
+        Our Basic Module architecture maps directly to official EcoVadis data ingestion loops, unlocking up to 75 out of 100 scoring credits on your assessment indicators immediately.
       </Card>
-      <Card testid="uk-scope-card" kicker="BOUNDARY" title="Own-walls Scope 1 + 2">
-        The system isolates your explicit operational boundaries: physical premises, fleet vehicles, and purchased energy values. Scope 1 and location-based Scope 2 are structurally computed, hashed, and evidenced.
+      <Card testid="uk-scope-card" kicker="Operational Bounds" title="Own-Walls Scope 1 + 2">
+        The system isolates your explicit operational boundaries: physical premises and vehicles. Scope 3 supply chain demands from subcontractors are completely excluded by law in the Basic Module.
       </Card>
     </div>
   </Section>
@@ -66,7 +66,7 @@ export const Product = () => (
         <div
           key={s.step}
           data-testid={`product-step-${s.step}`}
-          className="rounded-md border border-[#e4e7ea] bg-white p-6"
+          className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm"
         >
           <p className="font-mono text-[26px] font-bold text-[#00C08B]">{s.step}</p>
           <h3 className="mt-3 text-[15px] font-bold text-[#26292e]">{s.title}</h3>
@@ -81,7 +81,7 @@ export const WhyNow = () => (
   <Section
     id="why-now"
     label="WHY NOW"
-    title="A published standard, a dated recommendation"
+    title="A published standard, a synchronized transition timeline"
     tint="bg-[#fafafa]"
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -117,7 +117,7 @@ export const Market = () => (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
       <div
         data-testid="market-tam-card"
-        className="rounded-md border border-[#e4e7ea] bg-white p-6"
+        className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm"
       >
         <p className="text-[11px] font-bold tracking-[0.12em] text-[#767c85]">TAM</p>
         <p className="mt-3 text-[24px] font-bold text-[#26292e]">Under NDA</p>
@@ -130,7 +130,7 @@ export const Market = () => (
         <div
           key={i}
           data-testid={`market-dynamic-card-${i}`}
-          className={`rounded-md border p-6 bg-white ${i === 1 ? 'border-[#00C08B]' : 'border-[#e4e7ea]'}`}
+          className={`rounded-xl border p-6 bg-white ${i === 1 ? 'border-[#00C08B]' : 'border-[#e4e7ea]'}`}
         >
           <p className={`text-[11px] font-bold tracking-[0.12em] ${i === 1 ? 'text-[#00996f]' : 'text-[#767c85]'}`}>
             {i === 0 ? "SAM" : "SOM — ENTRY"}
