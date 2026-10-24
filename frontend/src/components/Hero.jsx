@@ -10,7 +10,7 @@ export const Hero = () => (
         <div className="lg:col-span-6 space-y-6">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
-              🛡️ REGULATION (EU) 2026/1560 VALUE CHAIN CAP COMPLIANT
+              🛡️ EFRAG VOLUNTARY STANDARD VALUE CHAIN CAP COMPLIANT
             </span>
           </div>
 
@@ -23,7 +23,7 @@ export const Hero = () => (
           </h1>
           
           <p className="text-[15.5px] leading-relaxed text-slate-500 font-medium max-w-[540px]">
-            The cryptographic verification spine for protected non-listed undertakings under 250 employees. Enforce your legal right to refuse custom spreadsheets, automate raw compliance data ingestion, and unlock instant EcoVadis credits.
+            The cryptographic verification spine for protected non-listed undertakings under 250 employees. Enforce your legal right to refuse custom spreadsheets, automate raw data ingestion, and unlock instant compliance metrics.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -52,8 +52,19 @@ export const Hero = () => (
           </div>
         </div>
 
-        {/* RIGHT COLUMN: REFINED HIGH-FIDELITY LIVE TRACE CONSOLE */}
-        <div className="lg:col-span-6">
+        {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
+        <div className="lg:col-span-6 flex flex-col gap-4">
+          
+          {/* 🖼️ Signature Brand Emblem Alignment (Sized precisely to match the black console underneath) */}
+          <div className="w-full max-w-[340px] px-2">
+            <img 
+              className="w-full h-auto object-contain" 
+              src="/vsmecap_logo_transparent_800.png" 
+              alt="VSMECAP Primary Brand Graphic" 
+            />
+          </div>
+
+          {/* Automated Verification Console Block */}
           <div
             data-testid="hero-terminal"
             className="w-full rounded-xl bg-[#0F172A] p-6 text-left shadow-2xl border border-slate-800"
