@@ -19,6 +19,7 @@ export const NAV_LINKS = [
   { id: "privacy", label: "PRIVACY" }
 ];
 
+// 🌐 LEGISLATIVE COMPLIANT TICKER WITH VISUAL 🔴 X DIVIDERS
 export const TICKER_ITEMS = [
   "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
   "INTERNAL TEMPLATE V1.2 – 13 MAY 2026 – TIMESTAMP 2026-05-13T09:41:00Z UTC",
@@ -91,4 +92,3 @@ export const RISKS = [
 
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps to the public EFRAG VSME standard. It is not certified, endorsed or operated by EFRAG." },
-  { q: "Is VSME reporting mandatory?", a: "No. Recommendation (EU) 2025/1710 keeps VSME voluntary. Pressure arrives through procurement frameworks asking for it." },
