@@ -92,8 +92,3 @@ export const RISKS = [
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps to the public EFRAG VSME standard. It is not certified, endorsed or operated by EFRAG." },
   { q: "Is VSME reporting mandatory?", a: "No. Recommendation (EU) 2025/1710 keeps VSME voluntary. Pressure arrives through procurement frameworks asking for it." },
-  { q: "What is the difference between Annex I and Annex II?", a: "Annex I is the Basic module (B1–B11). Annex II is the Comprehensive module (C1–C9), reported where undertakings choose to go further." },
-  { q: "Does a VSMECAP pack count as assurance?", a: "No. The pack is audit-ready: structured, evidenced and traceable. Assurance itself must come from an independent assurance provider." },
-  { q: "What is a chain hash?", a: "Each source document and each derived disclosure is hashed and linked to the previous one. An auditor can follow the chain back to the raw source data." },
-  { q: "What data do I need to start?", a: "Typically utility meter identifiers (MPAN/MPRN), energy invoices, fleet fuel records and basic HR metrics." }
-];
