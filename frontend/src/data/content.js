@@ -19,10 +19,11 @@ export const NAV_LINKS = [
   { id: "privacy", label: "PRIVACY" }
 ];
 
+// 🌐 REFINED VERIFIED REGULATORY INFRASTRUCTURE TICKER DATA ROW
 export const TICKER_ITEMS = [
   "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
-  "DIRECT ECOVADIS INGESTION COMPATIBLE 🔴 X AUTOMATED UP TO 75 POINTS CREDITS",
-  "EFRAG VALUE CHAIN CAP COMPLIANT — PROTECTING NON-LISTED UNDERTAKINGS UNDER 250 EMPLOYEES"
+  "INTERNAL TEMPLATE V1.2 – 13 MAY 2026 – TIMESTAMP 2026-05-13T09:41:00Z UTC",
+  "REGULATION (EU) 2026/1560 VALUE CHAIN CAP COMPLIANT — PROTECTING UNDERTAKINGS UNDER 250 EMPLOYEES"
 ];
 
 export const BASIC_MODULES = [
@@ -59,14 +60,14 @@ export const PRODUCT_STEPS = [
 
 export const MOAT_CARDS = [
   { title: "XBRL Taxonomy Lock", desc: "Direct structural schema integration with official efrg:vsm_e tags creates high data switching friction." },
-  { title: "EcoVadis 75pt Ingestion", desc: "Standardized mapping structures match EcoVadis ingestion loops, unlocking instant scoring credits up to 75/100 points." },
+  { title: "Chain Verification", desc: "Cryptographic hash lineage links source material to outputs, yielding verified technical trails for independent auditors." },
   { title: "Value Chain Cap Armor", desc: "Tailored to enforce the legal right of true SMEs to say no to custom, bloated enterprise questionnaires." },
   { title: "Bank API Moat", desc: "Automated links to utility feeds transition annual compliance into a continuous utility stream." }
 ];
 
 export const WHY_NOW_SECTIONS = [
   { title: "Value Chain Cap Enforced", desc: "Large corporations cannot legally pass down complex, out-of-scope ESG requests to subcontractors under 250 employees." },
-  { title: "EcoVadis Automated Credits", desc: "EcoVadis has officially integrated the VSME framework, rewarding standard compliance with immediate, verifiable scoring tier bumps." },
+  { title: "November 2026 Transition", desc: "November 2026 marks the official release of EFRAG's standardized digital taxonomy and conversion architectures." },
   { title: "Capital Allocation Moats", desc: "Lending institutions and commercial banks are actively embedding EFRAG ESG frameworks into mid-market risk evaluations." }
 ];
 
@@ -91,8 +92,8 @@ export const RISKS = [
 
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard framework." },
-  { q: "What is the Value Chain Cap?", a: "It protects non-listed SMEs under 250 employees, making it illegal for buyers to demand data points exceeding VSME parameters." },
-  { q: "Does VSMECAP integrate with EcoVadis?", a: "Yes. Submitting your VSMECAP Basic report automatically awards up to 75/100 points on EcoVadis indicators." },
+  { q: "What is the Value Chain Cap?", a: "It is a legal shield protecting non-listed SMEs under 250 employees. Large corporate buyers cannot demand data points that exceed official VSME parameters." },
+  { q: "Does a VSMECAP pack count as assurance?", a: "No. The pack is audit-ready and traceable. Formal external assurance must come from an independent, licensed assurance provider." },
   { q: "What is a chain hash?", a: "Each data record is hashed, allowing independent auditors to follow numerical trails directly back to your source bills." },
   { q: "Is software installation required?", a: "No. VSMECAP runs as an automated web-based cloud pipeline via secure data ingestion streams." },
   { q: "How long does deployment take?", a: "Standard pipeline configurations complete ingestion mappings within 48 hours of source linking." },
