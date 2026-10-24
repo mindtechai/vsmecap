@@ -94,7 +94,7 @@ export const FAQS = [
   { q: "What is the Value Chain Cap?", a: "It protects non-listed SMEs under 250 employees, making it illegal for buyers to demand data points exceeding VSME parameters." },
   { q: "Does VSMECAP integrate with EcoVadis?", a: "Yes. Submitting your VSMECAP Basic report automatically awards up to 75/100 points on EcoVadis indicators." },
   { q: "What is a chain hash?", a: "Each data record is hashed, allowing independent auditors to follow numerical trails directly back to your source bills." },
-  { q: "Is software installation required?", a: "No. VSMECAP runs as an automated cloud pipeline via secure utility ingestion streams." },
+  { q: "Is software installation required?", a: "No. VSMECAP runs as an automated web-based cloud pipeline via secure data ingestion streams." },
   { q: "How long does deployment take?", a: "Standard pipeline configurations complete ingestion mappings within 48 hours of source linking." },
   { q: "Can we export reports for UK public tenders?", a: "Yes. All ledger exports structurally align with PPN 06/21 carbon reduction format guidelines." },
   { q: "Who retains data governance?", a: "The reporting enterprise retains absolute data ownership. Profiles are hashed locally to eliminate third-party leaks." },
