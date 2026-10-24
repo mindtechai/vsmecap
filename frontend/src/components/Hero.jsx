@@ -1,5 +1,3 @@
-import { CONTACT_MAILTO } from "../data/content";
-
 export const Hero = () => (
   <section
     data-testid="hero"
@@ -36,7 +34,7 @@ export const Hero = () => (
               Start VS (VSME) for free →
             </a>
             <a 
-              href={CONTACT_MAILTO}
+              href="mailto:info@://vsmecap.com"
               className="rounded-xl bg-white border border-slate-200 px-6 py-3.5 text-[14px] font-bold text-slate-600 hover:bg-slate-50 shadow-sm transition-all hover:-translate-y-0.5"
             >
               Book Expert Demo
