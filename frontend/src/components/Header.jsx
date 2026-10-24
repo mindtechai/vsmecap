@@ -56,6 +56,19 @@ export const Header = () => {
         }
       `}} />
 
+      {/* 🌟 FLOATING PROMINENT OFFER BADGE (Visible across all screen scrolls) */}
+      <div className="fixed bottom-24 right-5 z-50 pointer-events-auto hidden md:block">
+        <a 
+          href="#uk-companies"
+          className="flex flex-col items-center gap-1 rounded-2xl bg-[#0D9488] border border-[#ccfbf1]/20 p-4 text-center text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7a70] group animate-bounce"
+          style={{ animationDuration: '3s' }}
+        >
+          <span className="text-[11px] font-black uppercase tracking-widest text-[#ccfbf1]">Special Offer</span>
+          <span className="text-[14px] font-extrabold tracking-tight leading-tight">FREE VSME<br/>FOR SMEs</span>
+          <span className="mt-1 text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-md group-hover:bg-white/30 transition-colors">Activate Free Tier →</span>
+        </a>
+      </div>
+
       <header id="top" className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-24 items-center justify-between gap-4">
