@@ -1,3 +1,5 @@
+import { CONTACT_MAILTO } from "@/data/content";
+
 export const Hero = () => (
   <section
     data-testid="hero"
@@ -34,7 +36,7 @@ export const Hero = () => (
               Start VS (VSME) for free →
             </a>
             <a 
-              href="mailto:info@://vsmecap.com" 
+              href={CONTACT_MAILTO}
               className="rounded-xl bg-white border border-slate-200 px-6 py-3.5 text-[14px] font-bold text-slate-600 hover:bg-slate-50 shadow-sm transition-all hover:-translate-y-0.5"
             >
               Book Expert Demo
@@ -55,7 +57,7 @@ export const Hero = () => (
         {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
         <div className="lg:col-span-6 flex flex-col gap-4">
           
-          {/* 🖼️ Signature Brand Emblem Alignment (Sized precisely to match the black console underneath) */}
+          {/* 🖼️ Signature Brand Emblem Alignment */}
           <div className="w-full max-w-[340px] px-2">
             <img 
               className="w-full h-auto object-contain" 
