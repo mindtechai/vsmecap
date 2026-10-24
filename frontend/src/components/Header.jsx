@@ -5,7 +5,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // 📁 Dropdown Architecture Configuration Array
+  // 📁 Premium Dropdown Architecture Configuration Array - Updated with EU Scope
   const navMenu = [
     {
       label: "Frameworks",
@@ -17,7 +17,7 @@ export const Header = () => {
     {
       label: "Solutions",
       items: [
-        { label: "UK Companies", href: "#uk-companies" },
+        { label: "UK & EU Companies", href: "#uk-companies" },
         { label: "Public Sector", href: "#public-sector" },
         { label: "Partners", href: "#partners" }
       ]
@@ -56,16 +56,20 @@ export const Header = () => {
         }
       `}} />
 
-      {/* 🌟 UPDATED FLOATING BANNER ROW (Permanently Free Target Scope) */}
+      {/* 🌟 SHARPER FLOATING BANNER ROW (Fixed Line-Height and Typography Stacking) */}
       <div className="fixed bottom-24 right-5 z-50 pointer-events-auto hidden md:block">
         <a 
           href="#uk-companies"
           className="flex flex-col items-center gap-1 rounded-2xl bg-[#0D9488] border border-[#ccfbf1]/20 p-4 text-center text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7a70] group animate-bounce"
           style={{ animationDuration: '3s' }}
         >
-          <span className="text-[11px] font-black uppercase tracking-widest text-[#ccfbf1]">Platform Offer</span>
-          <span className="text-[14px] font-extrabold tracking-tight leading-tight">PERMANENTLY FREE<br/>TO SMEs &lt;250 EMPLOYEES</span>
-          <span className="mt-1 text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-md group-hover:bg-white/30 transition-colors">Activate Free Tier →</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#ccfbf1] block mb-0.5">Platform Offer</span>
+          <span className="text-[13px] font-black tracking-tight leading-normal block uppercase text-white">
+            PERMANENTLY FREE<br/>TO SMEs &lt;250 EMPLOYEES
+          </span>
+          <span className="mt-1.5 text-[10px] font-bold bg-white/20 px-2 py-1 rounded-md group-hover:bg-white/30 transition-colors block tracking-wide">
+            Activate Free Tier →
+          </span>
         </a>
       </div>
 
@@ -73,7 +77,7 @@ export const Header = () => {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-24 items-center justify-between gap-4">
             
-            {/* 🔍 LEFT EDGE: TYPOGRAPHY CORPORATE LOGO */}
+            {/* 🔍 LEFT EDGE: HIGH-FIDELITY TYPOGRAPHY CORPORATE LOGO */}
             <a href="#top" className="flex items-center flex-shrink-0 transition-all hover:opacity-90 gap-2">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A] font-sans antialiased">
                 VSME<span className="text-[#0D9488]">CAP</span>
@@ -116,7 +120,7 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* 💻 RIGHT EDGE: ACTION BUTTON */}
+            {/* 💻 RIGHT EDGE: ACTION PROFILE */}
             <div className="hidden lg:flex items-center gap-x-4">
               <span className="rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 VSME COMPLIANT • &lt;250 EMPLOYEES
@@ -129,7 +133,7 @@ export const Header = () => {
               </a>
             </div>
 
-            {/* 🍔 MOBILE MENU TOGGLE BUTTON */}
+            {/* 🍔 PORTABLE DEVICE MOBILE BAR MENU TOGGLE */}
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -150,7 +154,7 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* 📱 MOBILE VIEW CONTAINER DRAWER */}
+        {/* 📱 MOBILE NAVIGATION PORTAL PANEL */}
         <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-slate-100 bg-slate-50 w-full`}>
           <div className="space-y-4 px-6 py-6 max-w-md mx-auto">
             {navMenu.map((menu, idx) => (
