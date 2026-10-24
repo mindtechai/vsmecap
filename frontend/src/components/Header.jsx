@@ -5,7 +5,6 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // 📁 Premium Dropdown Architecture Configuration Array - Updated with EU Scope
   const navMenu = [
     {
       label: "Frameworks",
@@ -45,7 +44,6 @@ export const Header = () => {
 
   return (
     <>
-      {/* ⚡ Custom CSS Keyframe Injection to force the Ticker to scroll infinitely */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeCrawl {
           0% { transform: translateX(0%); }
@@ -56,18 +54,18 @@ export const Header = () => {
         }
       `}} />
 
-      {/* 🌟 SHARPER FLOATING BANNER ROW (Fixed Line-Height and Typography Stacking) */}
+      {/* 🌟 FLOATING CORNER WIDGET — SPECIFIC HEIGHT PROTECTION TO PREVENT TEXT SMUDGING */}
       <div className="fixed bottom-24 right-5 z-50 pointer-events-auto hidden md:block">
         <a 
           href="#uk-companies"
-          className="flex flex-col items-center gap-1 rounded-2xl bg-[#0D9488] border border-[#ccfbf1]/20 p-4 text-center text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7a70] group animate-bounce"
+          className="flex flex-col items-center justify-center rounded-2xl bg-[#0D9488] border border-[#ccfbf1]/20 w-[240px] h-[104px] text-center text-white shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7a70] group animate-bounce"
           style={{ animationDuration: '3s' }}
         >
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#ccfbf1] block mb-0.5">Platform Offer</span>
-          <span className="text-[13px] font-black tracking-tight leading-normal block uppercase text-white">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#ccfbf1] block mb-0.5 leading-none">Platform Offer</span>
+          <span className="text-[13px] font-black tracking-tight leading-tight block text-white">
             PERMANENTLY FREE<br/>TO SMEs &lt;250 EMPLOYEES
           </span>
-          <span className="mt-1.5 text-[10px] font-bold bg-white/20 px-2 py-1 rounded-md group-hover:bg-white/30 transition-colors block tracking-wide">
+          <span className="mt-1 text-[9.5px] font-bold bg-white/20 px-2 py-0.5 rounded-md group-hover:bg-white/30 transition-colors block tracking-wide leading-none">
             Activate Free Tier →
           </span>
         </a>
@@ -77,7 +75,6 @@ export const Header = () => {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-24 items-center justify-between gap-4">
             
-            {/* 🔍 LEFT EDGE: HIGH-FIDELITY TYPOGRAPHY CORPORATE LOGO */}
             <a href="#top" className="flex items-center flex-shrink-0 transition-all hover:opacity-90 gap-2">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A] font-sans antialiased">
                 VSME<span className="text-[#0D9488]">CAP</span>
@@ -87,7 +84,6 @@ export const Header = () => {
               </span>
             </a>
 
-            {/* 💻 CENTER: RESPONSIVE DROPDOWN FOLDERS */}
             <nav className="hidden lg:flex items-center gap-x-8">
               {navMenu.map((menu, idx) => (
                 <div 
@@ -120,7 +116,6 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* 💻 RIGHT EDGE: ACTION PROFILE */}
             <div className="hidden lg:flex items-center gap-x-4">
               <span className="rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 VSME COMPLIANT • &lt;250 EMPLOYEES
@@ -133,28 +128,18 @@ export const Header = () => {
               </a>
             </div>
 
-            {/* 🍔 PORTABLE DEVICE MOBILE BAR MENU TOGGLE */}
             <div className="flex items-center lg:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className="inline-flex items-center justify-center p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none"
-              >
+              <button onClick={() => setIsOpen(!isOpen)} type="button" className="inline-flex items-center justify-center p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none">
                 {!isOpen ? (
-                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
+                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
                 ) : (
-                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                 )}
               </button>
             </div>
           </div>
         </div>
 
-        {/* 📱 MOBILE NAVIGATION PORTAL PANEL */}
         <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-slate-100 bg-slate-50 w-full`}>
           <div className="space-y-4 px-6 py-6 max-w-md mx-auto">
             {navMenu.map((menu, idx) => (
@@ -174,18 +159,6 @@ export const Header = () => {
                 </div>
               </div>
             ))}
-            <div className="pt-4 border-t border-slate-200/80 flex flex-col gap-3 items-center">
-              <span className="text-[11px] font-bold text-slate-400 tracking-wide">
-                VSME COMPLIANT • &lt;250 EMPLOYEES
-              </span>
-              <a
-                href={CONTACT_MAILTO}
-                onClick={() => setIsOpen(false)}
-                className="w-full text-center rounded-xl bg-[#0F172A] py-3 text-[13.5px] font-bold text-white hover:bg-[#1e293b]"
-              >
-                Contact Us
-              </a>
-            </div>
           </div>
         </div>
       </header>
