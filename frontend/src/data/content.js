@@ -91,4 +91,5 @@ export const RISKS = [
 
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps to the public EFRAG VSME standard. It is not certified, endorsed or operated by EFRAG." },
-  { q: "Is VSME reporting mandatory?", a: "No. Recommendation (EU) 2025/1710 keeps VSME voluntary. Pressure arrives through procurement frameworks asking for it." },
+  { q: "Is VSME reporting mandatory?", a: "No. Recommendation (EU) 2025/1710 keeps VSME voluntary. Pressure arrives through procurement frameworks asking for it."},
+];
