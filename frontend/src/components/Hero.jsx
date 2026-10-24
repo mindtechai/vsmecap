@@ -1,4 +1,4 @@
-import { CONTACT_MAILTO } from "@/data/content";
+import { CONTACT_MAILTO } from "../data/content";
 
 export const Hero = () => (
   <section
