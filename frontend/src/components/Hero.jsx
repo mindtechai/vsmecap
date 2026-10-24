@@ -10,7 +10,7 @@ export const Hero = () => (
         <div className="lg:col-span-6 space-y-6">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
-              ⚡ AUDIT-READY • VOLUNTARY STANDARD (VSME) INFRASTRUCTURE
+              🛡️ REGULATION (EU) 2026/1560 VALUE CHAIN CAP COMPLIANT
             </span>
           </div>
 
@@ -23,7 +23,7 @@ export const Hero = () => (
           </h1>
           
           <p className="text-[15.5px] leading-relaxed text-slate-500 font-medium max-w-[540px]">
-            The cryptographic verification spine for non-listed enterprises under 250 employees. Automate raw data ingestion, build immutable SHA-256 evidence chains, and export compliant digital disclosures.
+            The cryptographic verification spine for protected non-listed undertakings under 250 employees. Enforce your legal right to refuse custom spreadsheets, automate raw compliance data ingestion, and unlock instant EcoVadis credits.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -47,7 +47,7 @@ export const Hero = () => (
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0d9488]"></span>
             </span>
             <p className="text-[11.5px] font-bold text-[#115e59]">
-              Aligned with EFRAG's finalized November 2026 Schema &amp; Migration Engine
+              Tracking framework requirements from EFRAG's Brussels Summit (1,500+ Registered Enterprise Stakeholders)
             </p>
           </div>
         </div>
