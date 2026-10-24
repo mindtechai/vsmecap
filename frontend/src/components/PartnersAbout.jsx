@@ -1,24 +1,12 @@
 import { Section } from "@/components/Section";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/salil-patankar-94892a367";
-
 const Card = ({ title, role, children }) => (
-  <div className="rounded-md border border-[#e4e7ea] bg-white p-6 shadow-sm">
-    <div className="flex items-center justify-between gap-2 border-b border-gray-100 pb-3">
-      <div>
-        <h3 className="text-[15px] font-bold text-[#26292e]">{title}</h3>
-        {role && <p className="text-[12px] font-medium text-[#767c85] mt-0.5">{role}</p>}
-      </div>
-      <a 
-        href={LINKEDIN_URL} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="text-[11px] font-bold text-[#0077b5] hover:underline whitespace-nowrap"
-      >
-        LINKEDIN →
-      </a>
+  <div className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm">
+    <div className="border-b border-slate-100 pb-3">
+      <h3 className="text-[15px] font-bold text-[#0F172A]">{title}</h3>
+      {role && <p className="text-[12px] font-semibold text-[#0D9488] mt-0.5">{role}</p>}
     </div>
-    <div className="mt-4 text-[13.5px] leading-relaxed text-[#4b5058]">{children}</div>
+    <div className="mt-4 text-[13.5px] leading-relaxed text-slate-500 font-medium">{children}</div>
   </div>
 );
 
@@ -41,21 +29,50 @@ export const PartnersAbout = () => (
       </div>
     </Section>
 
-    {/* 📈 ABOUT US FOUNDATION SECTION */}
+    {/* 📈 ENTERPRISE STYLE ABOUT US SECTION */}
     <Section
       id="about"
       label="ABOUT US"
-      title="The VSMECAP Operational Philosophy"
-      intro="Accelerating structural carbon transparency frameworks for the next generation of non-listed enterprises."
+      title="Combining Proven Technology with Institutional Infrastructure"
+      intro="VSMECAP designs cryptographic verification layers to turn supply-chain data complexity into structured enterprise capital."
       tint="bg-[#fafafa]"
     >
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <Card title="Salil Patankar" role="Founder &amp; Principal Architect">
-          Leading the development of secure, hash-chained regulatory pipelines tailored precisely to the voluntary SME reporting framework definitions.
-        </Card>
-        <Card title="Technical Mission">
-          Transforming annual disclosure friction into automated infrastructure layers, ensuring small firms maintain strict supply chain procurement advantages.
-        </Card>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="rounded-xl border border-slate-200/60 bg-white p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 className="text-[16px] font-bold text-[#0F172A]">Core Foundation</h3>
+            <p className="mt-3 text-[13.5px] leading-relaxed text-slate-500 font-medium">
+              Built on a decadelong methodology of data ledger prioritisation, stakeholder risk alignment, and enterprise control systems.
+            </p>
+          </div>
+          <div className="mt-6 pt-4 border-t border-slate-100 font-mono text-[20px] font-black text-[#0D9488]">
+            10+ Years
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-slate-200/60 bg-white p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 className="text-[16px] font-bold text-[#0F172A]">Data Governance</h3>
+            <p className="mt-3 text-[13.5px] leading-relaxed text-slate-500 font-medium">
+              We translate highly complex EFRAG parameters into practical cloud workflows, ensuring mid-market suppliers lock in contractual supply-chain advantages.
+            </p>
+          </div>
+          <div className="mt-6 pt-4 border-t border-slate-100 font-mono text-[20px] font-black text-[#0D9488]">
+            EFRAG Aligned
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-slate-200/60 bg-white p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 className="text-[16px] font-bold text-[#0F172A]">Technical Mission</h3>
+            <p className="mt-3 text-[13.5px] leading-relaxed text-slate-500 font-medium">
+              Developing immutable, machine-readable reporting pipelines that help companies move past expensive traditional human consulting.
+            </p>
+          </div>
+          <div className="mt-6 pt-4 border-t border-slate-100 font-mono text-[20px] font-black text-[#0D9488]">
+            SHA-256 Secured
+          </div>
+        </div>
       </div>
     </Section>
   </>
