@@ -5,6 +5,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+  // 📁 Premium Dropdown Architecture Configuration Array
   const navMenu = [
     {
       label: "Frameworks",
@@ -59,9 +60,14 @@ export const Header = () => {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-24 items-center justify-between gap-4">
             
-            {/* 🔍 LEFT EDGE: ENLARGED HIGH-FIDELITY BRANDING */}
-            <a href="#top" className="flex items-center flex-shrink-0 transition-opacity hover:opacity-90">
-              
+            {/* 🔍 LEFT EDGE: HIGH-FIDELITY TYPOGRAPHY CORPORATE LOGO */}
+            <a href="#top" className="flex items-center flex-shrink-0 transition-all hover:opacity-90 gap-2">
+              <span className="text-[24px] font-black tracking-tighter text-[#0F172A] font-sans antialiased">
+                VSME<span className="text-[#0D9488]">CAP</span>
+              </span>
+              <span className="hidden sm:inline-block rounded-md bg-slate-100 border border-slate-200/40 px-2 py-0.5 text-[9px] font-extrabold tracking-widest text-slate-500 uppercase shadow-sm">
+                PLATFORM
+              </span>
             </a>
 
             {/* 💻 CENTER: RESPONSIVE DROPDOWN FOLDERS */}
@@ -110,7 +116,7 @@ export const Header = () => {
               </a>
             </div>
 
-            {/* 🍔 PORTABLE DRAW TOGGLE */}
+            {/* 🍔 PORTABLE DEVICE MOBILE BAR MENU TOGGLE */}
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -131,7 +137,7 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* 📱 MOBILE DRAW CONTAINER */}
+        {/* 📱 MOBILE NAVIGATION PORTAL PANEL */}
         <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-slate-100 bg-slate-50 w-full`}>
           <div className="space-y-4 px-6 py-6 max-w-md mx-auto">
             {navMenu.map((menu, idx) => (
