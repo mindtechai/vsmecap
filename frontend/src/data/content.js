@@ -19,88 +19,82 @@ export const NAV_LINKS = [
   { id: "privacy", label: "PRIVACY" }
 ];
 
-// 🌐 REFINED VERIFIED REGULATORY INFRASTRUCTURE TICKER DATA ROW
+// 🌐 REFINED REGULATORY DATA TRACK — ZERO THIRD-PARTY ECOVADIS CLAIMS INCLUDED
 export const TICKER_ITEMS = [
   "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
-  "INTERNAL TEMPLATE V1.2 – 13 MAY 2026 – TIMESTAMP 2026-05-13T09:41:00Z UTC",
-  "REGULATION (EU) 2026/1560 VALUE CHAIN CAP COMPLIANT — PROTECTING UNDERTAKINGS UNDER 250 EMPLOYEES"
+  "SELF-DECLARATION SUFFICIENT PER REC 16 🔴 X NO BUILT-IN THIRD PARTY RATINGS INTEGRATION CLAIMED",
+  "REGULATION (EU) 2026/1560 VALUE CHAIN CAP ENFORCED — PROTECTING UNDERTAKINGS UNDER 250 EMPLOYEES"
 ];
 
 export const BASIC_MODULES = [
-  { code: "B1", title: "Basis for preparation", desc: "Explicit definition of the reporting entity scope covering non-listed operations under 250 employees." },
-  { code: "B2", title: "Practices and initiatives", desc: "Formal disclosures detailing specific corporate sustainability actions and transition targets." },
-  { code: "B3", title: "Energy and emissions", desc: "Granular energy consumption in MWh and gross Scope 1 and Scope 2 GHG metrics." },
-  { code: "B4", title: "Pollution", desc: "Mandatory legal thresholds and pollutant tracking across operational environments." },
-  { code: "B5", title: "Biodiversity", desc: "Detailed tracking of operations situated within or near biodiversity-sensitive geographical areas." },
-  { code: "B6", title: "Water", desc: "Comprehensive water extraction and localized monitoring in designated high water-stress regions." },
-  { code: "B7", title: "Resource and waste", desc: "Comprehensive weight metrics of operational waste streams and circular recovery diversion rates." },
-  { code: "B8", title: "Workforce characteristics", desc: "Standardized headcount breakdowns by Full-Time Equivalent (FTE) parameters." },
-  { code: "B9", title: "Workforce health and safety", desc: "Frequency tracking of recordable occupational accidents for own personnel." },
-  { code: "B10", title: "Remuneration and training", desc: "Internal wage gap percentiles and average annual training allocations per employee." },
-  { code: "B11", title: "Convictions and fines", desc: "Formal transparency log tracking legal convictions related to bribery or corruption." }
+  { code: "B1", title: "Basis for preparation", desc: "Explicit definition of entity scope, reporting period, and voluntary basis per Recital 2 under 250 employee parameters." },
+  { code: "B2", title: "Practices, policies and future initiatives", desc: "Qualitative narrative disclosures detailing structural sustainable transition targets. Qualitative only in Basic." },
+  { code: "B3", title: "Energy and greenhouse gas emissions", desc: "Own-walls Scope 1 and Scope 2 tracking in MWh and tCO2e via metered utility points. Excludes Scope 3 fields." },
+  { code: "B4", title: "Pollution of air, water and soil", desc: "Standardized yes/no baseline declarations tracking operational atmospheric and aquatic pollutant exposures." },
+  { code: "B5", title: "Biodiversity", desc: "Qualitative narrative log tracking proximity to protected areas or high-conservation value geographies." },
+  { code: "B6", title: "Water", desc: "Total water extraction and consumption profiles across high water-stress operational sectors." },
+  { code: "B7", title: "Resource use, circular economy and waste", desc: "Total weight metrics splitting hazardous vs non-hazardous components. No full circularity metrics required." },
+  { code: "B8", title: "Workforce — general characteristics", desc: "Standardized headcount breakdowns by Full-Time Equivalent (FTE) benchmarks and employment contract shapes." },
+  { code: "B9", title: "Workforce — health and safety", desc: "Frequency tracking of recordable occupational incidents and fatal workplace safety occurrences." },
+  { code: "B10", title: "Workforce — remuneration and training", desc: "Internal wage gap percentiles, collective-bargaining safety coverage, and average annual training hours." },
+  { code: "B11", title: "Convictions and fines", desc: "Formal transparency tracker logging regulatory citations and fines related to corruption or bribery." }
 ];
 
 export const COMPREHENSIVE_MODULES = [
-  { code: "C1", title: "Strategy and model", points: "4 data points", desc: "Structural interaction of sustainability metrics with core strategy and market position." },
-  { code: "C2", title: "Transition initiatives", points: "3 data points", desc: "Deep-dive operational policies frameworks designed to decouple business activities from resource intensity." },
-  { code: "C3", title: "GHG reduction plan", points: "5 data points", desc: "Time-bound, scientifically aligned GHG emission reduction goals and progress auditing." },
-  { code: "C4", title: "Climate risks", points: "4 data points", desc: "Assessment of acute physical climate hazards alongside financial resilience planning." },
-  { code: "C5", title: "Workforce details", points: "3 data points", desc: "Proportionate deep-dives into age demographics and employee turnover rates." },
-  { code: "C6", title: "Human rights policies", points: "3 data points", desc: "Formally codified human rights due diligence architectures and grievance channels." },
-  { code: "C7", title: "Human rights incidents", points: "2 data points", desc: "Transparency declaration of material human rights grievances and corrective actions." },
-  { code: "C8", title: "Sector revenues", points: "2 data points", desc: "Calculation of revenue exposures linked directly to EU Benchmark Exclusion lists." },
-  { code: "C9", title: "Gender diversity in governance", points: "1 data point", desc: "The exact balance ratio tracking gender representation within the highest governing body." }
+  { code: "C1", title: "Strategy and business model", points: "4 data points", desc: "Gated per Para 6. Structural interaction of core strategy with material downstream sustainability dependencies." },
+  { code: "C2", title: "Additional workforce metrics", points: "3 data points", desc: "Triggered if exceeding 50 employees. Deeper turnover rates and granular internal equity parameters." },
+  { code: "C3", title: "Scope 3 GHG Categories", points: "5 data points", desc: "Value-chain supplier emissions logs. Optional in Comprehensive tracking with a 3-year safe harbor." },
+  { code: "C4", title: "Climate transition risks", points: "4 data points", desc: "Scenario vulnerability analysis tracking financial resilience planning against acute physical hazards." },
+  { code: "C5", title: "Own workforce human rights", points: "3 data points", desc: "Codified due diligence paths, grievance channels, and non-retaliation operational mechanisms." },
+  { code: "C6", title: "Workers in the value chain", points: "3 data points", desc: "Targeted policy tracking focused explicitly on upstream procurement environments and supplier networks." },
+  { code: "C7", title: "Affected communities", points: "2 data points", desc: "Local impact declarations triggered only if undertakings operate near sensitive geographic sites." },
+  { code: "C8", title: "Consumers and end-users", points: "2 data points", desc: "Product responsibility metrics, data privacy tracking, and consumer access control logs." },
+  { code: "C9", title: "Business conduct supplement", points: "1 data point", desc: "Corporate payment practices, localized lobbying transparency parameters, and supplier relationships." }
 ];
 
 export const PRODUCT_STEPS = [
-  { step: "01", title: "Ingest", desc: "Seamlessly map utility meter points (MPAN/MPRN) and internal records into an EFRAG-compliant structural grid." },
-  { step: "02", title: "Verify chain hash", desc: "Verification architectures execute SHA-256 cryptographic hashes from document to output." },
-  { step: "03", title: "Output pack", desc: "Compile digital ledgers native-mapped to official Inline XBRL, JSON, and CSV specifications." }
+  { step: "01", title: "Ingest", desc: "Map utility meter indices (MPAN/MPRN) and raw data streams directly into the structured EFRAG framework." },
+  { step: "02", title: "Verify Chain Hash", desc: "Execute local SHA-256 cryptographic hashes from source files to final numbers to guarantee audit readiness." },
+  { step: "03", title: "Output Pack", desc: "Compile digital compliance passbooks native-mapped to Inline XBRL, XBRL-JSON, and XBRL-CSV formats." }
 ];
 
 export const MOAT_CARDS = [
-  { title: "XBRL Taxonomy Lock", desc: "Direct structural schema integration with official efrg:vsm_e tags creates high data switching friction." },
-  { title: "Chain Verification", desc: "Cryptographic hash lineage links source material to outputs, yielding verified technical trails for independent auditors." },
-  { title: "Value Chain Cap Armor", desc: "Tailored to enforce the legal right of true SMEs to say no to custom, bloated enterprise questionnaires." },
-  { title: "Bank API Moat", desc: "Automated links to utility feeds transition annual compliance into a continuous utility stream." }
+  { title: "XBRL Taxonomy Lock", desc: "Direct integration with official efrg:vsm_e schemas binds data exports tightly, preventing platform migration." },
+  { title: "Chain Verification", desc: "SHA-256 cryptographic lineage traces outputs directly back to source documents for independent auditors." },
+  { title: "Value Chain Cap Armor", desc: "Built to enforce Regulation (EU) 2026/1560, giving true SMEs the legal right to reject custom questionnaires." },
+  { title: "Bank API Moat", desc: "Continuous automated data links to utility feeds convert annual compliance updates into an ongoing data utility stream." }
 ];
 
 export const WHY_NOW_SECTIONS = [
-  { title: "Value Chain Cap Enforced", desc: "Large corporations cannot legally pass down complex, out-of-scope ESG requests to subcontractors under 250 employees." },
-  { title: "November 2026 Transition", desc: "November 2026 marks the official release of EFRAG's standardized digital taxonomy and conversion architectures." },
-  { title: "Capital Allocation Moats", desc: "Lending institutions and commercial banks are actively embedding EFRAG ESG frameworks into mid-market risk evaluations." }
+  { title: "Value Chain Cap Active", desc: "Large corporations cannot legally pass down data requests exceeding the official VSME standard thresholds to subcontractors." },
+  { title: "Digital Ingestion Release", desc: "EFRAG's standardized digital taxonomy schemas lock compliance deadlines down, requiring machine-readable structures." },
+  { title: "Capital Pricing Moats", desc: "Lending institutions and commercial banks are actively embedding official VSME parameters into mid-market risk models." }
 ];
 
 export const MARKET_DYNAMICS = [
-  { title: "The Non-Listed Market Gap", desc: "Over 99% of European and UK enterprises operate as non-listed small-to-medium undertakings under 250 employees." },
-  { title: "1,500+ Registered Enterprise Stakeholders", desc: "EFRAG's Brussels Outreach Event demonstrated a sharp spike in real market interest from procurement networks." }
+  { title: "The Non-Listed Market Gap", desc: "Over 99% of European and UK undertakings operate outside mandatory CSRD rules, requiring low-overhead tools." },
+  { title: "1,500+ Registered Enterprise Stakeholders", desc: "EFRAG's Brussels Summit proved massive market demand for standardized, non-consultancy verification flows." }
 ];
 
 export const LEGAL_BASIS = [
-  { title: "EFRAG VSME Framework", desc: "The official voluntary reporting standard specifying the precise datapoints allowed under value chain limitations." },
-  { title: "CSRD Value Chain Cap", desc: "Statutory European framework protecting non-listed SMEs from excessive data disclosure requests from enterprise clients." }
+  { title: "Regulation (EU) 2026/1560", desc: "Enforces the legal Value Chain Cap restricting what listed corporate buyers can request from smaller vendors." },
+  { title: "EFRAG VSME Framework", desc: "The definitive voluntary reporting standard specifying the maximum allowed datapoints across supply chain loops." }
 ];
 
 export const RISKS = [
-  { title: "Not certified platform", desc: "VSMECAP output is audit-ready. It is not certified or endorsed by EFRAG." },
-  { title: "Regulation changes", desc: "VSME is voluntary. Delegated acts or successor standards may alter requirements." },
-  { title: "Data quality", desc: "Outputs depend on client inputs. Missing records limit the final pack's coverage." },
-  { title: "Early-stage venture", desc: "Pre-revenue. No partner agreements are signed, and relationships are not assumed." },
-  { title: "Competitive response", desc: "Incumbent ESG platforms may ship comparable SME modules, narrowing our window." },
-  { title: "Bank API dependencies", desc: "Open-banking and meter data access depends on third-party commercial terms." }
+  { title: "Not certified platform", desc: "VSMECAP outputs are audit-ready. The system is not officially certified or endorsed by EFRAG." },
+  { title: "Regulation changes", desc: "VSME is voluntary. Future delegated acts or successor standards may modify operational fields." },
+  { title: "Data quality dependencies", desc: "Outputs depend entirely on user inputs. Missing meter files limit final passport coverage." },
+  { title: "Early-stage venture", desc: "Pre-revenue. No strategic partner contracts are signed, and relationships are not assumed." },
+  { title: "Competitive response", desc: "Incumbent legacy accounting tools may introduce simple SME modules, narrowing our first-mover window." },
+  { title: "Third-party API frameworks", desc: "Open-banking and utility network access depends entirely on external API provider terms." }
 ];
 
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard framework." },
-  { q: "What is the Value Chain Cap?", a: "It is a legal shield protecting non-listed SMEs under 250 employees. Large corporate buyers cannot demand data points that exceed official VSME parameters." },
-  { q: "Does a VSMECAP pack count as assurance?", a: "No. The pack is audit-ready and traceable. Formal external assurance must come from an independent, licensed assurance provider." },
-  { q: "What is a chain hash?", a: "Each data record is hashed, allowing independent auditors to follow numerical trails directly back to your source bills." },
+  { q: "What is the Value Chain Cap?", a: "Under Regulation (EU) 2026/1560, large corporate buyers cannot legally demand ESG metrics from you that exceed official VSME parameters." },
+  { q: "What data points are required to start?", a: "Typically utility meter point identifiers (MPAN/MPRN), raw energy invoices, fleet fuel parameters, and basic payroll characteristics." },
+  { q: "What is a chain hash?", a: "Each data record is cryptographically hashed, allowing independent auditors to trace final numbers back to source documents without spreadsheet chaos." },
   { q: "Is software installation required?", a: "No. VSMECAP runs as an automated web-based cloud pipeline via secure data ingestion streams." },
-  { q: "How long does deployment take?", a: "Standard pipeline configurations complete ingestion mappings within 48 hours of source linking." },
-  { q: "Can we export reports for UK public tenders?", a: "Yes. All ledger exports structurally align with PPN 06/21 carbon reduction format guidelines." },
-  { q: "Who retains data governance?", a: "The reporting enterprise retains absolute data ownership. Profiles are hashed locally to eliminate third-party leaks." },
-  { q: "Are Scope 3 supply chain values tracked?", a: "Yes, our modules support proportionate value-chain fields to answer upstream corporate requests safely." },
-  { q: "What happens if EFRAG modifies taxonomy specs?", a: "VSMECAP pipeline conversion tables update dynamically to ensure format parity with future schema versions." },
-  { q: "Is this platform free for small businesses?", a: "Yes, the platform features a permanently free reporting tier for true non-listed SMEs under 250 employees." },
-  { q: "How do we link meter streams?", a: "Enter your standard MPAN/MPRN network identifier to connect direct consumption archives instantly." }
+  { q: "Is this platform free for small businesses?", a: "Yes, the platform features a permanently free reporting tier for true non-listed SMEs under 250 employees." }
 ];
