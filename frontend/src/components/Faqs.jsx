@@ -1,4 +1,4 @@
-import { Section } from "@/components/Section";
+import React from "react";
 
 const LOCAL_FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard framework." },
@@ -15,30 +15,36 @@ const LOCAL_FAQS = [
   { q: "What happens if EFRAG modifies taxonomy specs?", a: "VSMECAP pipeline conversion tables update dynamically to ensure format parity with future schema versions." }
 ];
 
-export const Faqs = () => (
-  <Section 
-    id="faqs" 
-    label="FAQS" 
-    title="Frequently Asked Questions"
-    intro="Comprehensive operational parameters, methodology disclosures, and strategic regulatory alignment guidelines."
-  >
-    <div className="mx-auto max-w-[820px] space-y-6">
-      {LOCAL_FAQS.map((f, i) => (
-        <div 
-          key={i} 
-          data-testid={`faq-item-${i + 1}`}
-          className="rounded-lg border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#0D9488]/30"
-        >
-          <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
-            <span className="text-[#0D9488] font-mono font-bold text-[16px]">Q:</span>
-            <span>{f.q}</span>
-          </h3>
-          <div className="mt-3 border-t border-gray-100/60 pt-3 text-[14px] leading-relaxed text-[#4b5058] pl-5 relative">
-            <span className="absolute left-0 top-3 text-gray-400 font-mono text-[12px] font-bold">A:</span>
-            <p>{f.a}</p>
-          </div>
+export const Faqs = () => {
+  return (
+    <section id="faqs" className="py-16 bg-white border-t border-[#e4e7ea]">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <p className="text-[11px] font-bold tracking-[0.12em] text-[#00996f] uppercase">FAQS</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#0F172A]">Frequently Asked Questions</h2>
+          <p className="mt-4 text-base text-slate-500 font-medium">
+            Comprehensive operational parameters, methodology disclosures, and strategic regulatory alignment guidelines.
+          </p>
         </div>
-      ))}
-    </div>
-  </Section>
-);
+        
+        <div className="mx-auto max-w-[820px] space-y-6">
+          {LOCAL_FAQS.map((f, i) => (
+            <div 
+              key={i} 
+              className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#0D9488]/30"
+            >
+              <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
+                <span className="text-[#0D9488] font-mono font-bold text-[16px]">Q:</span>
+                <span>{f.q}</span>
+              </h3>
+              <div className="mt-3 border-t border-gray-100/60 pt-3 text-[14px] leading-relaxed text-[#4b5058] pl-5 relative">
+                <span className="absolute left-0 top-3 text-gray-400 font-mono text-[12px] font-bold">A:</span>
+                <p>{f.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
