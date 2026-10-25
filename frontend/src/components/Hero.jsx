@@ -8,17 +8,18 @@ export const Hero = () => (
     <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
         
-        {/* LEFT COLUMN: FIXED HEADLINE AND PRODUCT PARAMETERS */}
+        {/* LEFT COLUMN: FIXED PRECISE TEXT FIELD MARKUP */}
         <div className="lg:col-span-6 space-y-6 pt-2">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
-              🛡️ EFRAG VOLUNTARY STANDARD VALUE CHAIN CAP COMPLIANT
+              🛡️ DIRECTIVE (EU) 2026/470 VALUE CHAIN CAP SHIELD ACTIVE
             </span>
           </div>
 
+          {/* 🚀 FIXED LOGIC COMPLIANT SAAS TYPOGRAPHY HEADLINE */}
           <h1
             data-testid="hero-title"
-            className="text-[clamp(28px,3.8vw,42px)] font-black tracking-tight text-[#0F172A] leading-[1.2] font-sans antialiased"
+            className="text-[clamp(26px,3.8vw,40px)] font-black tracking-tight text-[#0F172A] leading-[1.2] font-sans antialiased"
           >
             AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP
             <span className="block text-[#EA580C] text-[clamp(16px,2.2vw,22px)] font-black tracking-wide uppercase mt-4">
@@ -51,15 +52,15 @@ export const Hero = () => (
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0d9488]"></span>
             </span>
             <p className="text-[11.5px] font-bold text-[#115e59]">
-              Tracking framework requirements from EFRAG's Brussels Summit (1,500+ Registered Enterprise Stakeholders)
+              Viral Multi-Tier Onboarding Network Active: CAC = 0
             </p>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: UNIFIED VERTICAL BLOCK TO PREVENT OVERLAPPING LOGOS */}
+        {/* RIGHT COLUMN: BRAND EMBLEM STACKED ABOVE TERMINAL LOGGER BOX */}
         <div className="lg:col-span-6 flex flex-col gap-6 items-start w-full">
           
-          {/* 🖼️ BRAND EMBLEM — ALIGNED DIRECTLY OVER THE TERMINAL BOX LEFT EDGE */}
+          {/* 🖼️ Signature Brand Emblem Alignment */}
           <div className="w-full max-w-[280px] pl-1">
             <img 
               className="w-full h-auto object-contain select-none" 
@@ -80,16 +81,15 @@ export const Hero = () => (
                 <span className="h-2.5 w-2.5 rounded-full bg-[#10B981]" />
               </div>
               <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest">
-                XBRL TRACE LOG • TEMPLATE V1.3
+                XBRL TRACE LOG • NETWORK INTRODUCTIONS ACTIVE
               </span>
             </div>
             <pre className="overflow-x-auto font-mono text-[12px] leading-relaxed text-[#00C08B]">
-{`$ vsmecap ingest --source ledger.csv --format open-banking
-  parsing operational data flows ........... [OK]
+{`$ vsmecap ingest --source network_nodes.csv --metric cac
+  analyzing viral onboarding channels ....... [OK]
+  acquisition coefficient tracker: CAC = 0 .. [PASS]
 $ vsmecap verify --chain-hash --taxonomy "2026-v1"
   sha256: 9f2c...a41e -> linked to source .. [OK]
-  B3:efrg:vsm_e_B3_disclosure .............. [PASS]
-  C2:efrg:vsm_e_C2_disclosure .............. [PASS]
 $ vsmecap pack --format inline-xbrl --csv
   generating audit-ready disclosures ....... [OK]
   vsmecap_passport_2026.xhtml compiled ..... [READY]`}
