@@ -25,8 +25,8 @@ export const UkCompanies = () => (
       <Card testid="uk-micro-card" kicker="Value Chain Cap" title="Protected Undertaking Armor">
         Under Directive (EU) 2026/470, companies under 1,000 employees are legally shielded from excessive corporate ESG demands. Hand them your standard VSME report instead.
       </Card>
-      <Card testid="uk-meter-card" kicker="Viral Growth" title="Zero Cost Network Growth">
-        Our permanently free reporting tier for mid-market suppliers triggers a natural B2B viral loop, driving onboarding volume completely at CAC = 0.
+      <Card testid="uk-meter-card" kicker="Ingestion" title="Automated Meter Tracking">
+        Electricity and gas utility networks are ingested directly via digital MPAN/MPRN records, completely eliminating slow, manual Excel files.
       </Card>
       <Card testid="uk-scope-card" kicker="Operational Bounds" title="Own-Walls Scope 1 + 2">
         The system isolates your explicit operational boundaries: physical premises and vehicles. Scope 3 supply chain demands from subcontractors are completely excluded by law in the Basic Module.
@@ -97,11 +97,18 @@ export const WhyNow = () => (
 export const Moat = () => (
   <Section id="moat" label="MOAT" title="Four compounding advantages">
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {MOAT_CARDS.map((c, i) => (
-        <Card key={c.title} testid={`moat-card-${i + 1}`} title={c.title}>
-          {c.desc}
-        </Card>
-      ))}
+      <Card testid="moat-card-1" kicker="Architecture" title="XBRL Taxonomy Lock">
+        Direct structural schema integration with official efrg:vsm_e tags creates high data switching friction, keeping clients locked into our ecosystem.
+      </Card>
+      <Card testid="moat-card-2" kicker="GROWTH LOOP" title="Zero Cost Scale: CAC = 0">
+        Our permanently free mid-market tier forces large listed corporations to onboard their entire supplier networks onto VSMECAP automatically, triggering explosive volume loops at zero customer acquisition cost.
+      </Card>
+      <Card testid="moat-card-3" kicker="🛡️ PROTECTION" title="Value Chain Cap Armor">
+        Tailored explicitly to enforce Regulation (EU) 2026/1560, giving undertakings under 1,000 employees the immediate legal right to reject bloated enterprise questionnaires.
+      </Card>
+      <Card testid="moat-card-4" kicker="Telemetry" title="Bank API Moat">
+        Continuous automated data links to utility feeds convert annual compliance updates into an ongoing data utility stream for commercial underwriting networks.
+      </Card>
     </div>
   </Section>
 );
