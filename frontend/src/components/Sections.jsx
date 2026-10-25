@@ -18,15 +18,15 @@ export const UkCompanies = () => (
   <Section
     id="uk-companies"
     label="UK &amp; EU ENTERPRISES"
-    title="Non-Listed Enterprise Framework — Built for Scale"
-    intro="A standardized verification schema configured strictly for non-listed undertakings under 250 employees, enforcing your legal value chain cap protections."
+    title="Protected Enterprise Framework — Built for Scale"
+    intro="A standardized verification schema configured strictly for non-listed undertakings under 1,000 employees, enforcing your legal value chain cap protections."
   >
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-      <Card testid="uk-micro-card" kicker="Value Chain Cap" title="SME Regulatory Protection">
-        Under official EFRAG guidelines, companies under 250 employees are legally shielded from excessive corporate ESG demands. Hand them your standard VSME report instead.
+      <Card testid="uk-micro-card" kicker="Value Chain Cap" title="Protected Undertaking Armor">
+        Under Directive (EU) 2026/470, companies under 1,000 employees are legally shielded from excessive corporate ESG demands. Hand them your standard VSME report instead.
       </Card>
-      <Card testid="uk-meter-card" kicker="EcoVadis Ingestion" title="Up to 75 Points Automated Credit">
-        Our Basic Module architecture maps directly to official EcoVadis data ingestion loops, unlocking up to 75 out of 100 scoring credits on your assessment indicators immediately.
+      <Card testid="uk-meter-card" kicker="Viral Growth" title="Zero Cost Network Growth">
+        Our permanently free reporting tier for mid-market suppliers triggers a natural B2B viral loop, driving onboarding volume completely at CAC = 0.
       </Card>
       <Card testid="uk-scope-card" kicker="Operational Bounds" title="Own-Walls Scope 1 + 2">
         The system isolates your explicit operational boundaries: physical premises and vehicles. Scope 3 supply chain demands from subcontractors are completely excluded by law in the Basic Module.
