@@ -13,7 +13,7 @@ export const Faqs = () => (
         <div 
           key={i} 
           data-testid={`faq-item-${i + 1}`}
-          className="rounded-lg border border-[#e4e7ea] bg-white p-6 shadow-sm"
+          className="rounded-lg border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#0D9488]/30"
         >
           <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
             <span className="text-[#0D9488] font-mono font-bold text-[16px]">Q:</span>
