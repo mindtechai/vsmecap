@@ -1,25 +1,30 @@
+import { CONTACT_MAILTO } from "../data/content";
+
 export const Hero = () => (
   <section
     data-testid="hero"
     className="border-b border-[#e4e7ea] bg-white py-16 sm:py-24"
   >
     <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
         
-        {/* LEFT COLUMN: HIGH-CONVERTING VALUE PROP & DUAL ACTION BUTTONS */}
-        <div className="lg:col-span-6 space-y-6">
+        {/* LEFT COLUMN: FIXED RESTORED HEADLINE */}
+        <div className="lg:col-span-6 space-y-6 pt-2">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
               🛡️ EFRAG VOLUNTARY STANDARD VALUE CHAIN CAP COMPLIANT
             </span>
           </div>
 
+          {/* 🌟 HEADLINE RESET: RESTORING YOUR AUTHORITATIVE REGULATORY COPY */}
           <h1
             data-testid="hero-title"
-            className="text-[clamp(32px,4.5vw,48px)] font-black tracking-tight text-[#0F172A] leading-[1.15]"
+            className="text-[clamp(30px,4.2vw,44px)] font-black tracking-tight text-[#0F172A] leading-[1.2]"
           >
-            Understand What Matters.
-            <span className="block text-[#0D9488] mt-2">Report With Confidence.</span>
+            AUDIT-READY OUTPUT<br />NOT AUDITED.
+            <span className="block text-[#EA580C] text-[clamp(16px,2.5vw,22px)] font-extrabold tracking-wide uppercase mt-3">
+              🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM
+            </span>
           </h1>
           
           <p className="text-[15.5px] leading-relaxed text-slate-500 font-medium max-w-[540px]">
@@ -34,7 +39,7 @@ export const Hero = () => (
               Start VS (VSME) for free →
             </a>
             <a 
-              href="mailto:info@://vsmecap.com"
+              href={CONTACT_MAILTO}
               className="rounded-xl bg-white border border-slate-200 px-6 py-3.5 text-[14px] font-bold text-slate-600 hover:bg-slate-50 shadow-sm transition-all hover:-translate-y-0.5"
             >
               Book Expert Demo
@@ -52,11 +57,11 @@ export const Hero = () => (
           </div>
         </div>
 
-        {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
-        <div className="lg:col-span-6 flex flex-col gap-4">
+        {/* RIGHT COLUMN: SLID UP BRAND EMBLEM & DARK VERIFICATION TERMINAL LOG */}
+        <div className="lg:col-span-6 flex flex-col gap-6">
           
-          {/* 🖼️ Signature Brand Emblem Alignment */}
-          <div className="w-full max-w-[340px] px-2">
+          {/* 🖼️ BRAND EMBLEM SLID TO THE ABSOLUTE TOP OF THE GRID COLUMN ZONE */}
+          <div className="w-full max-w-[320px] px-1 transform -translate-y-2">
             <img 
               className="w-full h-auto object-contain" 
               src="/vsmecap_logo_transparent_800.png" 
