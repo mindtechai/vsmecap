@@ -44,7 +44,6 @@ export const Header = () => {
 
   return (
     <>
-      {/* Slower smooth marquee channel animation crawl */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeCrawl {
           0% { transform: translateX(0%); }
@@ -55,29 +54,29 @@ export const Header = () => {
         }
       `}} />
 
-      {/* 🚀 ELITE ENTERPRISE TOP-ROW FLOATING BANNER NOTIFICATION BAR */}
-      <div className="w-full bg-slate-50 border-b border-slate-200/80 py-2.5 px-4 text-center sticky top-0 z-50">
-        <div className="mx-auto max-w-6xl flex items-center justify-center gap-x-3 text-xs">
-          <span className="rounded bg-[#EA580C]/10 px-2 py-0.5 font-mono font-extrabold text-[#EA580C] uppercase tracking-wider text-[10px]">
+      {/* 🚀 ELITE FIXED ENTERPRISE TOP ROW FLOATING RIBBON NOTIFICATION BANNER */}
+      <div className="w-full bg-[#f8fafc] border-b border-slate-200/80 py-3 px-4 text-center sticky top-0 z-50">
+        <div className="mx-auto max-w-6xl flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
+          <span className="rounded bg-[#EA580C]/10 border border-[#EA580C]/20 px-2 py-0.5 font-mono font-black text-[#EA580C] uppercase tracking-wider text-[9.5px] shadow-sm">
             Platform Offer
           </span>
-          <span className="font-semibold text-slate-700">
-            PERMANENTLY FREE TO SMEs &lt;250 EMPLOYEES: COMPLIANT DATA PIPELINES
+          <span className="font-bold text-slate-700 tracking-tight">
+            PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES
           </span>
           <a 
             href="#uk-companies" 
-            className="font-bold text-[#2563EB] hover:text-blue-700 hover:underline inline-flex items-center gap-0.5 ml-1"
+            className="font-extrabold text-[#2563EB] hover:text-blue-700 hover:underline inline-flex items-center gap-0.5 tracking-wide"
           >
             Activate Free Tier →
           </a>
         </div>
       </div>
 
-      <header className="sticky top-[37px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
+      <header className="sticky top-[45px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
             
-            {/* BRAND LOGO */}
+            {/* LOGO */}
             <a href="#top" className="flex items-center flex-shrink-0 transition-all hover:opacity-90 gap-2">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A] font-sans antialiased">
                 VSME<span className="text-[#0D9488]">CAP</span>
@@ -87,7 +86,7 @@ export const Header = () => {
               </span>
             </a>
 
-            {/* NAV MENU */}
+            {/* RESPONSIVE DROPDOWNS */}
             <nav className="hidden lg:flex items-center gap-x-8">
               {navMenu.map((menu, idx) => (
                 <div 
@@ -120,10 +119,10 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* ACTION FOOTPRINT */}
+            {/* ACTION ENDPOINT */}
             <div className="hidden lg:flex items-center gap-x-4">
               <span className="rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
-                VSME COMPLIANT • &lt;250 EMPLOYEES
+                VSME COMPLIANT • &lt;1,000 EMPLOYEES
               </span>
               <a
                 href={CONTACT_MAILTO}
@@ -133,7 +132,7 @@ export const Header = () => {
               </a>
             </div>
 
-            {/* MOBILE TRIGGER */}
+            {/* MOBILE INTERACTIVE TRIGGER */}
             <div className="flex items-center lg:hidden">
               <button onClick={() => setIsOpen(!isOpen)} type="button" className="inline-flex items-center justify-center p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none">
                 {!isOpen ? (
@@ -146,7 +145,7 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* MOBILE PORTAL */}
+        {/* MOBILE RESPONSIVE PANEL */}
         <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-slate-100 bg-slate-50 w-full`}>
           <div className="space-y-4 px-6 py-6 max-w-md mx-auto">
             {navMenu.map((menu, idx) => (
