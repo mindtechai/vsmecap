@@ -8,7 +8,7 @@ export const Hero = () => (
     <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
         
-        {/* LEFT COLUMN: FIXED PREMIUM ENTERPRISE SAAS TYPOGRAPHY */}
+        {/* LEFT COLUMN: FIXED HEADLINE AND PRODUCT PARAMETERS */}
         <div className="lg:col-span-6 space-y-6 pt-2">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
@@ -16,10 +16,9 @@ export const Hero = () => (
             </span>
           </div>
 
-          {/* 🚀 POWERFUL MARKETING HEADLINE BLOCK */}
           <h1
             data-testid="hero-title"
-            className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-[#0F172A] leading-[1.2] font-sans antialiased"
+            className="text-[clamp(28px,3.8vw,42px)] font-black tracking-tight text-[#0F172A] leading-[1.2] font-sans antialiased"
           >
             AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP
             <span className="block text-[#EA580C] text-[clamp(16px,2.2vw,22px)] font-black tracking-wide uppercase mt-4">
@@ -27,7 +26,6 @@ export const Hero = () => (
             </span>
           </h1>
           
-          {/* CRUNCHY EXPLANATORY PRODUCT COPY */}
           <p className="text-[15px] leading-relaxed text-slate-500 font-semibold max-w-[540px]">
             VSMECAP is the Audit-Ready output for the enterprise control layer for VSME. The first-mover cap that standardizes B1-B11 and C1-C9 across UK Companies and Public Sector supply chains. Verifiable, exportable, enterprise-grade.
           </p>
@@ -58,11 +56,11 @@ export const Hero = () => (
           </div>
         </div>
 
-        {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
-        <div className="lg:col-span-6 flex flex-col gap-6">
+        {/* RIGHT COLUMN: UNIFIED VERTICAL BLOCK TO PREVENT OVERLAPPING LOGOS */}
+        <div className="lg:col-span-6 flex flex-col gap-6 items-start w-full">
           
-          {/* Signature Brand Emblem Alignment (Slid up to link seamlessly with the text block edge) */}
-          <div className="w-full max-w-[320px] px-1 transform -translate-y-1">
+          {/* 🖼️ BRAND EMBLEM — ALIGNED DIRECTLY OVER THE TERMINAL BOX LEFT EDGE */}
+          <div className="w-full max-w-[280px] pl-1">
             <img 
               className="w-full h-auto object-contain select-none" 
               src="/vsmecap_logo_transparent_800.png" 
