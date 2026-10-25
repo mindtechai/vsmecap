@@ -42,33 +42,33 @@ export const Header = () => {
     }
   ];
 
-  // Duplicating the string text to ensure a perfectly seamless crawl track loop
   const bannerText = "PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  ";
   const loopedBanner = Array(4).fill(bannerText).join("");
 
   return (
     <>
+      {/* ⚡ KEYFRAME SPEED CONTROL — Reversed starting margins to force Left-to-Right motion crawl */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeCrawl {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-50%); }
         }
-        @keyframes topBannerScroll {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-25%); }
+        @keyframes topBannerScrollRight {
+          0% { transform: translateX(-25%); }
+          100% { transform: translateX(0%); }
         }
         .animate-marquee-scroll {
           animation: marqueeCrawl 48s linear infinite !important;
         }
-        .animate-top-banner {
-          animation: topBannerScroll 32s linear infinite !important;
+        .animate-top-banner-right {
+          animation: topBannerScrollRight 32s linear infinite !important;
         }
       `}} />
 
-      {/* 🚀 HIGH-END MOVING REGULATORY ORANGE ALERT TICKER RIBBON ROW */}
+      {/* 🚀 HIGH-VISIBILITY LEFT-TO-RIGHT CRAWLING ORANGE ALERT BANNER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden sticky top-0 z-50 flex items-center shadow-md border-b border-orange-700/30">
-        <div className="flex whitespace-nowrap items-center animate-top-banner text-white text-[11px] font-black tracking-widest uppercase antialiased">
-          <span>{loopedBanner}</span>
+        <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
+          <span className="text-white">{loopedBanner}</span>
         </div>
       </div>
 
@@ -76,7 +76,7 @@ export const Header = () => {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
             
-            {/* LOGO */}
+            {/* LOGO IDENTITY */}
             <a href="#top" className="flex items-center flex-shrink-0 transition-all hover:opacity-90 gap-2">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A] font-sans antialiased">
                 VSME<span className="text-[#0D9488]">CAP</span>
@@ -86,7 +86,7 @@ export const Header = () => {
               </span>
             </a>
 
-            {/* NAV MENU */}
+            {/* RESPONSIVE DROPDOWN CONTROLS */}
             <nav className="hidden lg:flex items-center gap-x-8">
               {navMenu.map((menu, idx) => (
                 <div 
