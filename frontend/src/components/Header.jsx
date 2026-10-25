@@ -44,7 +44,7 @@ export const Header = () => {
 
   return (
     <>
-      {/* ⚡ OPTIMIZED SLOWER MARQUEE SPEED (Changed from 28s to 48s loop cycle duration) */}
+      {/* Slower smooth marquee channel animation crawl */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeCrawl {
           0% { transform: translateX(0%); }
@@ -55,36 +55,29 @@ export const Header = () => {
         }
       `}} />
 
-      {/* 🌟 HIGH-CONTRAST FLOATING BADGE — NEW PREMIUM ORANGE & BLUE INFRASTRUCTURE */}
-      <div 
-        className="fixed bottom-24 right-5 z-50 pointer-events-auto hidden md:block animate-bounce"
-        style={{ animationDuration: '3s' }}
-      >
-        <a 
-          href="#uk-companies"
-          className="flex flex-col items-center justify-center rounded-2xl bg-white border border-slate-200 p-5 text-center shadow-2xl transition-all duration-300 hover:scale-105 group"
-          style={{ width: '250px', height: '114px', minHeight: '114px' }}
-        >
-          {/* ORANGE SUBHEADER ACCENT STYLE LINK */}
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#EA580C] block mb-1" style={{ lineHeight: '1' }}>
+      {/* 🚀 ELITE ENTERPRISE TOP-ROW FLOATING BANNER NOTIFICATION BAR */}
+      <div className="w-full bg-slate-50 border-b border-slate-200/80 py-2.5 px-4 text-center sticky top-0 z-50">
+        <div className="mx-auto max-w-6xl flex items-center justify-center gap-x-3 text-xs">
+          <span className="rounded bg-[#EA580C]/10 px-2 py-0.5 font-mono font-extrabold text-[#EA580C] uppercase tracking-wider text-[10px]">
             Platform Offer
           </span>
-          {/* RICH CHARCOAL TEXT LAYOUT BLOCK */}
-          <span className="text-[13.5px] font-black tracking-tight block text-slate-800" style={{ lineHeight: '1.4' }}>
-            PERMANENTLY FREE<br/>TO SMEs &lt;250 EMPLOYEES
+          <span className="font-semibold text-slate-700">
+            PERMANENTLY FREE TO SMEs &lt;250 EMPLOYEES: COMPLIANT DATA PIPELINES
           </span>
-          {/* CRUNCHY CONTRAST ACCENT BLUE LOWER BUTTON RIBBON TRACK */}
-          <span className="mt-2 text-[9.5px] font-bold bg-[#2563EB]/10 text-[#2563EB] border border-[#2563EB]/20 px-2 py-0.5 rounded-md group-hover:bg-[#2563EB]/20 transition-colors block tracking-wide" style={{ lineHeight: '1' }}>
+          <a 
+            href="#uk-companies" 
+            className="font-bold text-[#2563EB] hover:text-blue-700 hover:underline inline-flex items-center gap-0.5 ml-1"
+          >
             Activate Free Tier →
-          </span>
-        </a>
+          </a>
+        </div>
       </div>
 
-      <header id="top" className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
+      <header className="sticky top-[37px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex h-24 items-center justify-between gap-4">
+          <div className="flex h-20 items-center justify-between gap-4">
             
-            {/* LEFT EDGE: LOGO */}
+            {/* BRAND LOGO */}
             <a href="#top" className="flex items-center flex-shrink-0 transition-all hover:opacity-90 gap-2">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A] font-sans antialiased">
                 VSME<span className="text-[#0D9488]">CAP</span>
@@ -94,7 +87,7 @@ export const Header = () => {
               </span>
             </a>
 
-            {/* CENTER: NAVIGATION */}
+            {/* NAV MENU */}
             <nav className="hidden lg:flex items-center gap-x-8">
               {navMenu.map((menu, idx) => (
                 <div 
@@ -127,26 +120,22 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* RIGHT EDGE: CTA */}
+            {/* ACTION FOOTPRINT */}
             <div className="hidden lg:flex items-center gap-x-4">
               <span className="rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 VSME COMPLIANT • &lt;250 EMPLOYEES
               </span>
               <a
                 href={CONTACT_MAILTO}
-                className="rounded-xl bg-[#0F172A] px-6 py-3 text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10 transition-all hover:-translate-y-0.5"
+                className="rounded-xl bg-[#0F172A] px-6 py-3 text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10 transition-all"
               >
                 Contact
               </a>
             </div>
 
-            {/* INTERACTIVE COMPACT DRAWER BUTTON */}
+            {/* MOBILE TRIGGER */}
             <div className="flex items-center lg:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className="inline-flex items-center justify-center p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none"
-              >
+              <button onClick={() => setIsOpen(!isOpen)} type="button" className="inline-flex items-center justify-center p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none">
                 {!isOpen ? (
                   <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
                 ) : (
@@ -157,7 +146,7 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* MOBILE RESPONSIVE DRAWER CONTAINER */}
+        {/* MOBILE PORTAL */}
         <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden border-t border-slate-100 bg-slate-50 w-full`}>
           <div className="space-y-4 px-6 py-6 max-w-md mx-auto">
             {navMenu.map((menu, idx) => (
@@ -165,14 +154,7 @@ export const Header = () => {
                 <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">{menu.label}</p>
                 <div className="grid grid-cols-1 gap-1 pl-2">
                   {menu.items.map((item, itemIdx) => (
-                    <a
-                      key={itemIdx}
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block text-[14px] font-medium text-slate-600 hover:text-[#00996f] py-1.5"
-                    >
-                      {item.label}
-                    </a>
+                    <a key={itemIdx} href={item.href} onClick={() => setIsOpen(false)} className="block text-[14px] font-medium text-slate-600 hover:text-[#00996f] py-1.5">{item.label}</a>
                   ))}
                 </div>
               </div>
