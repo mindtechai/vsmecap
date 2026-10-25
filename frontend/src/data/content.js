@@ -22,7 +22,7 @@ export const NAV_LINKS = [
 export const TICKER_ITEMS = [
   "AUDIT-READY OUTPUT NOT AUDITED 🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM",
   "VIRAL NETWORK INTRODUCTIONS ACTIVE 🔴 X ACQUISITION ENGINE METRIC CAC = 0",
-  "VALUE CHAIN CAP ENFORCED — DIRECTIVE (EU) 2026/470 LEGAL SHIELD UNDER 1,000 EMPLOYEES"
+  "REGULATION (EU) 2026/1560 VALUE CHAIN CAP COMPLIANT — PROTECTING UNDERTAKINGS UNDER 1,000 EMPLOYEES"
 ];
 
 export const BASIC_MODULES = [
@@ -61,7 +61,7 @@ export const MOAT_CARDS = [
   { title: "XBRL Taxonomy Lock", desc: "Direct integration with official efrg:vsm_e schemas binds data exports tightly, preventing platform migration." },
   { title: "Viral Acquisition Engine", desc: "Permanently free business tiers mean enterprise networks pull entire supply chains onboard automatically: CAC = 0." },
   { title: "Value Chain Cap Armor", desc: "Tailored to enforce Regulation (EU) 2026/1560, giving true SMEs the legal right to reject custom questionnaires." },
-  { title: "Bank API Moat", desc: "Continuous automated data links to utility feeds convert annual compliance updates into an ongoing data utility stream." }
+  { title: "Bank API Moat", desc: "Automated links to utility feeds transition annual compliance into a continuous utility stream." }
 ];
 
 export const WHY_NOW_SECTIONS = [
@@ -82,7 +82,7 @@ export const LEGAL_BASIS = [
 
 export const RISKS = [
   { title: "Not certified platform", desc: "VSMECAP outputs are audit-ready. The system is not officially certified or endorsed by EFRAG." },
-  { title: "Regulation changes", desc: "VSME is voluntary. Future delegated acts or successor standards may modify operational fields." },
+  { title: "Regulation changes", desc: "VSME is voluntary. Future delegated acts or successor standards may alter requirements." },
   { title: "Data quality dependencies", desc: "Outputs depend entirely on user inputs. Missing meter files limit final passport coverage." },
   { title: "Early-stage venture", desc: "Pre-revenue. No strategic partner contracts are signed, and relationships are not assumed." },
   { title: "Competitive response", desc: "Incumbent legacy accounting tools may introduce simple SME modules, narrowing our first-mover window." },
@@ -95,5 +95,9 @@ export const FAQS = [
   { q: "Am I classified as a protected undertaking?", a: "Yes. Directive (EU) 2026/470 shields non-listed firms under 1,000 employees from excessive custom questionnaire requests." },
   { q: "What is a chain hash?", a: "Each data record is cryptographically hashed, allowing independent auditors to trace final numbers back to source documents without spreadsheet chaos." },
   { q: "Is software installation required?", a: "No. VSMECAP runs as an automated web-based cloud pipeline via secure data ingestion streams." },
-  { q: "Is this platform free for small businesses?", a: "Yes, the platform features a permanently free reporting tier for true non-listed undertakings under 1,000 employees." }
-];
+  { q: "Is this platform free for small businesses?", a: "Yes, the platform features a permanently free reporting tier for true non-listed undertakings under 1,000 employees." },
+  { q: "What data points are required to start?", a: "Typically utility meter point identifiers (MPAN/MPRN), raw energy invoices, fleet fuel parameters, and basic payroll characteristics." },
+  { q: "Does a VSMECAP pack count as assurance?", a: "No. The pack is audit-ready and traceable. Formal external assurance must come from an independent, licensed assurance provider." },
+  { q: "How long does deployment take?", a: "Standard pipeline configurations complete ingestion mappings within 48 hours of source linking." },
+  { q: "Can we export reports for UK public tenders?", a: "Yes. All ledger exports structurally align with PPN 06/21 carbon reduction format guidelines." },
+  { q: "Who retains data governance?", a: "The reporting enterprise retains absolute data ownership. Profiles are hashed locally to eliminate third-party leaks." },
