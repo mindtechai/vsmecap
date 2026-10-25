@@ -8,7 +8,7 @@ export const Hero = () => (
     <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
         
-        {/* LEFT COLUMN: FIXED RESTORED HEADLINE */}
+        {/* LEFT COLUMN: HIGH-CONVERSION COMMERCIAL VALUE HEADLINE */}
         <div className="lg:col-span-6 space-y-6 pt-2">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
@@ -16,15 +16,13 @@ export const Hero = () => (
             </span>
           </div>
 
-          {/* 🌟 HEADLINE RESET: RESTORING YOUR AUTHORITATIVE REGULATORY COPY */}
+          {/* 🌟 HEADLINE RESET: REMOVED COMPLIANCE RED FLAGS FOR PREMIUM SAAS IDENTITY */}
           <h1
             data-testid="hero-title"
-            className="text-[clamp(30px,4.2vw,44px)] font-black tracking-tight text-[#0F172A] leading-[1.2]"
+            className="text-[clamp(32px,4.5vw,48px)] font-black tracking-tight text-[#0F172A] leading-[1.15] font-sans antialiased"
           >
-            AUDIT-READY OUTPUT<br />NOT AUDITED.
-            <span className="block text-[#EA580C] text-[clamp(16px,2.5vw,22px)] font-extrabold tracking-wide uppercase mt-3">
-              🔴 X NOT CERTIFIED OFFICIAL EFRAG PLATFORM
-            </span>
+            AUDIT-READY OUTPUT.<br />
+            <span className="block text-[#EA580C] mt-2">STREAMLINED FOR SCALE.</span>
           </h1>
           
           <p className="text-[15.5px] leading-relaxed text-slate-500 font-medium max-w-[540px]">
@@ -57,15 +55,15 @@ export const Hero = () => (
           </div>
         </div>
 
-        {/* RIGHT COLUMN: SLID UP BRAND EMBLEM & DARK VERIFICATION TERMINAL LOG */}
+        {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
         <div className="lg:col-span-6 flex flex-col gap-6">
           
-          {/* 🖼️ BRAND EMBLEM SLID TO THE ABSOLUTE TOP OF THE GRID COLUMN ZONE */}
-          <div className="w-full max-w-[320px] px-1 transform -translate-y-2">
+          {/* Signature Brand Emblem Alignment */}
+          <div className="w-full max-w-[320px] px-1 transform -translate-y-1">
             <img 
-              className="w-full h-auto object-contain" 
+              className="w-full h-auto object-contain select-none" 
               src="/vsmecap_logo_transparent_800.png" 
-              alt="VSMECAP Primary Brand Graphic" 
+              alt="VSMECAP Primary Brand Graphic Alignment" 
             />
           </div>
 
