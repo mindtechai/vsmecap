@@ -8,7 +8,7 @@ export const Hero = () => (
     <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
         
-        {/* LEFT COLUMN: HIGH-CONVERSION COMMERCIAL VALUE HEADLINE */}
+        {/* LEFT COLUMN: FIXED PREMIUM ENTERPRISE SAAS TYPOGRAPHY */}
         <div className="lg:col-span-6 space-y-6 pt-2">
           <div className="flex">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
@@ -16,17 +16,20 @@ export const Hero = () => (
             </span>
           </div>
 
-          {/* 🌟 HEADLINE RESET: REMOVED COMPLIANCE RED FLAGS FOR PREMIUM SAAS IDENTITY */}
+          {/* 🚀 POWERFUL MARKETING HEADLINE BLOCK */}
           <h1
             data-testid="hero-title"
-            className="text-[clamp(32px,4.5vw,48px)] font-black tracking-tight text-[#0F172A] leading-[1.15] font-sans antialiased"
+            className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-[#0F172A] leading-[1.2] font-sans antialiased"
           >
-            AUDIT-READY OUTPUT.<br />
-            <span className="block text-[#EA580C] mt-2">STREAMLINED FOR SCALE.</span>
+            AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP
+            <span className="block text-[#EA580C] text-[clamp(16px,2.2vw,22px)] font-black tracking-wide uppercase mt-4">
+              THE CAP THAT STOPS SPREADSHEET CHAOS.
+            </span>
           </h1>
           
-          <p className="text-[15.5px] leading-relaxed text-slate-500 font-medium max-w-[540px]">
-            The cryptographic verification spine for protected non-listed undertakings under 250 employees. Enforce your legal right to refuse custom spreadsheets, automate raw data ingestion, and unlock instant compliance metrics.
+          {/* CRUNCHY EXPLANATORY PRODUCT COPY */}
+          <p className="text-[15px] leading-relaxed text-slate-500 font-semibold max-w-[540px]">
+            VSMECAP is the Audit-Ready output for the enterprise control layer for VSME. The first-mover cap that standardizes B1-B11 and C1-C9 across UK Companies and Public Sector supply chains. Verifiable, exportable, enterprise-grade.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -58,7 +61,7 @@ export const Hero = () => (
         {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
         <div className="lg:col-span-6 flex flex-col gap-6">
           
-          {/* Signature Brand Emblem Alignment */}
+          {/* Signature Brand Emblem Alignment (Slid up to link seamlessly with the text block edge) */}
           <div className="w-full max-w-[320px] px-1 transform -translate-y-1">
             <img 
               className="w-full h-auto object-contain select-none" 
