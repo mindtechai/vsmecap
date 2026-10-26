@@ -21,7 +21,6 @@ export const Header = () => {
   const allNavItems = navMenu.flatMap(menu => menu.items);
 
   return (
-    /* Fixed: Outer container is now the global sticky anchor, keeping the entire block completely locked on scroll */
     <div className="w-full sticky top-0 z-50">
       
       {/* 🤖 AEO STRUCTURAL NAVIGATION INFRASTRUCTURE */}
@@ -44,25 +43,15 @@ export const Header = () => {
       />
 
       <style dangerouslySetInnerHTML={{__html: `
-        @keyframes topBannerScrollRight {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0%); }
-        }
-        .animate-top-banner-right {
-          animation: topBannerScrollRight 40s linear infinite !important;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .animate-top-banner-right { animation: none !important; }
-        }
         html { scroll-padding-top: 112px; }
         @media (min-width: 1024px) { html { scroll-padding-top: 130px; } }
       `}} />
 
-      {/* ORANGE TOP RIBBON TICKER BANNER */}
-      <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden flex items-center border-b border-orange-700/30">
-        <div className="flex whitespace-nowrap items-center text-white text-[11px] font-black tracking-widest uppercase antialiased px-4">
-          <span>{"FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING"}</span>
-        </div>
+      {/* STATIC CENTERED ORANGE RIBBON BANNER */}
+      <div className="w-full bg-[#EA580C] py-2.5 flex items-center justify-center text-center border-b border-orange-700/30 select-none px-4">
+        <span className="text-white text-[11px] font-black tracking-widest uppercase antialiased">
+          {"FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING"}
+        </span>
       </div>
 
       {/* CORE NAVBAR HEADER */}
@@ -70,16 +59,14 @@ export const Header = () => {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
             
-            {/* BRANDING IDENTITY */}
             <a href="#top" className="flex items-center flex-shrink-0 gap-2">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">{"VSME"}<span className="text-[#0D9488]">{"CAP"}</span></span>
             </a>
 
-            {/* DESKTOP ACCESSIBLE MENU DROPDOWNS */}
             <nav className="hidden lg:flex items-center gap-x-8">
               {navMenu.map((m, idx) => (
                 <div key={idx} className="relative py-2" onMouseEnter={() => setActiveDropdown(idx)} onMouseLeave={() => setActiveDropdown(null)}>
-                  <button type="button" className="flex items-center gap-1 text-[14.5px] font-bold text-slate-700 focus:outline-none">{m.label}</button>
+                  <button type="button" className="flex items-center gap-1 text-[14.5px] font-bold text-slate-700 hover:text-[#00996f] focus:outline-none">{m.label}</button>
                   {activeDropdown === idx && (
                     <div className="absolute left-1/2 -translate-x-1/2 top-full w-56 rounded-xl border border-slate-100 bg-white p-2 shadow-xl z-50">
                       {m.items.map((item, i) => (
@@ -91,7 +78,6 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* ACTION BLOCK CONTAINER BUTTON */}
             <div className="flex items-center gap-x-4">
               <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 py-2.5 text-[13px] font-bold text-white hover:bg-[#1e293b]">{"Contact"}</a>
               <button type="button" onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700">
@@ -102,7 +88,6 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* TABLET / MOBILE MENU DISCLOSURES DROPDOWN OVERLAY */}
         {menuOpen && (
           <div className="lg:hidden border-t border-slate-200 bg-white shadow-2xl absolute left-0 right-0 z-50 p-6 max-h-[80vh] overflow-y-auto">
             <div className="space-y-6">{navMenu.map((m, idx) => (
