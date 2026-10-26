@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// 🌐 1. CRITICAL CENTRAL REGULATORY AND COMPLIANCE DATA
 const CONTACT_MAILTO = "mailto:info@vsmecap.com";
 
 const LOCAL_TICKER = [
@@ -30,7 +29,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-12 selection:bg-[#0D9488]/10">
       
-      {/* ⚡ INJECTED MULTI-ANIMATION SPEED CONTROLLERS */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeCrawl { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
         @keyframes topBannerScrollRight { 0% { transform: translateX(-25%); } 100% { transform: translateX(0%); } }
@@ -38,23 +36,17 @@ export default function App() {
         .animate-top-banner-right { animation: topBannerScrollRight 32s linear infinite !important; }
       `}} />
 
-      {/* ========================================================================= */}
-      {/* 🚀 2. HIGH-VISIBILITY LEFT-TO-RIGHT CRAWLING ORANGE ALERT BANNER */}
-      {/* ========================================================================= */}
+      {/* ORANGE TOP RIBBON TICKER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden sticky top-0 z-50 flex items-center border-b border-orange-700/30 select-none">
         <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
           <span>PLATFORM OFFER: PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  </span>
         </div>
       </div>
 
-      {/* ========================================================================= */}
-      {/* 💻 3. GLOBAL HEADER AND RESPONSIVE NAVIGATION DRAWER */}
-      {/* ========================================================================= */}
+      {/* HEADER & MOBILE MENU */}
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
-            
-            {/* BRAND LOGO TYPOGRAPHY */}
             <a href="#top" className="flex items-center flex-shrink-0 gap-2 select-none">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
                 VSME<span className="text-[#0D9488]">CAP</span>
@@ -64,7 +56,6 @@ export default function App() {
               </span>
             </a>
 
-            {/* DESKTOP LINKS PROFILE CONTAINER */}
             <nav className="hidden lg:flex items-center gap-x-8 text-[14.5px] font-bold text-slate-700">
               <a href="#uk-companies" className="hover:text-[#00996f] transition-colors">Solutions</a>
               <a href="#product" className="hover:text-[#00996f] transition-colors">Product</a>
@@ -79,7 +70,6 @@ export default function App() {
               <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-6 py-3 text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">Contact</a>
             </div>
 
-            {/* 🍔 MOBILE HAMBURGER LAYOUT TRIGGER */}
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -94,7 +84,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* MOBILE ACTIVE PORTAL FRAMEWORK PANEL */}
         {isOpen && (
           <div className="lg:hidden border-t border-slate-200 bg-white w-full absolute left-0 right-0 shadow-2xl z-50 px-6 py-6 space-y-4 font-bold text-slate-700">
             <a href="#uk-companies" onClick={() => setIsOpen(false)} className="block py-2 border-b border-slate-50">UK &amp; EU Solutions</a>
@@ -108,9 +97,7 @@ export default function App() {
         )}
       </header>
 
-      {/* ========================================================================= */}
-      {/* 🔴 4. REGULATORY INFRASTRUCTURE ROLLING TEXT TICKER */}
-      {/* ========================================================================= */}
+      {/* LOWER DARK TICKER */}
       <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 flex items-center select-none">
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
@@ -122,9 +109,7 @@ export default function App() {
       </div>
 
       <main>
-        {/* ========================================================================= */}
-        {/* 🚀 5. HERO COLUMN GRID SECTION CONTAINER */}
-        {/* ========================================================================= */}
+        {/* HERO SECTION */}
         <section className="border-b border-[#e4e7ea] bg-white py-16 sm:py-24">
           <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
@@ -133,3 +118,12 @@ export default function App() {
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
                   🛡️ DIRECTIVE (EU) 2026/470 VALUE CHAIN CAP SHIELD ACTIVE
                 </span>
+                <h1 className="text-[clamp(26px,3.8vw,40px)] font-black tracking-tight text-[#0F172A] leading-[1.2]">
+                  AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP
+                  <span className="block text-[#EA580C] text-[clamp(16px,2.2vw,22px)] font-black tracking-wide uppercase mt-4">THE CAP THAT STOPS SPREADSHEET CHAOS.</span>
+                </h1>
+                <p className="text-[15px] leading-relaxed text-slate-500 font-semibold max-w-[540px]">
+                  VSMECAP is the Audit-Ready output for the enterprise control layer for VSME. The first-mover cap that standardizes B1-B11 and C1-C9 across UK Companies and Public Sector supply chains. Verifiable, exportable, enterprise-grade.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <a href="#uk-companies" className="rounded-xl bg-[#0F172A] px-6 py-3.5 text-[14px] font-bold text-white hover:bg-slate-800 shadow-lg">Start VS (VSME) for free →</a>
