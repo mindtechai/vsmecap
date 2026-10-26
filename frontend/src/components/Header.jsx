@@ -5,8 +5,7 @@ export const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Start at the top on load (stops Safari restoring a scrolled position
-  // that leaves the black ticker tucked behind the sticky header)
+  // Prevent scroll anomalies on mobile Safari reload loops
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
@@ -16,7 +15,7 @@ export const Header = () => {
     }
   }, []);
 
-  // Close the mobile menu with Escape, or when the screen grows to desktop size
+  // Structural menu window keyboard listeners
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") setMenuOpen(false);
@@ -71,15 +70,12 @@ export const Header = () => {
     }
   ];
 
-  // Flatten nested navigation menus into a single schema list array for machine consumption
   const allNavItems = navMenu.flatMap(menu => menu.items);
-
-  const bannerText =
-    "FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING  •  ";
+  const bannerText = "FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING  •  ";
 
   return (
     <>
-      {/* 🤖 ASO/AEO STRUCTURAL NAVIGATION ELEMENT SCHEMA LINKING (Feeds exact system navigation structure directly to LLMs) */}
+      {/* 🤖 ASO/AEO SITE NAVIGATION ENTITY DISCOVERY SCHEMA METADATA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -113,20 +109,22 @@ export const Header = () => {
         @media (min-width: 1024px) { html { scroll-padding-top: 130px; } }
       `}} />
 
-      {/* One sticky unit: banner + header stack together, no hardcoded offsets */}
+      {/* STICKY CONTAINER BLOCK */}
       <div className="sticky top-0 z-50 w-full">
-        {/* TOP BANNER */}
+        
+        {/* ORANGE TOP TICKER BANNER */}
         <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden flex items-center border-b border-orange-700/30">
           <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
             <span>{bannerText}{bannerText}{bannerText}{bannerText}</span>
           </div>
         </div>
 
+        {/* PRIMARY VIEW NAVIGATION HEADER */}
         <header className="relative border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
 
-              {/* BRAND LOGO IDENTITY */}
+              {/* BRAND IDENTIFIERS */}
               <a href="#top" className="flex items-center flex-shrink-0 gap-2">
                 <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
                   {"VSME"}<span className="text-[#0D9488]">{"CAP"}</span>
@@ -136,7 +134,7 @@ export const Header = () => {
                 </span>
               </a>
 
-              {/* DESKTOP DROPDOWNS */}
+              {/* DESKTOP ACCESSIBLE MENU DROPDOWNS */}
               <nav className="hidden lg:flex items-center gap-x-8">
                 {navMenu.map((menu, idx) => (
                   <div
@@ -151,7 +149,7 @@ export const Header = () => {
                       className="flex items-center gap-1 text-[14.5px] font-bold text-slate-700 hover:text-[#00996f] focus:outline-none"
                     >
                       {menu.label}
-                      <svg className={`h-4 w-4 text-slate-400 transition-transform ${activeDropdown === idx ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <svg className={`h-4 w-4 text-slate-400 transition-transform ${activeDropdown === idx ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
@@ -174,7 +172,7 @@ export const Header = () => {
                 ))}
               </nav>
 
-              {/* BADGE (desktop only) + CONTACT (all sizes) + MENU BUTTON (mobile and tablet) */}
+              {/* ACTION LAYOUT CONTROLS */}
               <div className="flex items-center gap-x-3 lg:gap-x-4">
                 <span className="hidden lg:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                   {"VSME-ALIGNED REPORTING • UP TO 1,000 EMPLOYEES"}
@@ -208,7 +206,7 @@ export const Header = () => {
             </div>
           </div>
 
-          {/* MOBILE / TABLET OVERLAY CONTAINER - Safely balanced, bound, and cleanly completed */}
+          {/* OVERLAY PANEL MECHANICS */}
           {menuOpen && (
             <div id="mobile-menu" className="lg:hidden border-t border-slate-200 bg-white shadow-2xl absolute left-0 right-0 z-50 p-6 max-h-[80vh] overflow-y-auto">
               <div className="space-y-6">
@@ -219,3 +217,18 @@ export const Header = () => {
                       {menu.items.map((item, itemIdx) => (
                         <a
                           key={itemIdx}
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="block py-1.5 text-[14px] font-bold text-slate-700 hover:text-[#00996f]"
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </header>
+      </div>
