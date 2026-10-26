@@ -1,5 +1,5 @@
 export const CONTACT_MAILTO = "mailto:info@vsmecap.com";
-export const DECK_MAILTO = "mailto:info@://vsmecap.com";
+export const DECK_MAILTO = "mailto:info@vsmecap.com";
 
 export const NAV_LINKS = [
   { id: "basic", label: "B1-B11 Modules", pill: "blue" },
