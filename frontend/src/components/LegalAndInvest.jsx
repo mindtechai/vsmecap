@@ -1,3 +1,4 @@
+import React from "react";
 import { Section } from "@/components/Section";
 import { LEGAL_BASIS } from "@/data/content";
 
@@ -36,10 +37,10 @@ export const LegalAndInvest = () => (
     >
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
         <Card title="Strategic Roadmap">
-          VSMECAP transitions annual regulatory obligations into real-time, automated verification feeds directly linked to financial underwriting nodes.
+          {"VSMECAP transitions annual regulatory obligations into real-time, automated verification feeds directly linked to financial underwriting nodes."}
         </Card>
         <Card title="Capital Efficiency">
-          By locking field parameters to the machine-readable efrg:vsm_e schemas, our code blocks prevent user migration friction and deliver a true market moat.
+          {"By locking field parameters to the machine-readable efrg:vsm_e schemas, our code blocks prevent user migration friction and deliver a true market moat."}
         </Card>
       </div>
     </Section>
