@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const CONTACT_MAILTO = "mailto:info@vsmecap.com";
 
@@ -32,6 +32,8 @@ export default function App() {
         @keyframes topBannerScrollRight { 0% { transform: translateX(-25%); } 100% { transform: translateX(0%); } }
         .animate-marquee-scroll { animation: marqueeCrawl 48s linear infinite !important; }
         .animate-top-banner-right { animation: topBannerScrollRight 32s linear infinite !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}} />
 
       {/* ORANGE TOP RIBBON TICKER */}
@@ -134,11 +136,8 @@ export default function App() {
                     {faq.q}
                   </h3>
                   <span className="flex-shrink-0 ml-1.5 p-1.5 text-slate-500 rounded-full group-open:rotate-180 transition-transform duration-200">
-                    <svg xmlns="http://w3.org" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-4 text-[14.5px] leading-relaxed text-slate-600 font-medium pl-0 sm:pl-7">
-                  {faq.a}
-                </p>
