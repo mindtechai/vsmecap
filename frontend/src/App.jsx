@@ -25,15 +25,23 @@ const LOCAL_FAQS = [
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-12 selection:bg-[#0D9488]/10">
+    <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-12 selection:bg-[#0D9488]/10 scroll-smooth">
       
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marqueeCrawl { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
-        @keyframes topBannerScrollRight { 0% { transform: translateX(-25%); } 100% { transform: translateX(0%); } }
+        @keyframes topBannerScrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0%); } }
         .animate-marquee-scroll { animation: marqueeCrawl 48s linear infinite !important; }
         .animate-top-banner-right { animation: topBannerScrollRight 32s linear infinite !important; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        section { scroll-margin-top: 140px; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-marquee-scroll, .animate-top-banner-right {
+            animation: none !important;
+          }
+        }
       `}} />
 
       {/* ORANGE TOP RIBBON TICKER */}
@@ -56,14 +64,15 @@ export default function App() {
               </span>
             </a>
 
-            <nav className="flex items-center gap-x-4 sm:gap-x-8 text-[13px] sm:text-[14.5px] font-bold text-slate-700 overflow-x-auto no-scrollbar py-2">
+            {/* Permanent menu rows that scale beautifully on desktop and swipe horizontally on mobile viewports */}
+            <nav className="flex items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 overflow-x-auto no-scrollbar py-2">
               <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Solutions"}</a>
               <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Product"}</a>
               <a href="#moat" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Moat"}</a>
               <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{`FAQs (${LOCAL_FAQS.length})`}</a>
             </nav>
 
-            <div className="flex items-center gap-x-4 flex-shrink-0">
+            <div className="flex items-center gap-x-3 flex-shrink-0">
               <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 {"VSME COMPLIANT • <1,000 EMPLOYEES"}
               </span>
@@ -73,7 +82,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* LOWER DARK TICKER */}
+      {/* LOWER DARK TICKER - Permanently visible across all desktop and mobile frames */}
       <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 flex items-center select-none">
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
@@ -92,11 +101,14 @@ export default function App() {
         
         {/* HERO SECTION / SOLUTIONS */}
         <section id="solutions" className="space-y-6">
-          <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900">
-            {"Automated compliance built for protected undertakings."}
+          <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900 leading-tight">
+            {"AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP"}
           </h1>
-          <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            {"Stop drowning in customized ESG spreadsheets. Secure your market share using independent data conversion loops mapped to public framework taxonomies."}
+          <p className="text-lg font-bold text-[#EA580C] uppercase tracking-wide">
+            {"THE CAP THAT STOPS SPREADSHEET CHAOS."}
+          </p>
+          <p className="text-slate-600 max-w-3xl leading-relaxed text-[15px] font-medium">
+            {"VSMECAP is the Audit-Ready output for the enterprise control layer for VSME. The first-mover cap that standardizes B1-B11 and C1-C9 across UK and EU value chains."}
           </p>
         </section>
 
@@ -104,7 +116,7 @@ export default function App() {
         <section id="product" className="border-t border-slate-100 pt-16">
           <h2 className="text-2xl font-black text-slate-900 mb-4">{"Product Architecture"}</h2>
           <p className="text-slate-600 leading-relaxed max-w-3xl">
-            {"Our pipeline extracts utility metrics, fleet emissions data, and basic payroll parameters directly into cryptographically protected records. Generate clean, audit-ready packs in less than 48 hours."}
+            {"Our automated system hooks into secure data extraction points, aligning operational indicators with public framework schemas. Keep your internal ledger clean, traceable, and ready for deployment within 48 hours."}
           </p>
         </section>
 
@@ -112,7 +124,7 @@ export default function App() {
         <section id="moat" className="border-t border-slate-100 pt-16">
           <h2 className="text-2xl font-black text-slate-900 mb-4">{"Market Moat"}</h2>
           <p className="text-slate-600 leading-relaxed max-w-3xl">
-            {"With corporate buyer restrictions shifting under fresh regulations, VSMECAP ensures compliance thresholds remain locked. Protect your operations with decentralized proof chains that eliminate tracking leaks entirely."}
+            {"With corporate tracking demands growing, VSMECAP secures your market positioning. Cryptographic ledger hashing seals your reporting pipeline from structural modifications and compliance overlap."}
           </p>
         </section>
 
@@ -132,12 +144,3 @@ export default function App() {
               <details key={index} className="group border border-slate-200 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-white open:shadow-md">
                 <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
                   <h3 className="text-[16px] font-bold text-slate-900 pr-4">
-                    <span className="text-[#0D9488] font-black mr-2">{(index + 1).toString().padStart(2, "0")}.</span>
-                    {faq.q}
-                  </h3>
-                  <span className="flex-shrink-0 ml-1.5 p-1.5 text-slate-500 rounded-full group-open:rotate-180 transition-transform duration-200">
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
-                </summary>
