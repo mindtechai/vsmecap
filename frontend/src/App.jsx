@@ -41,7 +41,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* FIXED NAVIGATION HEADER (Always Visible Menu Links on All Screen Sizes, No Hamburger Button) */}
+      {/* FIXED NAVIGATION HEADER */}
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
@@ -54,7 +54,6 @@ export default function App() {
               </span>
             </a>
 
-            {/* Always visible inline link architecture across mobile, tablet, and desktop viewports */}
             <nav className="flex items-center gap-x-4 sm:gap-x-8 text-[13px] sm:text-[14.5px] font-bold text-slate-700 overflow-x-auto no-scrollbar py-2">
               <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Solutions</a>
               <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Product</a>
@@ -115,7 +114,7 @@ export default function App() {
           </p>
         </section>
 
-        {/* ACCORDION FAQ SECTION (Guaranteed Complete 12 Elements Render List Loop) */}
+        {/* ACCORDION FAQ SECTION */}
         <section id="faqs" className="border-t border-slate-100 pt-16">
           <div className="mb-8">
             <h2 className="text-3xl font-black tracking-tight text-slate-900">
@@ -137,3 +136,9 @@ export default function App() {
                   <span className="flex-shrink-0 ml-1.5 p-1.5 text-slate-500 rounded-full group-open:rotate-180 transition-transform duration-200">
                     <svg xmlns="http://w3.org" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-[14.5px] leading-relaxed text-slate-600 font-medium pl-0 sm:pl-7">
+                  {faq.a}
+                </p>
