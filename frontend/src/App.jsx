@@ -24,8 +24,6 @@ const LOCAL_FAQS = [
 ];
 
 export default function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-12 selection:bg-[#0D9488]/10">
       
@@ -43,7 +41,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* HEADER & MOBILE MENU */}
+      {/* FIXED NAVIGATION HEADER (Always Visible Menu Links on All Screen Sizes, No Hamburger Button) */}
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
@@ -56,74 +54,86 @@ export default function App() {
               </span>
             </a>
 
-            <nav className="hidden lg:flex items-center gap-x-8 text-[14.5px] font-bold text-slate-700">
-              <a href="#uk-companies" className="hover:text-[#00996f] transition-colors">Solutions</a>
-              <a href="#product" className="hover:text-[#00996f] transition-colors">Product</a>
-              <a href="#moat" className="hover:text-[#00996f] transition-colors">Moat</a>
-              <a href="#faqs" className="hover:text-[#00996f] transition-colors">FAQs</a>
+            {/* Always visible inline link architecture across mobile, tablet, and desktop viewports */}
+            <nav className="flex items-center gap-x-4 sm:gap-x-8 text-[13px] sm:text-[14.5px] font-bold text-slate-700 overflow-x-auto no-scrollbar py-2">
+              <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Solutions</a>
+              <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Product</a>
+              <a href="#moat" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Moat</a>
+              <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">FAQs ({LOCAL_FAQS.length})</a>
             </nav>
 
-            <div className="hidden lg:flex items-center gap-x-4">
-              <span className="rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
+            <div className="flex items-center gap-x-4 flex-shrink-0">
+              <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 VSME COMPLIANT • &lt;1,000 EMPLOYEES
               </span>
-              <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-6 py-3 text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">Contact</a>
-            </div>
-
-            <div className="flex items-center lg:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className="inline-flex items-center justify-center p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 focus:outline-none"
-              >
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                  {isOpen ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />}
-                </svg>
-              </button>
+              <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 sm:px-6 py-2.5 sm:py-3 text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">Contact</a>
             </div>
           </div>
         </div>
-
-        {isOpen && (
-          <div className="lg:hidden border-t border-slate-200 bg-white w-full absolute left-0 right-0 shadow-2xl z-50 px-6 py-6 space-y-4 font-bold text-slate-700">
-            <a href="#uk-companies" onClick={() => setIsOpen(false)} className="block py-2 border-b border-slate-50">UK &amp; EU Solutions</a>
-            <a href="#product" onClick={() => setIsOpen(false)} className="block py-2 border-b border-slate-50">Product Architecture</a>
-            <a href="#moat" onClick={() => setIsOpen(false)} className="block py-2 border-b border-slate-50">Market Moat</a>
-            <a href="#faqs" onClick={() => setIsOpen(false)} className="block py-2">Frequently Asked Questions</a>
-            <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
-              <a href={CONTACT_MAILTO} className="w-full text-center rounded-xl bg-[#0F172A] py-3 text-[14px] text-white shadow-md">Contact Us</a>
-            </div>
-          </div>
-        )}
       </header>
 
       {/* LOWER DARK TICKER */}
       <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 flex items-center select-none">
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
-        <div className="flex whitespace-nowrap items-center gap-x-20 animate-marquee-scroll">
-          {[...LOCAL_TICKER, ...LOCAL_TICKER, ...LOCAL_TICKER].map((item, idx) => (
-            <span key={idx} className="text-[15px] font-mono font-bold tracking-widest text-slate-100 uppercase flex-shrink-0">{item}</span>
+        
+        <div className="flex whitespace-nowrap gap-x-12 animate-marquee-scroll text-slate-300 font-bold text-[13px] tracking-wide">
+          {[...LOCAL_TICKER, ...LOCAL_TICKER].map((text, idx) => (
+            <span key={idx} className="flex items-center gap-x-3">
+              {text}
+            </span>
           ))}
         </div>
       </div>
 
-      <main>
-        {/* HERO SECTION */}
-        <section className="border-b border-[#e4e7ea] bg-white py-16 sm:py-24">
-          <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
-              
-              <div className="lg:col-span-6 space-y-6 pt-2">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
-                  🛡️ DIRECTIVE (EU) 2026/470 VALUE CHAIN CAP SHIELD ACTIVE
-                </span>
-                <h1 className="text-[clamp(26px,3.8vw,40px)] font-black tracking-tight text-[#0F172A] leading-[1.2]">
-                  AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP
-                  <span className="block text-[#EA580C] text-[clamp(16px,2.2vw,22px)] font-black tracking-wide uppercase mt-4">THE CAP THAT STOPS SPREADSHEET CHAOS.</span>
-                </h1>
-                <p className="text-[15px] leading-relaxed text-slate-500 font-semibold max-w-[540px]">
-                  VSMECAP is the Audit-Ready output for the enterprise control layer for VSME. The first-mover cap that standardizes B1-B11 and C1-C9 across UK Companies and Public Sector supply chains. Verifiable, exportable, enterprise-grade.
-                </p>
-                <div className="flex flex-wrap items-center gap-4 pt-2">
-                  <a href="#uk-companies" className="rounded-xl bg-[#0F172A] px-6 py-3.5 text-[14px] font-bold text-white hover:bg-slate-800 shadow-lg">Start VS (VSME) for free →</a>
+      {/* BODY CONTENT CONTAINER */}
+      <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 space-y-24">
+        
+        {/* HERO SECTION / SOLUTIONS */}
+        <section id="solutions" className="space-y-6">
+          <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900">
+            Automated compliance built for protected undertakings.
+          </h1>
+          <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
+            Stop drowning in customized ESG spreadsheets. Secure your market share using independent data conversion loops mapped to public framework taxonomies.
+          </p>
+        </section>
+
+        {/* PRODUCT ARCHITECTURE */}
+        <section id="product" className="border-t border-slate-100 pt-16">
+          <h2 className="text-2xl font-black text-slate-900 mb-4">Product Architecture</h2>
+          <p className="text-slate-600 leading-relaxed max-w-3xl">
+            Our pipeline extracts utility metrics, fleet emissions data, and basic payroll parameters directly into cryptographically protected records. Generate clean, audit-ready packs in less than 48 hours.
+          </p>
+        </section>
+
+        {/* MARKET MOAT */}
+        <section id="moat" className="border-t border-slate-100 pt-16">
+          <h2 className="text-2xl font-black text-slate-900 mb-4">Market Moat</h2>
+          <p className="text-slate-600 leading-relaxed max-w-3xl">
+            With corporate buyer restrictions shifting under fresh regulations, VSMECAP ensures compliance thresholds remain locked. Protect your operations with decentralized proof chains that eliminate tracking leaks entirely.
+          </p>
+        </section>
+
+        {/* ACCORDION FAQ SECTION (Guaranteed Complete 12 Elements Render List Loop) */}
+        <section id="faqs" className="border-t border-slate-100 pt-16">
+          <div className="mb-8">
+            <h2 className="text-3xl font-black tracking-tight text-slate-900">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-slate-500 font-bold text-[14px] mt-1">
+              Showing all {LOCAL_FAQS.length} structural framework items
+            </p>
+          </div>
+          
+          <div className="grid gap-4 max-w-4xl">
+            {LOCAL_FAQS.map((faq, index) => (
+              <details key={index} className="group border border-slate-200 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-white open:shadow-md">
+                <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
+                  <h3 className="text-[16px] font-bold text-slate-900 pr-4">
+                    <span className="text-[#0D9488] font-black mr-2">{(index + 1).toString().padStart(2, "0")}.</span>
+                    {faq.q}
+                  </h3>
+                  <span className="flex-shrink-0 ml-1.5 p-1.5 text-slate-500 rounded-full group-open:rotate-180 transition-transform duration-200">
+                    <svg xmlns="http://w3.org" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
