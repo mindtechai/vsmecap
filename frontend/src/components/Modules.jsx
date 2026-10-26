@@ -1,3 +1,4 @@
+import React from "react";
 import { Section } from "@/components/Section";
 import { BASIC_MODULES, COMPREHENSIVE_MODULES } from "@/data/content";
 
