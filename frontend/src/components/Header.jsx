@@ -3,6 +3,7 @@ import { CONTACT_MAILTO } from "@/data/content";
 
 export const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Start at the top on load (stops Safari restoring a scrolled position
   // that leaves the black ticker tucked behind the sticky header)
@@ -14,6 +15,24 @@ export const Header = () => {
       window.scrollTo(0, 0);
     }
   }, []);
+
+  // Close the mobile menu with Escape, or when the screen grows to desktop size
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  const closeMenu = () => setMenuOpen(false);
 
   const navMenu = [
     {
@@ -36,7 +55,7 @@ export const Header = () => {
       items: [
         { label: "Product Architecture", href: "#product" },
         { label: "Why Now", href: "#why-now" },
-        { label: "Market Moat", href: "#moat" },
+        { label: "Market Position", href: "#moat" },
         { label: "Market Blueprint", href: "#market" },
         { label: "Legal Basis Foundations", href: "#legal-basis" }
       ]
@@ -52,19 +71,23 @@ export const Header = () => {
     }
   ];
 
+  const bannerText =
+    "FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING  •  ";
+
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes topBannerScrollRight {
-          0% { transform: translateX(-25%); }
+          0% { transform: translateX(-50%); }
           100% { transform: translateX(0%); }
         }
         .animate-top-banner-right {
-          animation: topBannerScrollRight 32s linear infinite !important;
+          animation: topBannerScrollRight 40s linear infinite !important;
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        html { scroll-padding-top: 170px; }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-top-banner-right { animation: none !important; }
+        }
+        html { scroll-padding-top: 112px; }
         @media (min-width: 1024px) { html { scroll-padding-top: 130px; } }
       `}} />
 
@@ -73,7 +96,7 @@ export const Header = () => {
       {/* TOP BANNER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden flex items-center border-b border-orange-700/30">
         <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
-          <span>PLATFORM OFFER: PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  </span>
+          <span>{bannerText}{bannerText}{bannerText}{bannerText}</span>
         </div>
       </div>
 
@@ -129,10 +152,10 @@ export const Header = () => {
               ))}
             </nav>
 
-            {/* BADGE (desktop only) + CONTACT (all sizes) */}
-            <div className="flex items-center gap-x-4">
+            {/* BADGE (desktop only) + CONTACT (all sizes) + MENU BUTTON (mobile and tablet) */}
+            <div className="flex items-center gap-x-3 lg:gap-x-4">
               <span className="hidden lg:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
-                VSME COMPLIANT • &lt;1,000 EMPLOYEES
+                VSME-ALIGNED REPORTING • UP TO 1,000 EMPLOYEES
               </span>
               <a
                 href={CONTACT_MAILTO}
@@ -140,37 +163,59 @@ export const Header = () => {
               >
                 Contact
               </a>
+              <button
+                type="button"
+                onClick={() => setMenuOpen((open) => !open)}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
+                aria-controls="mobile-menu"
+                className="lg:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-[#0D9488]"
+              >
+                {menuOpen ? (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>
 
-        {/* MOBILE / TABLET: every menu page inline, swipe sideways. No hamburger, no hidden drawer. */}
-        <div className="lg:hidden relative border-t border-slate-100">
-          <nav
-            aria-label="Site pages"
-            className="flex items-center gap-x-4 overflow-x-auto no-scrollbar px-4 sm:px-6 py-2.5 text-[13px] font-bold text-slate-700"
-            style={{ WebkitOverflowScrolling: "touch" }}
+        {/* MOBILE / TABLET MENU: every page, grouped, large tap targets, scrolls if the screen is short */}
+        {menuOpen && (
+          <div
+            id="mobile-menu"
+            className="lg:hidden absolute left-0 right-0 top-full border-t border-slate-200 bg-white shadow-xl overflow-y-auto overscroll-contain"
+            style={{ maxHeight: "calc(100dvh - 7rem)" }}
           >
-            {navMenu.map((menu, mIdx) => (
-              <div key={mIdx} className="flex items-center gap-x-4 flex-shrink-0">
-                {mIdx > 0 && <span className="h-4 w-px bg-slate-200" aria-hidden="true" />}
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#0D9488] whitespace-nowrap">
-                  {menu.label}
-                </span>
-                {menu.items.map((item, iIdx) => (
-                  <a
-                    key={iIdx}
-                    href={item.href}
-                    className="whitespace-nowrap hover:text-[#00996f] transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            ))}
-          </nav>
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent" />
-        </div>
+            <nav aria-label="Site pages" className="mx-auto max-w-6xl px-4 sm:px-6 py-4">
+              {navMenu.map((menu, mIdx) => (
+                <div key={mIdx} className={mIdx > 0 ? "mt-4 pt-4 border-t border-slate-100" : ""}>
+                  <p className="px-3 mb-1 text-[11px] font-black uppercase tracking-widest text-[#0D9488]">
+                    {menu.label}
+                  </p>
+                  <ul>
+                    {menu.items.map((item, iIdx) => (
+                      <li key={iIdx}>
+                        <a
+                          href={item.href}
+                          onClick={closeMenu}
+                          className="block rounded-lg px-3 py-3 text-[15px] font-semibold text-slate-700 active:bg-slate-100 hover:bg-slate-50"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
+          </div>
+        )}
       </header>
       </div>
     </>
