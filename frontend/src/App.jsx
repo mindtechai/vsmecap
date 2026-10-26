@@ -24,6 +24,7 @@ export default function App() {
         <Market />
         <LegalAndInvest />
         <PartnersAbout />
+         <IngestionMatrix />
         <Faqs />
         <Risks />
         <Privacy />
