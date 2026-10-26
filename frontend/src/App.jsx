@@ -39,7 +39,7 @@ export default function App() {
       {/* ORANGE TOP RIBBON TICKER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden sticky top-0 z-50 flex items-center border-b border-orange-700/30 select-none">
         <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
-          <span>PLATFORM OFFER: PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs &lt;1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  </span>
+          <span>PLATFORM OFFER: PERMANENTLY FREE TO SMEs {"<"}1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs {"<"}1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  </span>
         </div>
       </div>
 
@@ -65,7 +65,7 @@ export default function App() {
 
             <div className="flex items-center gap-x-4 flex-shrink-0">
               <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
-                VSME COMPLIANT • &lt;1,000 EMPLOYEES
+                VSME COMPLIANT • {"<"}1,000 EMPLOYEES
               </span>
               <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 sm:px-6 py-2.5 sm:py-3 text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">Contact</a>
             </div>
