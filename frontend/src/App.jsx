@@ -40,25 +40,20 @@ export default function App() {
           overflow-x: auto !important;
           -webkit-overflow-scrolling: touch !important;
         }
-        .force-visible-ticker {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
         .custom-no-scrollbar::-webkit-scrollbar { display: none !important; }
         .custom-no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         
-        section { scroll-margin-top: 140px; }
+        section { scroll-margin-top: 180px; }
       `}} />
 
-      {/* ORANGE TOP RIBBON TICKER */}
+      {/* LAYER 1 (z-50): ORANGE TOP RIBBON TICKER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden sticky top-0 z-50 flex items-center border-b border-orange-700/30 select-none">
         <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
           <span>{"PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  • "}</span>
         </div>
       </div>
 
-      {/* FIXED NAVIGATION HEADER */}
+      {/* LAYER 2 (z-40): FIXED NAVIGATION HEADER WITH PRECISE STICKY TOP OFFSET */}
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
@@ -73,7 +68,7 @@ export default function App() {
               </span>
             </a>
 
-            {/* UNCONDITIONAL MENU LINKS */}
+            {/* MENU LINKS */}
             <nav className="force-visible-nav custom-no-scrollbar items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 py-2">
               <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Solutions"}</a>
               <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Product"}</a>
@@ -81,7 +76,7 @@ export default function App() {
               <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{`FAQs (${LOCAL_FAQS.length})`}</a>
             </nav>
 
-            {/* CTA ACTION BUTTON */}
+            {/* ACTION ITEM */}
             <div className="flex items-center gap-x-3 flex-shrink-0">
               <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 {"VSME COMPLIANT • <1,000 EMPLOYEES"}
@@ -93,8 +88,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* LOWER DARK TICKER */}
-      <div className="force-visible-ticker w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 select-none">
+      {/* LAYER 3 (z-30): STABILIZED LOWER DARK TICKER - Positioned directly below the navigation to prevent clipping on touch viewports */}
+      <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden sticky top-[116px] z-30 select-none">
         <div className="relative flex items-center w-full h-full">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
@@ -112,7 +107,7 @@ export default function App() {
       {/* BODY MAIN CONTAINER AREA */}
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 space-y-24">
         
-        {/* HERO SOLUTIONS SECTION */}
+        {/* SOLUTIONS ACCENT CARD */}
         <section id="solutions" className="space-y-6">
           <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900 leading-tight">
             {"AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP"}
