@@ -44,7 +44,7 @@ export default function App() {
           display: block !important;
           visibility: visible !important;
           opacity: 1 !important;
-        }
+          }
         .custom-no-scrollbar::-webkit-scrollbar { display: none !important; }
         .custom-no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         
@@ -73,7 +73,7 @@ export default function App() {
               </span>
             </a>
 
-            {/* UNCONDITIONAL MENU LINKS - Visible cross-platform natively */}
+            {/* UNCONDITIONAL MENU LINKS */}
             <nav className="force-visible-nav custom-no-scrollbar items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 py-2">
               <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Solutions"}</a>
               <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Product"}</a>
@@ -93,7 +93,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* LOWER DARK TICKER - Fixed block layout tracking */}
+      {/* LOWER DARK TICKER */}
       <div className="force-visible-ticker w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 select-none">
         <div className="relative flex items-center w-full h-full">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
@@ -153,3 +153,4 @@ export default function App() {
           </div>
           
           <div className="grid gap-4 max-w-4xl">
+            {LOCAL_FAQS.map((faq, index) => (
