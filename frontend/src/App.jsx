@@ -43,22 +43,21 @@ export default function App() {
         .custom-no-scrollbar::-webkit-scrollbar { display: none !important; }
         .custom-no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         
-        section { scroll-margin-top: 180px; }
+        section { scroll-margin-top: 140px; }
       `}} />
 
-      {/* LAYER 1: STICKY TOP ORANGE TICKER */}
+      {/* STICKY TOP ORANGE TICKER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden sticky top-0 z-50 flex items-center border-b border-orange-700/30 select-none">
         <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
           <span>{"PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  • "}</span>
         </div>
       </div>
 
-      {/* LAYER 2: STICKY WHITE NAVIGATION NAVBAR */}
+      {/* STICKY HEADER FIXED */}
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
             
-            {/* BRAND LOGO DESIGN */}
             <a href="#top" className="flex items-center flex-shrink-0 gap-2 select-none">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
                 {"VSME"}<span className="text-[#0D9488]">{"CAP"}</span>
@@ -68,7 +67,6 @@ export default function App() {
               </span>
             </a>
 
-            {/* FIXED TEXT LINKS MENU (Never collapses to hamburger) */}
             <nav className="force-visible-nav custom-no-scrollbar items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 py-2">
               <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Solutions"}</a>
               <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Product"}</a>
@@ -76,7 +74,6 @@ export default function App() {
               <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{`FAQs (${LOCAL_FAQS.length})`}</a>
             </nav>
 
-            {/* ACTION CTA BLOCK */}
             <div className="flex items-center gap-x-3 flex-shrink-0">
               <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 {"VSME COMPLIANT • <1,000 EMPLOYEES"}
@@ -88,8 +85,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* LAYER 3: FIXED LOWER DARK TICKER (Corrected sticky offset layout configuration to prevent shifting on mobile) */}
-      <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden sticky top-[116px] z-30 select-none">
+      {/* LOWER DARK TICKER (Rendered relative to eliminate mobile overlapping bugs) */}
+      <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 select-none">
         <div className="relative flex items-center w-full h-full">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
@@ -104,10 +101,9 @@ export default function App() {
         </div>
       </div>
 
-      {/* MAIN CONTAINER PLATFORM FRAME */}
+      {/* BODY MAIN CONTAINER */}
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 space-y-24">
         
-        {/* SOLUTIONS SECTION */}
         <section id="solutions" className="space-y-6">
           <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900 leading-tight">
             {"AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP"}
@@ -120,7 +116,6 @@ export default function App() {
           </p>
         </section>
 
-        {/* PRODUCT SECTION */}
         <section id="product" className="border-t border-slate-100 pt-16">
           <h2 className="text-2xl font-black text-slate-900 mb-4">{"Product Architecture"}</h2>
           <p className="text-slate-600 leading-relaxed max-w-3xl">
@@ -128,7 +123,6 @@ export default function App() {
           </p>
         </section>
 
-        {/* MOAT SECTION */}
         <section id="moat" className="border-t border-slate-100 pt-16">
           <h2 className="text-2xl font-black text-slate-900 mb-4">{"Market Moat"}</h2>
           <p className="text-slate-600 leading-relaxed max-w-3xl">
@@ -136,7 +130,6 @@ export default function App() {
           </p>
         </section>
 
-        {/* FAQs LIST MAP ARRAYS SECTION */}
         <section id="faqs" className="border-t border-slate-100 pt-16">
           <div className="mb-8">
             <h2 className="text-3xl font-black tracking-tight text-slate-900">
@@ -149,3 +142,6 @@ export default function App() {
           
           <div className="grid gap-4 max-w-4xl">
             {LOCAL_FAQS.map((faq, index) => (
+              <details key={index} className="group border border-slate-200 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-white open:shadow-md">
+                <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
+                  <h3 className="text-[16px] font-bold text-slate-900 pr-4">
