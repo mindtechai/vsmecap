@@ -39,7 +39,7 @@ export default function App() {
       {/* ORANGE TOP RIBBON TICKER */}
       <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden sticky top-0 z-50 flex items-center border-b border-orange-700/30 select-none">
         <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
-          <span>PLATFORM OFFER: PERMANENTLY FREE TO SMEs {"<"}1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs {"<"}1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  </span>
+          <span>{"PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  •  PLATFORM OFFER: PERMANENTLY FREE TO SMEs <1,000 EMPLOYEES: COMPLIANT DATA DISCLOSURE PIPELINES  • "}</span>
         </div>
       </div>
 
@@ -49,25 +49,25 @@ export default function App() {
           <div className="flex h-20 items-center justify-between gap-4">
             <a href="#top" className="flex items-center flex-shrink-0 gap-2 select-none">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
-                VSME<span className="text-[#0D9488]">CAP</span>
+                {"VSME"}<span className="text-[#0D9488]">{"CAP"}</span>
               </span>
               <span className="hidden sm:inline-block rounded-md bg-slate-100 border border-slate-200/40 px-2 py-0.5 text-[9px] font-extrabold tracking-widest text-slate-500 uppercase">
-                PLATFORM
+                {"PLATFORM"}
               </span>
             </a>
 
             <nav className="flex items-center gap-x-4 sm:gap-x-8 text-[13px] sm:text-[14.5px] font-bold text-slate-700 overflow-x-auto no-scrollbar py-2">
-              <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Solutions</a>
-              <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Product</a>
-              <a href="#moat" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">Moat</a>
-              <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">FAQs ({LOCAL_FAQS.length})</a>
+              <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Solutions"}</a>
+              <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Product"}</a>
+              <a href="#moat" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Moat"}</a>
+              <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{`FAQs (${LOCAL_FAQS.length})`}</a>
             </nav>
 
             <div className="flex items-center gap-x-4 flex-shrink-0">
               <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
-                VSME COMPLIANT • {"<"}1,000 EMPLOYEES
+                {"VSME COMPLIANT • <1,000 EMPLOYEES"}
               </span>
-              <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 sm:px-6 py-2.5 sm:py-3 text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">Contact</a>
+              <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 sm:px-6 py-2.5 sm:py-3 text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">{"Contact"}</a>
             </div>
           </div>
         </div>
@@ -93,26 +93,26 @@ export default function App() {
         {/* HERO SECTION / SOLUTIONS */}
         <section id="solutions" className="space-y-6">
           <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900">
-            Automated compliance built for protected undertakings.
+            {"Automated compliance built for protected undertakings."}
           </h1>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            Stop drowning in customized ESG spreadsheets. Secure your market share using independent data conversion loops mapped to public framework taxonomies.
+            {"Stop drowning in customized ESG spreadsheets. Secure your market share using independent data conversion loops mapped to public framework taxonomies."}
           </p>
         </section>
 
         {/* PRODUCT ARCHITECTURE */}
         <section id="product" className="border-t border-slate-100 pt-16">
-          <h2 className="text-2xl font-black text-slate-900 mb-4">Product Architecture</h2>
+          <h2 className="text-2xl font-black text-slate-900 mb-4">{"Product Architecture"}</h2>
           <p className="text-slate-600 leading-relaxed max-w-3xl">
-            Our pipeline extracts utility metrics, fleet emissions data, and basic payroll parameters directly into cryptographically protected records. Generate clean, audit-ready packs in less than 48 hours.
+            {"Our pipeline extracts utility metrics, fleet emissions data, and basic payroll parameters directly into cryptographically protected records. Generate clean, audit-ready packs in less than 48 hours."}
           </p>
         </section>
 
         {/* MARKET MOAT */}
         <section id="moat" className="border-t border-slate-100 pt-16">
-          <h2 className="text-2xl font-black text-slate-900 mb-4">Market Moat</h2>
+          <h2 className="text-2xl font-black text-slate-900 mb-4">{"Market Moat"}</h2>
           <p className="text-slate-600 leading-relaxed max-w-3xl">
-            With corporate buyer restrictions shifting under fresh regulations, VSMECAP ensures compliance thresholds remain locked. Protect your operations with decentralized proof chains that eliminate tracking leaks entirely.
+            {"With corporate buyer restrictions shifting under fresh regulations, VSMECAP ensures compliance thresholds remain locked. Protect your operations with decentralized proof chains that eliminate tracking leaks entirely."}
           </p>
         </section>
 
@@ -120,10 +120,10 @@ export default function App() {
         <section id="faqs" className="border-t border-slate-100 pt-16">
           <div className="mb-8">
             <h2 className="text-3xl font-black tracking-tight text-slate-900">
-              Frequently Asked Questions
+              {"Frequently Asked Questions"}
             </h2>
             <p className="text-slate-500 font-bold text-[14px] mt-1">
-              Showing all {LOCAL_FAQS.length} structural framework items
+              {`Showing all ${LOCAL_FAQS.length} structural framework items`}
             </p>
           </div>
           
