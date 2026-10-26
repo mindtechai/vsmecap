@@ -18,6 +18,26 @@ const LOCAL_FAQS = [
 export const Faqs = () => {
   return (
     <section id="faqs" className="py-16 bg-white border-t border-[#e4e7ea]">
+      
+      {/* 🤖 AEO STRUCTURAL SCHEMA DATA (JSON-LD mapping for AI search discovery engines) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": LOCAL_FAQS.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })
+        }}
+      />
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="text-[11px] font-bold tracking-[0.12em] text-[#00996f] uppercase">FAQS</p>
