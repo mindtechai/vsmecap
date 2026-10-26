@@ -8,6 +8,7 @@ import { PartnersAbout } from "@/components/PartnersAbout";
 import { Faqs } from "@/components/Faqs";
 import { Risks } from "@/components/Risks";
 import { Footer, Privacy } from "@/components/Closing";
+import { Modules } from "@/components/Modules"; // 🚀 LINE 11: ADDED CORRECT STANDALONE MODULES IMPORT PATH
 
 export default function App() {
   return (
@@ -18,13 +19,14 @@ export default function App() {
         <Hero />
         <UkCompanies />
         <PublicSector />
+        <Modules /> {/* 🚀 LINE 23: PLACED THE GRID TAG IN THE MAIN FLOW CONTAINER TO POPULATE THE LINK DROPDOWNS */}
         <Product />
         <WhyNow />
         <Moat />
         <Market />
         <LegalAndInvest />
         <PartnersAbout />
-         <IngestionMatrix />
+        <IngestionMatrix />
         <Faqs />
         <Risks />
         <Privacy />
