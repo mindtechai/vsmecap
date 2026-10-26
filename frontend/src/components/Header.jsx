@@ -5,7 +5,7 @@ export const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Prevent scroll anomalies on mobile Safari reload loops
+  // Prevent scroll positions breaking Safari touch reload renders
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
@@ -15,7 +15,7 @@ export const Header = () => {
     }
   }, []);
 
-  // Structural menu window keyboard listeners
+  // Standard window event listener registration blocks
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") setMenuOpen(false);
@@ -74,8 +74,9 @@ export const Header = () => {
   const bannerText = "FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING  •  ";
 
   return (
-    <>
-      {/* 🤖 ASO/AEO SITE NAVIGATION ENTITY DISCOVERY SCHEMA METADATA */}
+    <div className="w-full relative z-50">
+      
+      {/* 🤖 ASO/AEO SITE NAVIGATION ELEMENT SCHEMA DEFINITIONS */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -109,22 +110,22 @@ export const Header = () => {
         @media (min-width: 1024px) { html { scroll-padding-top: 130px; } }
       `}} />
 
-      {/* STICKY CONTAINER BLOCK */}
+      {/* FIXED STICKY HEAD STRUCTURAL WRAPPER */}
       <div className="sticky top-0 z-50 w-full">
         
-        {/* ORANGE TOP TICKER BANNER */}
+        {/* ORANGE TOP RIBBON BANNER */}
         <div className="w-full bg-[#EA580C] py-2.5 overflow-hidden flex items-center border-b border-orange-700/30">
           <div className="flex whitespace-nowrap items-center animate-top-banner-right text-white text-[11px] font-black tracking-widest uppercase antialiased">
             <span>{bannerText}{bannerText}{bannerText}{bannerText}</span>
           </div>
         </div>
 
-        {/* PRIMARY VIEW NAVIGATION HEADER */}
+        {/* WHITE CORE NAVBAR HEADER */}
         <header className="relative border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="flex h-16 lg:h-20 items-center justify-between gap-4">
 
-              {/* BRAND IDENTIFIERS */}
+              {/* LOGO LINK */}
               <a href="#top" className="flex items-center flex-shrink-0 gap-2">
                 <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
                   {"VSME"}<span className="text-[#0D9488]">{"CAP"}</span>
@@ -134,7 +135,7 @@ export const Header = () => {
                 </span>
               </a>
 
-              {/* DESKTOP ACCESSIBLE MENU DROPDOWNS */}
+              {/* DESKTOP VIEW ACCESSIBLE INLINE MENU DROPDOWNS */}
               <nav className="hidden lg:flex items-center gap-x-8">
                 {navMenu.map((menu, idx) => (
                   <div
@@ -172,7 +173,7 @@ export const Header = () => {
                 ))}
               </nav>
 
-              {/* ACTION LAYOUT CONTROLS */}
+              {/* ACTION COMPONENT TARGET INTERACTION BAR */}
               <div className="flex items-center gap-x-3 lg:gap-x-4">
                 <span className="hidden lg:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                   {"VSME-ALIGNED REPORTING • UP TO 1,000 EMPLOYEES"}
@@ -206,7 +207,7 @@ export const Header = () => {
             </div>
           </div>
 
-          {/* OVERLAY PANEL MECHANICS */}
+          {/* TABLET / MOBILE DISCLOSURES OVERLAY DROPDOWN */}
           {menuOpen && (
             <div id="mobile-menu" className="lg:hidden border-t border-slate-200 bg-white shadow-2xl absolute left-0 right-0 z-50 p-6 max-h-[80vh] overflow-y-auto">
               <div className="space-y-6">
@@ -222,13 +223,3 @@ export const Header = () => {
                           className="block py-1.5 text-[14px] font-bold text-slate-700 hover:text-[#00996f]"
                         >
                           {item.label}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </header>
-      </div>
