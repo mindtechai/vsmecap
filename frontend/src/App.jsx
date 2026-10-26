@@ -18,7 +18,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-20 scroll-smooth">
       
-      {/* 🤖 AEO STRUCTURAL SCHEMA DATA (JSON-LD injection for LLMs & AI Scrapers) */}
+      {/* 🤖 AEO STRUCTURAL SCHEMA DATA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -55,18 +55,9 @@ export default function App() {
         @keyframes topBannerScrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0%); } }
         .animate-marquee-scroll { animation: marqueeCrawl 48s linear infinite !important; }
         .animate-top-banner-right { animation: topBannerScrollRight 32s linear infinite !important; }
-        
-        .force-visible-nav {
-          display: flex !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          overflow-x: auto !important;
-          -webkit-overflow-scrolling: touch !important;
-        }
+        .force-visible-nav { display: flex !important; visibility: visible !important; opacity: 1 !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
         .custom-no-scrollbar::-webkit-scrollbar { display: none !important; }
         .custom-no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
-        
-        /* Clear anchor scroll calculation padding */
         section { scroll-margin-top: 140px; }
       `}} />
 
@@ -77,12 +68,11 @@ export default function App() {
         </div>
       </div>
 
-      {/* FIXED NAVIGATION HEADER HEADER (Never hidden via a hamburger menu button toggle) */}
+      {/* FIXED NAVIGATION HEADER */}
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
             
-            {/* BRANDING LANDMARK */}
             <a href="#top" className="flex items-center flex-shrink-0 gap-2 select-none">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
                 {"VSME"}<span className="text-[#0D9488]">{"CAP"}</span>
@@ -92,7 +82,6 @@ export default function App() {
               </span>
             </a>
 
-            {/* HORIZONTAL SWIPEABLE INTERACTIVE NAVIGATION MENU LINKS */}
             <nav className="force-visible-nav custom-no-scrollbar items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 py-2">
               {NAV_LINKS.map((link) => (
                 <a 
@@ -112,7 +101,6 @@ export default function App() {
               ))}
             </nav>
 
-            {/* DIRECT CTA TRIGGER ACTION */}
             <div className="flex items-center gap-x-3 flex-shrink-0">
               <span className="hidden lg:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 {"VSME COMPLIANT • <1,000 EMPLOYEES"}
@@ -124,7 +112,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* LOWER DARK TICKER ROW (Rendered purely relative to prevent iPhone Safari stacking overlap drops) */}
+      {/* LOWER DARK TICKER ROW */}
       <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 select-none">
         <div className="relative flex items-center w-full h-full">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
@@ -140,7 +128,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* MAIN DATA FRAME SECTIONS (Semantic markup nodes optimizing AI context ingestion) */}
+      {/* MAIN CONTAINER */}
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 space-y-24">
         
         {/* HERO SECTION / UK COMPANIES */}
@@ -156,7 +144,7 @@ export default function App() {
           </p>
         </section>
 
-        {/* PUBLIC SECTOR DATA PROVENCE */}
+        {/* PUBLIC SECTOR PROCUREMENT ALIGNMENT */}
         <section id="public-sector" className="border-t border-slate-100 pt-16">
           <h2 className="text-2xl font-black text-slate-900 mb-4">{"Public Sector Procurement Alignment"}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -193,3 +181,9 @@ export default function App() {
         {/* ANNEX II • COMPREHENSIVE DISCLOSURES (C1-C9) */}
         <section id="comprehensive" className="border-t border-slate-100 pt-16">
           <div className="mb-6">
+            <span className="text-[11px] font-mono font-black text-slate-900 tracking-wider uppercase">{"ANNEX II • COMPREHENSIVE DISCLOSURES"}</span>
+            <h2 className="text-2xl font-black text-slate-900 mt-1">{"C1–C9 Extended Modules"}</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {COMPREHENSIVE_MODULES.map((m) => (
+              <div key={m.code} className="rounded-xl border border-[#e4e7ea] bg-white p-5 shadow-sm hover:border-slate-800/30 transition-colors">
