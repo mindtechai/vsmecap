@@ -32,16 +32,23 @@ export default function App() {
         @keyframes topBannerScrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0%); } }
         .animate-marquee-scroll { animation: marqueeCrawl 48s linear infinite !important; }
         .animate-top-banner-right { animation: topBannerScrollRight 32s linear infinite !important; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .force-visible-nav {
+          display: flex !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          overflow-x: auto !important;
+          -webkit-overflow-scrolling: touch !important;
+        }
+        .force-visible-ticker {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        .custom-no-scrollbar::-webkit-scrollbar { display: none !important; }
+        .custom-no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         
         section { scroll-margin-top: 140px; }
-
-        @media (prefers-reduced-motion: reduce) {
-          .animate-marquee-scroll, .animate-top-banner-right {
-            animation: none !important;
-          }
-        }
       `}} />
 
       {/* ORANGE TOP RIBBON TICKER */}
@@ -55,6 +62,8 @@ export default function App() {
       <header className="sticky top-[36px] z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md w-full">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex h-20 items-center justify-between gap-4">
+            
+            {/* BRAND LOGO */}
             <a href="#top" className="flex items-center flex-shrink-0 gap-2 select-none">
               <span className="text-[24px] font-black tracking-tighter text-[#0F172A]">
                 {"VSME"}<span className="text-[#0D9488]">{"CAP"}</span>
@@ -64,42 +73,46 @@ export default function App() {
               </span>
             </a>
 
-            {/* Permanent menu rows that scale beautifully on desktop and swipe horizontally on mobile viewports */}
-            <nav className="flex items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 overflow-x-auto no-scrollbar py-2">
+            {/* UNCONDITIONAL MENU LINKS - Visible cross-platform natively */}
+            <nav className="force-visible-nav custom-no-scrollbar items-center gap-x-4 sm:gap-x-6 text-[13px] sm:text-[14.5px] font-bold text-slate-700 py-2">
               <a href="#solutions" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Solutions"}</a>
               <a href="#product" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Product"}</a>
               <a href="#moat" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{"Moat"}</a>
               <a href="#faqs" className="hover:text-[#0D9488] whitespace-nowrap transition-colors">{`FAQs (${LOCAL_FAQS.length})`}</a>
             </nav>
 
+            {/* CTA ACTION BUTTON */}
             <div className="flex items-center gap-x-3 flex-shrink-0">
               <span className="hidden md:inline-block rounded-full bg-slate-50 border border-slate-200/60 px-3.5 py-1 text-[11px] font-bold tracking-wide text-slate-500 shadow-sm">
                 {"VSME COMPLIANT • <1,000 EMPLOYEES"}
               </span>
               <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 sm:px-6 py-2.5 sm:py-3 text-[13px] sm:text-[14px] font-bold text-white hover:bg-[#1e293b] shadow-md shadow-slate-900/10">{"Contact"}</a>
             </div>
+
           </div>
         </div>
       </header>
 
-      {/* LOWER DARK TICKER - Permanently visible across all desktop and mobile frames */}
-      <div className="w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 flex items-center select-none">
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
-        
-        <div className="flex whitespace-nowrap gap-x-12 animate-marquee-scroll text-slate-300 font-bold text-[13px] tracking-wide">
-          {[...LOCAL_TICKER, ...LOCAL_TICKER].map((text, idx) => (
-            <span key={idx} className="flex items-center gap-x-3">
-              {text}
-            </span>
-          ))}
+      {/* LOWER DARK TICKER - Fixed block layout tracking */}
+      <div className="force-visible-ticker w-full bg-[#0F172A] border-y border-slate-800/80 py-4 overflow-hidden relative z-30 select-none">
+        <div className="relative flex items-center w-full h-full">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" />
+          
+          <div className="flex whitespace-nowrap gap-x-12 animate-marquee-scroll text-slate-300 font-bold text-[13px] tracking-wide">
+            {[...LOCAL_TICKER, ...LOCAL_TICKER].map((text, idx) => (
+              <span key={idx} className="flex items-center gap-x-3">
+                {text}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* BODY CONTENT CONTAINER */}
+      {/* BODY MAIN CONTAINER AREA */}
       <main className="mx-auto max-w-6xl px-4 sm:px-6 pt-16 space-y-24">
         
-        {/* HERO SECTION / SOLUTIONS */}
+        {/* HERO SOLUTIONS SECTION */}
         <section id="solutions" className="space-y-6">
           <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-slate-900 leading-tight">
             {"AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP"}
@@ -140,7 +153,3 @@ export default function App() {
           </div>
           
           <div className="grid gap-4 max-w-4xl">
-            {LOCAL_FAQS.map((faq, index) => (
-              <details key={index} className="group border border-slate-200 rounded-2xl bg-slate-50/50 p-6 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-white open:shadow-md">
-                <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
-                  <h3 className="text-[16px] font-bold text-slate-900 pr-4">
