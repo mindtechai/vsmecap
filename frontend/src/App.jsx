@@ -44,7 +44,7 @@ export default function App() {
           display: block !important;
           visibility: visible !important;
           opacity: 1 !important;
-          }
+        }
         .custom-no-scrollbar::-webkit-scrollbar { display: none !important; }
         .custom-no-scrollbar { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         
