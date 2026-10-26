@@ -1,3 +1,4 @@
+import React from "react";
 import { Section } from "@/components/Section";
 import { MOAT_CARDS, PRODUCT_STEPS, WHY_NOW_SECTIONS, MARKET_DYNAMICS } from "@/data/content";
 
@@ -55,26 +56,47 @@ export const PublicSector = () => (
 );
 
 export const Product = () => (
-  <Section
-    id="product"
-    label="PRODUCT"
-    title="The verification chain"
-    intro="Three structured operational steps from raw source records to an official audit-ready compliance pack."
-  >
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-      {PRODUCT_STEPS.map((s) => (
-        <div
-          key={s.step}
-          data-testid={`product-step-${s.step}`}
-          className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm"
-        >
-          <p className="font-mono text-[26px] font-bold text-[#00C08B]">{s.step}</p>
-          <h3 className="mt-3 text-[15px] font-bold text-[#26292e]">{s.title}</h3>
-          <p className="mt-2 text-[13.5px] leading-relaxed text-[#4b5058]">{s.desc}</p>
-        </div>
-      ))}
-    </div>
-  </Section>
+  <>
+    {/* 🤖 AEO STRUCTURAL HOWTO SCHEMA DATA FOR AI DISCOVERY CRAWLERS */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "VSMECAP Product Workflow Architecture",
+          "description": "Three structured operational steps from raw source records to an official audit-ready compliance pack.",
+          "step": PRODUCT_STEPS.map((s, index) => ({
+            "@type": "HowToStep",
+            "position": index + 1,
+            "name": s.title,
+            "text": s.desc
+          }))
+        })
+      }}
+    />
+
+    <Section
+      id="product"
+      label="PRODUCT"
+      title="The verification chain"
+      intro="Three structured operational steps from raw source records to an official audit-ready compliance pack."
+    >
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {PRODUCT_STEPS.map((s) => (
+          <div
+            key={s.step}
+            data-testid={`product-step-${s.step}`}
+            className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm"
+          >
+            <p className="font-mono text-[26px] font-bold text-[#00C08B]">{s.step}</p>
+            <h3 className="mt-3 text-[15px] font-bold text-[#26292e]">{s.title}</h3>
+            <p className="mt-2 text-[13.5px] leading-relaxed text-[#4b5058]">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  </>
 );
 
 export const WhyNow = () => (
@@ -95,22 +117,43 @@ export const WhyNow = () => (
 );
 
 export const Moat = () => (
-  <Section id="moat" label="MOAT" title="Four compounding advantages">
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      <Card testid="moat-card-1" kicker="Architecture" title="XBRL Taxonomy Lock">
-        Direct structural schema integration with official efrg:vsm_e tags creates high data switching friction, keeping clients locked into our ecosystem.
-      </Card>
-      <Card testid="moat-card-2" kicker="GROWTH LOOP" title="Zero Cost Scale: CAC = 0">
-        Our permanently free mid-market tier forces large listed corporations to onboard their entire supplier networks onto VSMECAP automatically, triggering explosive volume loops at zero customer acquisition cost.
-      </Card>
-      <Card testid="moat-card-3" kicker="🛡️ PROTECTION" title="Value Chain Cap Armor">
-        Tailored explicitly to enforce Regulation (EU) 2026/1560, giving undertakings under 1,000 employees the immediate legal right to reject bloated enterprise questionnaires.
-      </Card>
-      <Card testid="moat-card-4" kicker="Telemetry" title="Bank API Moat">
-        Continuous automated data links to utility feeds convert annual compliance updates into an ongoing data utility stream for commercial underwriting networks.
-      </Card>
-    </div>
-  </Section>
+  <>
+    {/* 🤖 AEO STRUCTURAL ITEMLIST SCHEMA DATA FOR AI SEARCH DISCOVERY */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "VSMECAP Four Compounding Market Moat Advantages",
+          "description": "Defensive compliance and market acquisition properties locking supply chain networks to our ecosystem.",
+          "itemListElement": MOAT_CARDS.map((card, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": card.title,
+            "description": card.desc
+          }))
+        })
+      }}
+    />
+
+    <Section id="moat" label="MOAT" title="Four compounding advantages">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <Card testid="moat-card-1" kicker="Architecture" title="XBRL Taxonomy Lock">
+          Direct structural schema integration with official efrg:vsm_e tags creates high data switching friction, keeping clients locked into our ecosystem.
+        </Card>
+        <Card testid="moat-card-2" kicker="GROWTH LOOP" title="Zero Cost Scale: CAC = 0">
+          Our permanently free mid-market tier forces large listed corporations to onboard their entire supplier networks onto VSMECAP automatically, triggering explosive volume loops at zero customer acquisition cost.
+        </Card>
+        <Card testid="moat-card-3" kicker="🛡️ PROTECTION" title="Value Chain Cap Armor">
+          Tailored explicitly to enforce Regulation (EU) 2026/1560, giving undertakings under 1,000 employees the immediate legal right to reject bloated enterprise questionnaires.
+        </Card>
+        <Card testid="moat-card-4" kicker="Telemetry" title="Bank API Moat">
+          Continuous automated data links to utility feeds convert annual compliance updates into an ongoing data utility stream for commercial underwriting networks.
+        </Card>
+      </div>
+    </Section>
+  </>
 );
 
 export const Market = () => (
