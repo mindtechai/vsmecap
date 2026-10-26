@@ -29,26 +29,19 @@ export const Faqs = () => {
         
         <div className="mx-auto max-w-[820px] space-y-4">
           {LOCAL_FAQS.map((f, i) => (
-            <details 
+            <div 
               key={i} 
-              className="group rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all duration-200 open:shadow-md [&_summary::-webkit-details-marker]:hidden"
+              className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#0D9488]/30"
             >
-              <summary className="flex items-center justify-between cursor-pointer focus:outline-none select-none">
-                <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2 pr-4">
-                  <span className="text-[#0D9488] font-mono font-bold text-[16px]">{(i + 1).toString().padStart(2, "0")}.</span>
-                  <span>{f.q}</span>
-                </h3>
-                <span className="flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform duration-200">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </summary>
-              <div className="mt-4 border-t border-gray-100/60 pt-4 text-[14.5px] leading-relaxed text-[#4b5058] pl-7 relative">
-                <span className="absolute left-0 top-4 text-[#0D9488] font-mono text-[13px] font-black">A:</span>
+              <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
+                <span className="text-[#0D9488] font-mono font-bold text-[16px]">Q:</span>
+                <span>{f.q}</span>
+              </h3>
+              <div className="mt-3 border-t border-gray-100/60 pt-3 text-[14px] leading-relaxed text-[#4b5058] pl-5 relative">
+                <span className="absolute left-0 top-3 text-gray-400 font-mono text-[12px] font-bold">A:</span>
                 <p>{f.a}</p>
               </div>
-            </details>
+            </div>
           ))}
         </div>
       </div>
