@@ -11,7 +11,8 @@ export const EnterprisePortal = () => {
   const [activePartner, setActivePartner] = useState(SYSTEM_PARTNERS[0]);
 
   return (
-    <section id="public-sector" className="py-16 bg-[#0F172A] text-white border-t border-slate-900 scroll-mt-[130px]">
+    /* ⚡ UPDATED SECTION ID TO SAFE ROUTE MATCHING THE NAVIGATION ANCHOR LINK */
+    <section id="scope-evidence" className="py-16 bg-[#0F172A] text-white border-t border-slate-900 scroll-mt-[130px]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         
         {/* Core Layout Split Head */}
@@ -19,10 +20,11 @@ export const EnterprisePortal = () => {
           <span className="bg-orange-500/10 text-[#EA580C] text-[10px] font-mono font-bold tracking-widest uppercase px-2.5 py-1 rounded border border-orange-500/20">
             ENTERPRISE &amp; PUBLIC SECTOR CONTROL LAYER
           </span>
+          {/* ⚡ BRANDED AS EVIDENCE & VERIFICATION TO ELIMINATE AUDIT INTEGRITY LIABILITY */}
           <h2 className="mt-3 text-3xl font-black tracking-tight text-white">
-            Value Chain Scope Assurance Portal
+            Value Chain Evidence &amp; Verification Portal
           </h2>
-          <p className="mt-4 text-base text-slate-400 font-medium leading-relaxed">
+          <p className="mt-4 text-base text-slate-400 font-medium leading-relaxed font-sans">
             Consolidate your entire subcontractor network into a unified, machine-readable repository. Monitor verified VSME compliance packets and trace raw evidence data streams without manual data chasing.
           </p>
         </div>
@@ -115,9 +117,10 @@ export const EnterprisePortal = () => {
                 </div>
               </div>
 
-              <div className="bg-slate-950 border border-slate-800/60 rounded-lg p-3.5 text-slate-400 text-[11px] leading-relaxed">
+              {/* ⚡ CHANGED THE RULES HEADER TO OBJECTIVE METER DATA FLOW VERIFICATION */}
+              <div className="bg-slate-950 border border-slate-800/60 rounded-lg p-3.5 text-slate-400 text-[11px] leading-relaxed font-sans font-medium">
                 <strong className="block text-slate-300 font-bold uppercase text-[9px] tracking-wider mb-1 font-mono">
-                  Assurance Infrastructure Rules
+                  Verification Infrastructure Rules
                 </strong>
                 {activePartner.status === "VERIFIED" ? (
                   "✓ This supplier profile matches all historical variance rules. Telemetry variables link straight to utility network settlement logs, removing the need for manual auditing tasks."
