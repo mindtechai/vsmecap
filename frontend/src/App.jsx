@@ -12,7 +12,8 @@ import { Modules } from "@/components/Modules"; // 🚀 LINE 11: ADDED CORRECT S
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-20 scroll-smooth">
+    /* ⚡ ADDED scroll-pt-[116px] TO RESOLVE BOTH DESKTOP AND MOBILE HEADER COLLISION OFFSETS ON ANCHOR NAVIGATION */
+    <div className="min-h-screen bg-white font-sans antialiased text-[#26292e] relative pb-20 scroll-smooth scroll-pt-[116px]">
       <Header />
       <Ticker />
       <main>
