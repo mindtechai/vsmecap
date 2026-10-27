@@ -10,7 +10,6 @@ const accent = {
 export const Modules = () => {
   const [showXbrl, setShowXbrl] = useState(false);
 
-  // Structural Template Assembler avoiding complex nested array declarations
   const getXbrlSchemaString = () => {
     const factsPayload = {};
     
@@ -30,7 +29,7 @@ export const Modules = () => {
         generatedBy: "VSMECAP Enterprise Control Layer v1.0"
       },
       context: {
-        entity: { scheme: "https://register.companieshouse.gov.uk", id: "VSME-ENT-99218" },
+        entity: { scheme: "https://companieshouse.gov.uk", id: "VSME-ENT-99218" },
         period: { instant: "2026-12-31T23:59:59Z" },
         regulatoryShield: "Directive (EU) 2026/470 Protected Undertaking (<1,000 FTE)"
       },
@@ -39,12 +38,15 @@ export const Modules = () => {
   };
 
   return (
-    /* ⚡ INCREMENTED OPTIMIZED OFFSET MARGIN TO 160PX TO CLEAR BOTH STICKY HEADER BOUNDS ACCURATELY */
-    <div className="scroll-mt-[160px]">
+    <div className="relative">
       
+      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING LAYERS FOR BOTH ANNEX ANCHORS */}
+      <div id="basic" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
+      <div id="comprehensive" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
+
       {/* 🌐 BASIC MODULES SECTION */}
       <Section
-        id="basic"
+        id="basic-display"
         label="ANNEX I • BASIC DISCLOSURES"
         labelColor="text-[#1E40AF]"
         title="B1–B11 Structural Modules"
@@ -67,7 +69,7 @@ export const Modules = () => {
 
       {/* 📈 COMPREHENSIVE MODULES SECTION */}
       <Section
-        id="comprehensive"
+        id="comprehensive-display"
         label="ANNEX II • COMPREHENSIVE DISCLOSURES"
         labelColor="text-[#0F172A]"
         title="C1–C9 Extended Modules"
@@ -120,7 +122,7 @@ export const Modules = () => {
                 {getXbrlSchemaString()}
               </pre>
               <p className="text-[10px] text-slate-500 mt-3 leading-relaxed">
-                * This machine-readable JSON structure bypasses custom procurement questionnaire intake forms entirely. Large corporate buyers upload this payload directly into enterprise ERP ledgers.
+                * This machine-readable JSON structure bypasses custom procurement questionnaire intake forms entirely. Large corporate buyer entities and public tender procurement workflows absorb this standardized JSON payload directly into compliance databases, avoiding unverified manual input entry sheets.
               </p>
             </div>
           )}
