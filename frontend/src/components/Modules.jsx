@@ -30,7 +30,7 @@ export const Modules = () => {
         generatedBy: "VSMECAP Enterprise Control Layer v1.0"
       },
       context: {
-        entity: { scheme: "https://companieshouse.gov.uk", id: "VSME-ENT-99218" },
+        entity: { scheme: "https://register.companieshouse.gov.uk", id: "VSME-ENT-99218" },
         period: { instant: "2026-12-31T23:59:59Z" },
         regulatoryShield: "Directive (EU) 2026/470 Protected Undertaking (<1,000 FTE)"
       },
@@ -39,7 +39,8 @@ export const Modules = () => {
   };
 
   return (
-    <div className="scroll-mt-[130px]">
+    /* ⚡ INCREMENTED OPTIMIZED OFFSET MARGIN TO 160PX TO CLEAR BOTH STICKY HEADER BOUNDS ACCURATELY */
+    <div className="scroll-mt-[160px]">
       
       {/* 🌐 BASIC MODULES SECTION */}
       <Section
@@ -119,7 +120,7 @@ export const Modules = () => {
                 {getXbrlSchemaString()}
               </pre>
               <p className="text-[10px] text-slate-500 mt-3 leading-relaxed">
-                * Large corporate buyer entities and public tender procurement workflows absorb this standardized JSON payload directly into compliance databases, avoiding unverified manual input entry sheets.
+                * This machine-readable JSON structure bypasses custom procurement questionnaire intake forms entirely. Large corporate buyers upload this payload directly into enterprise ERP ledgers.
               </p>
             </div>
           )}
