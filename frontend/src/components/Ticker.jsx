@@ -16,7 +16,7 @@ export const Ticker = () => {
           0% { transform: translate3d(0, 0, 0); }
           100% { transform: translate3d(-33.3333%, 0, 0); }
         }
-        /* ⚡ Enforced flex layout mode explicitly inside the global animation utility block */
+        /* Enforced flex layout mode explicitly inside the global animation utility block */
         .vsme-ticker-strip { 
           animation: vsmeTickerCrawl 48s linear infinite !important; 
           will-change: transform; 
@@ -34,7 +34,7 @@ export const Ticker = () => {
       <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#0F172A] to-transparent z-10 pointer-events-none" aria-hidden="true" />
       <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#0F172A] to-transparent z-10 pointer-events-none" aria-hidden="true" />
 
-      {/* Crawling strip: ⚡ Added explicit flex-row and shrink-0 to prevent layout collapse on narrow viewports */}
+      {/* Crawling strip: Added explicit flex-row and shrink-0 to prevent layout collapse on narrow viewports */}
       <div className="vsme-ticker-strip flex flex-row flex-shrink-0 whitespace-nowrap items-center gap-x-12 sm:gap-x-20 pr-12 sm:pr-20">
         {copies.map((copy) =>
           TICKER_ITEMS.map((item, idx) => (
