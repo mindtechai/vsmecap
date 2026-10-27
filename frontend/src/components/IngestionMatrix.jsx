@@ -104,7 +104,8 @@ export const IngestionMatrix = () => {
   };
 
   return (
-    <section id="ingestion-matrix" className="py-16 bg-slate-50 border-t border-[#e4e7ea] scroll-mt-[130px]">
+    /* ⚡ INCREMENTED OPTIMIZED OFFSET MARGIN TO 160PX TO CLEAR BOTH STICKY HEADER BOUNDS ACCURATELY */
+    <section id="ingestion-matrix" className="py-16 bg-slate-50 border-t border-[#e4e7ea] scroll-mt-[160px]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
