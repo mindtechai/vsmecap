@@ -11,8 +11,8 @@ export const EnterprisePortal = () => {
   const [activePartner, setActivePartner] = useState(SYSTEM_PARTNERS[0]);
 
   return (
-    /* ⚡ UPDATED SECTION ID TO SAFE ROUTE MATCHING THE NAVIGATION ANCHOR LINK */
-    <section id="scope-evidence" className="py-16 bg-[#0F172A] text-white border-t border-slate-900 scroll-mt-[130px]">
+    /* ⚡ INCREMENTED OPTIMIZED OFFSET MARGIN TO 160PX TO CLEAR BOTH STICKY HEADER BOUNDS ACCURATELY */
+    <section id="scope-evidence" className="py-16 bg-[#0F172A] text-white border-t border-slate-900 scroll-mt-[160px]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         
         {/* Core Layout Split Head */}
