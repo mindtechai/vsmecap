@@ -1,8 +1,8 @@
 import { TICKER_ITEMS } from "@/data/content";
 
 export const Ticker = () => {
-  // Three copies so the loop is seamless. Only the first copy is read by screen readers.
-  const copies =;
+  // Generates the tracking array dynamically to bypass stream formatting issues
+  const copies = Array.from({ length: 3 }, (_, index) => index);
 
   return (
     <div
