@@ -23,7 +23,7 @@ export const Header = () => {
   return (
     <div className="w-full sticky top-0 z-50">
       
-      {/* 🤖 AEO STRUCTURAL NAVIGATION INFRASTRUCTURE */}
+      {/* 🤖 AEO STRUCTURAL NAVIGATION INFRASTRUCTURE - FIXED TEMPLATE LITERAL SYNTAX */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -36,7 +36,7 @@ export const Header = () => {
               "@type": "SiteNavigationElement",
               "position": index + 1,
               "name": item.label,
-              "url": `https://vsmecap.com{item.href}`
+              "url": `https://vsmecap.com{item.href.replace('#', '')}`
             }))
           })
         }}
@@ -47,9 +47,12 @@ export const Header = () => {
         @media (min-width: 1024px) { html { scroll-padding-top: 130px; } }
       `}} />
 
-      {/* STATIC CENTERED ORANGE RIBBON BANNER */}
+      {/* GLOBAL FLOATING BANNER — OPTIMIZED FOR PREMIUM CRISP TYPOGRAPHY */}
       <div className="w-full bg-[#EA580C] py-2.5 flex items-center justify-center text-center border-b border-orange-700/30 select-none px-4">
-        <span className="text-white text-[11px] font-black tracking-widest uppercase antialiased">
+        <span 
+          className="text-white text-[13px] font-semibold tracking-[0.18em] uppercase antialiased subpixel-antialiased text-center"
+          style={{ textRendering: "geometricPrecision", WebkitFontSmoothing: "antialiased" }}
+        >
           {"FREE TIER AVAILABLE FOR ELIGIBLE SMEs (UP TO 1,000 EMPLOYEES): STRUCTURED VSME REPORTING"}
         </span>
       </div>
@@ -66,7 +69,7 @@ export const Header = () => {
             <nav className="hidden lg:flex items-center gap-x-8">
               {navMenu.map((m, idx) => (
                 <div key={idx} className="relative py-2" onMouseEnter={() => setActiveDropdown(idx)} onMouseLeave={() => setActiveDropdown(null)}>
-                  <button type="button" className="flex items-center gap-1 text-[14.5px] font-bold text-slate-700 hover:text-[#00996f] focus:outline-none">{m.label}</button>
+                  <button type="button" className="flex items-center gap-1 text-[14.5px] font-bold text-slate-700 hover:text-[#EA580C] focus:outline-none">{m.label}</button>
                   {activeDropdown === idx && (
                     <div className="absolute left-1/2 -translate-x-1/2 top-full w-56 rounded-xl border border-slate-100 bg-white p-2 shadow-xl z-50">
                       {m.items.map((item, i) => (
