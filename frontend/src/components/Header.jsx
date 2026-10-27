@@ -13,7 +13,8 @@ export const Header = () => {
 
   const navMenu = [
     { label: "Frameworks", items: [{ label: "B1-B11 Modules", href: "#basic" }, { label: "C1-C9 Modules", href: "#comprehensive" }] },
-    { label: "Solutions", items: [{ label: "UK & EU Companies", href: "#uk-companies" }, { label: "Public Sector", href: "#public-sector" }, { label: "Partners", href: "#partners" }] },
+    /* ⚡ UPDATED LABEL AND ANCHOR ROUTE TARGET TO OBJECTIVE DISCLOSURE VERIFICATION INFRASTRUCTURE */
+    { label: "Solutions", items: [{ label: "UK & EU Companies", href: "#uk-companies" }, { label: "Value Chain Evidence Portal", href: "#scope-evidence" }, { label: "Partners", href: "#partners" }] },
     { label: "Platform", items: [{ label: "Product Architecture", href: "#product" }, { label: "Why Now", href: "#why-now" }, { label: "Market Position", href: "#moat" }, { label: "Market Blueprint", href: "#market" }, { label: "Legal Basis Foundations", href: "#legal-basis" }] },
     { label: "Company", items: [{ label: "About Us", href: "#about" }, { label: "Frequently Asked Questions", href: "#faqs" }, { label: "Risks & Limitations", href: "#risk" }, { label: "Privacy Policy", href: "#privacy" }] }
   ];
@@ -23,7 +24,7 @@ export const Header = () => {
   return (
     <div className="w-full sticky top-0 z-50">
       
-      {/* 🤖 AEO STRUCTURAL NAVIGATION INFRASTRUCTURE - FIXED TEMPLATE LITERAL SYNTAX */}
+      {/* 🤖 AEO STRUCTURAL NAVIGATION INFRASTRUCTURE - RESTORED FOR ALL VIEWPORTS */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -36,7 +37,7 @@ export const Header = () => {
               "@type": "SiteNavigationElement",
               "position": index + 1,
               "name": item.label,
-              "url": `https://vsmecap.com{item.href.replace('#', '')}`
+              "url": "https://vsmecap.com" + item.href.replace('#', '')
             }))
           })
         }}
