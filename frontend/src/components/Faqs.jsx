@@ -17,9 +17,12 @@ const LOCAL_FAQS = [
 
 export const Faqs = () => {
   return (
-    /* ⚡ INCREMENTED OPTIMIZED OFFSET MARGIN TO 160PX TO CLEAR BOTH STICKY HEADER BOUNDS ACCURATELY */
-    <section id="faqs" className="py-16 bg-white border-t border-[#e4e7ea] scroll-mt-[160px]">
+    /* ⚡ Outer structural wrapper container set to relative position bounds */
+    <div className="relative">
       
+      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING OFFSET LAYER */}
+      <div id="faqs" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
+
       {/* 🤖 AEO STRUCTURAL SCHEMA DATA (JSON-LD mapping for AI search discovery engines) */}
       <script
         type="application/ld+json"
@@ -39,33 +42,36 @@ export const Faqs = () => {
         }}
       />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-[11px] font-bold tracking-[0.12em] text-[#EA580C] uppercase">FAQS</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0F172A]">Frequently Asked Questions</h2>
-          <p className="mt-4 text-base text-slate-500 font-medium">
-            Comprehensive operational parameters, methodology disclosures, and strategic regulatory alignment guidelines.
-          </p>
-        </div>
-        
-        <div className="mx-auto max-w-[820px] space-y-4 font-sans">
-          {LOCAL_FAQS.map((f, i) => (
-            <div 
-              key={i} 
-              className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#EA580C]/30"
-            >
-              <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
-                <span className="text-[#EA580C] font-mono font-bold text-[16px]">Q:</span>
-                <span>{f.q}</span>
-              </h3>
-              <div className="mt-3 border-t border-gray-100/60 pt-3 text-[14px] leading-relaxed text-[#4b5058] pl-5 relative font-medium">
-                <span className="absolute left-0 top-3 text-gray-400 font-mono text-[12px] font-bold">A:</span>
-                <p>{f.a}</p>
+      {/* Main section contents */}
+      <section className="py-16 bg-white border-t border-[#e4e7ea]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-[11px] font-bold tracking-[0.12em] text-[#EA580C] uppercase">FAQS</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0F172A]">Frequently Asked Questions</h2>
+            <p className="mt-4 text-base text-slate-500 font-medium">
+              Comprehensive operational parameters, methodology disclosures, and strategic regulatory alignment guidelines.
+            </p>
+          </div>
+          
+          <div className="mx-auto max-w-[820px] space-y-4 font-sans">
+            {LOCAL_FAQS.map((f, i) => (
+              <div 
+                key={i} 
+                className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#EA580C]/30"
+              >
+                <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
+                  <span className="text-[#EA580C] font-mono font-bold text-[16px]">Q:</span>
+                  <span>{f.q}</span>
+                </h3>
+                <div className="mt-3 border-t border-gray-100/60 pt-3 text-[14px] leading-relaxed text-[#4b5058] pl-5 relative font-medium">
+                  <span className="absolute left-0 top-3 text-gray-400 font-mono text-[12px] font-bold">A:</span>
+                  <p>{f.a}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
