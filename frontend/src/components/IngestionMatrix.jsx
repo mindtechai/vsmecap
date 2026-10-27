@@ -43,7 +43,6 @@ export const IngestionMatrix = () => {
     );
   };
 
-  // Render helper to prevent empty layout filtering errors
   const renderInspectorContent = () => {
     if (!selectedLog) {
       return (
@@ -104,85 +103,92 @@ export const IngestionMatrix = () => {
   };
 
   return (
-    /* ⚡ INCREMENTED OPTIMIZED OFFSET MARGIN TO 160PX TO CLEAR BOTH STICKY HEADER BOUNDS ACCURATELY */
-    <section id="ingestion-matrix" className="py-16 bg-slate-50 border-t border-[#e4e7ea] scroll-mt-[160px]">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-[11px] font-black tracking-[0.12em] text-[#EA580C] uppercase">
-            Layers 2 &amp; 3 Verification Architecture
-          </p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0F172A]">
-            Enterprise Control Layer Status
-          </h2>
-          <p className="mt-4 text-base text-slate-500 font-medium leading-relaxed">
-            Real-time tracking of unstructured evidence streams as they convert into machine-readable efrg:vsm_e schemas. Click any active pipeline node to inspect the auditor audit trail.
-          </p>
-        </div>
+    /* ⚡ Outer structural wrapper container set to relative position bounds */
+    <div className="relative">
+      
+      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING OFFSET LAYER */}
+      <div id="ingestion-matrix" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+      {/* Main section contents */}
+      <section className="py-16 bg-slate-50 border-t border-[#e4e7ea]">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           
-          {/* Live Ingestion Streams */}
-          <div className="lg:col-span-8 rounded-xl border border-[#e4e7ea] bg-[#0F172A] p-6 shadow-xl text-slate-200 font-mono text-[13px]">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 text-[11px] uppercase tracking-wider text-slate-400 font-bold">
-              <div>Data Pipeline Stream</div>
-              <div className="flex gap-x-12">
-                <span className="w-24 text-center">Status</span>
-                <span className="w-36 text-right">Cryptographic Hash</span>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-[11px] font-black tracking-[0.12em] text-[#EA580C] uppercase">
+              Layers 2 &amp; 3 Verification Architecture
+            </p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0F172A]">
+              Enterprise Control Layer Status
+            </h2>
+            <p className="mt-4 text-base text-slate-500 font-medium leading-relaxed">
+              Real-time tracking of unstructured evidence streams as they convert into machine-readable efrg:vsm_e schemas. Click any active pipeline node to inspect the auditor audit trail.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+            
+            {/* Live Ingestion Streams */}
+            <div className="lg:col-span-8 rounded-xl border border-[#e4e7ea] bg-[#0F172A] p-6 shadow-xl text-slate-200 font-mono text-[13px]">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 text-[11px] uppercase tracking-wider text-slate-400 font-bold">
+                <div>Data Pipeline Stream</div>
+                <div className="flex gap-x-12">
+                  <span className="w-24 text-center">Status</span>
+                  <span className="w-36 text-right">Cryptographic Hash</span>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {logs.map((log) => {
+                  const isSelected = selectedLog?.id === log.id;
+                  let statusClasses = "bg-slate-800 text-slate-400 border border-slate-700/50";
+                  
+                  if (log.status === "VERIFIED") statusClasses = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+                  else if (log.status === "PARSING") statusClasses = "bg-amber-500/10 text-amber-400 border border-amber-500/20 animate-pulse";
+                  else if (log.status === "SPIKE_WARN") statusClasses = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                  else if (log.status === "CRITICAL_GAP") statusClasses = "bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse";
+
+                  let dotClasses = "bg-[#00C08B] animate-pulse";
+                  if (log.status === "CRITICAL_GAP") dotClasses = "bg-rose-500";
+                  else if (log.status === "SPIKE_WARN") dotClasses = "bg-amber-400";
+
+                  return (
+                    <div 
+                      key={log.id} 
+                      onClick={() => setSelectedLog(log)}
+                      className={`flex flex-col sm:flex-row sm:items-center justify-between py-2.5 px-2 border-b border-slate-900/60 last:border-0 gap-y-1 cursor-pointer transition-all rounded-md ${
+                        isSelected ? "bg-slate-800/60 border-l-2 border-[#EA580C]" : "hover:bg-slate-800/30"
+                      }`}
+                    >
+                      <div className="flex items-center gap-x-3 overflow-hidden">
+                        <span className={`h-2 w-2 rounded-full shrink-0 ${dotClasses}`} />
+                        <span className="text-slate-400 shrink-0">[{log.type}]</span>
+                        <span className="text-slate-100 font-bold truncate">{log.source}</span>
+                      </div>
+                      <div className="flex items-center justify-between sm:justify-end gap-x-12">
+                        <span className={`px-2 py-0.5 rounded text-[11px] font-bold text-center w-24 tracking-wide shrink-0 ${statusClasses}`}>
+                          {log.status.replace("_", " ")}
+                        </span>
+                        <span className="text-slate-400 text-right w-36 text-[12px] font-mono truncate">{log.hash}</span>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
-            <div className="space-y-3">
-              {logs.map((log) => {
-                const isSelected = selectedLog?.id === log.id;
-                let statusClasses = "bg-slate-800 text-slate-400 border border-slate-700/50";
-                
-                if (log.status === "VERIFIED") statusClasses = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
-                else if (log.status === "PARSING") statusClasses = "bg-amber-500/10 text-amber-400 border border-amber-500/20 animate-pulse";
-                else if (log.status === "SPIKE_WARN") statusClasses = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
-                else if (log.status === "CRITICAL_GAP") statusClasses = "bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse";
-
-                let dotClasses = "bg-[#00C08B] animate-pulse";
-                if (log.status === "CRITICAL_GAP") dotClasses = "bg-rose-500";
-                else if (log.status === "SPIKE_WARN") dotClasses = "bg-amber-400";
-
-                return (
-                  <div 
-                    key={log.id} 
-                    onClick={() => setSelectedLog(log)}
-                    className={`flex flex-col sm:flex-row sm:items-center justify-between py-2.5 px-2 border-b border-slate-900/60 last:border-0 gap-y-1 cursor-pointer transition-all rounded-md ${
-                      isSelected ? "bg-slate-800/60 border-l-2 border-[#EA580C]" : "hover:bg-slate-800/30"
-                    }`}
-                  >
-                    <div className="flex items-center gap-x-3 overflow-hidden">
-                      <span className={`h-2 w-2 rounded-full shrink-0 ${dotClasses}`} />
-                      <span className="text-slate-400 shrink-0">[{log.type}]</span>
-                      <span className="text-slate-100 font-bold truncate">{log.source}</span>
-                    </div>
-                    <div className="flex items-center justify-between sm:justify-end gap-x-12">
-                      <span className={`px-2 py-0.5 rounded text-[11px] font-bold text-center w-24 tracking-wide shrink-0 ${statusClasses}`}>
-                        {log.status.replace("_", " ")}
-                      </span>
-                      <span className="text-slate-400 text-right w-36 text-[12px] font-mono truncate">{log.hash}</span>
-                    </div>
-                  </div>
-                );
-              })}
+            {/* Interactive Auditor Dashboard Inspector Panel */}
+            <div className="lg:col-span-4 bg-white border border-[#e4e7ea] rounded-xl p-5 shadow-lg min-h-[340px] flex flex-col justify-between">
+              {renderInspectorContent()}
+              <div className="border-t border-slate-100 pt-3 mt-4">
+                <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block text-center">
+                  Audit-Ready Control Layer
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Interactive Auditor Dashboard Inspector Panel */}
-          <div className="lg:col-span-4 bg-white border border-[#e4e7ea] rounded-xl p-5 shadow-lg min-h-[340px] flex flex-col justify-between">
-            {renderInspectorContent()}
-            <div className="border-t border-slate-100 pt-3 mt-4">
-              <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block text-center">
-                Audit-Ready Control Layer
-              </span>
-            </div>
           </div>
-
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    </div>
+);
 };
