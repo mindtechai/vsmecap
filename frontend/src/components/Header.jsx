@@ -82,7 +82,14 @@ export const Header = () => {
               ))}
             </nav>
 
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-3">
+              {/* LIVE ACCESS PORTAL ROUTING CTA */}
+              <a 
+                href="#authentication-portal" 
+                className="hidden sm:inline-flex rounded-xl bg-gradient-to-r from-[#EA580C] to-orange-600 px-4 py-2.5 text-[13px] font-bold text-white shadow-sm hover:from-orange-600 hover:to-orange-700 transition-all"
+              >
+                {"Access Portal"}
+              </a>
               <a href={CONTACT_MAILTO} className="rounded-xl bg-[#0F172A] px-4 py-2.5 text-[13px] font-bold text-white hover:bg-[#1e293b]">{"Contact"}</a>
               <button type="button" onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -94,14 +101,26 @@ export const Header = () => {
 
         {menuOpen && (
           <div className="lg:hidden border-t border-slate-200 bg-white shadow-2xl absolute left-0 right-0 z-50 p-6 max-h-[80vh] overflow-y-auto">
-            <div className="space-y-6">{navMenu.map((m, idx) => (
-              <div key={idx} className="space-y-2">
-                <p className="text-[11px] font-extrabold text-[#0D9488] uppercase">{m.label}</p>
-                <div className="grid grid-cols-1 gap-2">{m.items.map((item, i) => (
-                  <a key={i} href={item.href} onClick={() => setMenuOpen(false)} className="block py-1.5 text-[14px] font-bold text-slate-700">{item.label}</a>
-                ))}</div>
+            <div className="space-y-6">
+              {/* MOBILE LIVE PORTAL REDIRECT BUTTON */}
+              <div className="pb-2">
+                <a 
+                  href="#authentication-portal" 
+                  onClick={() => setMenuOpen(false)}
+                  className="block text-center rounded-xl bg-[#EA580C] py-3 text-[14px] font-bold text-white shadow-md"
+                >
+                  {"Access Security Gateway"}
+                </a>
               </div>
-            ))}</div>
+              {navMenu.map((m, idx) => (
+                <div key={idx} className="space-y-2">
+                  <p className="text-[11px] font-extrabold text-[#0D9488] uppercase">{m.label}</p>
+                  <div className="grid grid-cols-1 gap-2">{m.items.map((item, i) => (
+                    <a key={i} href={item.href} onClick={() => setMenuOpen(false)} className="block py-1.5 text-[14px] font-bold text-slate-700">{item.label}</a>
+                  ))}</div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </header>
