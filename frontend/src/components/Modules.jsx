@@ -9,6 +9,7 @@ const accent = {
 
 export const Modules = () => {
   const [showXbrl, setShowXbrl] = useState(false);
+  const [isAuthRestricted, setIsAuthRestricted] = useState(false);
 
   const getXbrlSchemaString = () => {
     const factsPayload = {};
@@ -35,6 +36,20 @@ export const Modules = () => {
       },
       facts: factsPayload
     }, null, 2);
+  };
+
+  const handleSchemaTrigger = () => {
+    // Check if user session state anchor exists, otherwise surface gateway constraint inline
+    const multiAuthTriggerNode = document.getElementById("authentication-portal");
+    if (multiAuthTriggerNode && !multiAuthTriggerNode.innerHTML.includes("Session Link Verified")) {
+      setIsAuthRestricted(true);
+      setShowXbrl(false);
+      // Auto smooth scroll view frame back into the gateway portal for login/registration
+      multiAuthTriggerNode.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setIsAuthRestricted(false);
+      setShowXbrl(!showXbrl);
+    }
   };
 
   return (
@@ -105,12 +120,26 @@ export const Modules = () => {
             </div>
             <button
               type="button"
-              onClick={() => setShowXbrl(!showXbrl)}
+              onClick={handleSchemaTrigger}
               className="shrink-0 px-4 py-2 bg-[#EA580C] hover:bg-orange-600 text-white rounded-lg text-xs font-bold font-mono tracking-wide transition-all shadow-sm uppercase"
             >
               {showXbrl ? "Hide Schema" : "Generate XBRL-JSON"}
             </button>
           </div>
+
+          {/* Inline Access Gate exception notification warning layer bounds */}
+          {isAuthRestricted && (
+            <div className="bg-rose-50 border-t border-rose-100 p-4 text-xs text-rose-800 font-medium font-sans flex items-center justify-between gap-4">
+              <span>⚠️ <strong>ACCESS RESTRICTED:</strong> Please connect via Google Enterprise or Sign in with Apple in the Verification Portal above to compile digital taxonomies.</span>
+              <button 
+                type="button" 
+                onClick={() => { setIsAuthRestricted(false); document.getElementById("authentication-portal")?.scrollIntoView({ behavior: "smooth" }); }}
+                className="text-[11px] font-bold uppercase underline hover:text-rose-950 shrink-0"
+              >
+                Authenticate Now
+              </button>
+            </div>
+          )}
 
           {showXbrl && (
             <div className="p-5 bg-[#0F172A] border-t border-slate-900 font-mono text-[12px] text-slate-300">
