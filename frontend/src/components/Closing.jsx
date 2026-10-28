@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Footer = () => (
   <footer className="bg-[#f8fafc] border-t border-[#e4e7ea] py-16">
@@ -15,7 +15,7 @@ export const Footer = () => (
 
       <div className="text-[12px] text-[#767c85] space-y-1">
         <p className="font-semibold text-slate-700">VSMECAP — Audit-Ready Sustainability Pipelines</p>
-        <p>© {new Date().getFullYear()} VSMECAP. All rights reserved. Registered framework mappings.</p>
+        <p>© 2026 VSMECAP. All rights reserved. Registered framework mappings.</p>
       </div>
     </div>
   </footer>
