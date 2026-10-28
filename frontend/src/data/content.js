@@ -21,8 +21,8 @@ export const NAV_LINKS = [
 
 export const TICKER_ITEMS = [
   "STRUCTURED FOR REVIEW — NOT AUDITED — NOT CERTIFIED OR ENDORSED BY EFRAG",
-  "FREE TIER AVAILABLE FOR ELIGIBLE NON-LISTED UNDERTAKINGS WITH UP TO 1,000 EMPLOYEES",
-  "REGISTRATION PROTOCOL ACTIVE — SECURE MULTI-PROVIDER HANDSHAKE GATEWAY"
+  "FREE TIER AVAILABLE FOR ELIGIBLE NON-LISTED UNDERTAKINGS",
+  "DIRECTIVE (EU) 2026/470 VALUE CHAIN CAP — SUPPORTS UNDERTAKINGS WITH UP TO 1,000 EMPLOYEES, WHERE IT APPLIES"
 ];
 
 export const BASIC_MODULES = [
@@ -52,16 +52,16 @@ export const COMPREHENSIVE_MODULES = [
 ];
 
 export const PRODUCT_STEPS = [
-  { step: "01", title: "Identity Handshake", desc: "Users complete validation routing via Google or Apple authentication protocols to initialize workspace profiles." },
-  { step: "02", title: "Administrative Approval", desc: "The workspace enters a provisional holding status until administrator authorization verifies corporate registration parameters." },
-  { step: "03", title: "Pipeline Operation & Collection", desc: "Upon approval, full ingestion utilities activate. Utility consumption metrics (MPAN/MPRN network parameters) compile securely into the central database ledger." }
+  { step: "01", title: "Ingest", desc: "Upload utility bills. Meter identifiers (MPAN/MPRN) and consumption figures are extracted for you to check and correct." },
+  { step: "02", title: "Integrity checks", desc: "Source files are listed alongside every figure. SHA-256 integrity hashing is part of the platform design and is in development." },
+  { step: "03", title: "Output pack", desc: "Compile a reporting pack. JSON, CSV and PDF exports are available. Inline XBRL export is in development." }
 ];
 
 export const MOAT_CARDS = [
   { title: "XBRL Taxonomy Alignment", desc: "Inline XBRL export aligned to EFRAG’s digital VSME taxonomy is in development, so that reports can be machine-readable." },
-  { title: "Network Ingestion Infrastructure", desc: "A cloud-hosted multi-tenant pipeline collects verified subcontractor data directly after authorization filters resolve." },
+  { title: "Network Adoption", desc: "A free tier for eligible businesses lets customers and suppliers adopt the same format, so data can move along a supply chain." },
   { title: "Value Chain Cap Support", desc: "Built around Directive (EU) 2026/470, helping eligible smaller companies respond to data requests within the voluntary standard where the cap applies." },
-  { title: "Centralized Utility Processing", desc: "Following administrative clearance, automated secure feeds extract structural utility parameters to construct audit trails." }
+  { title: "Utility Data Links", desc: "Automated links to utility feeds are planned. Today, data comes from uploaded bills." }
 ];
 
 export const WHY_NOW_SECTIONS = [
@@ -71,7 +71,7 @@ export const WHY_NOW_SECTIONS = [
 ];
 
 export const MARKET_DYNAMICS = [
-  { title: "The Non-Listed Market Gap", desc: "Most European and UK undertakings fall outside mandatory CSRD reporting, and many need a centralized way to answer customer and lender requests." },
+  { title: "The Non-Listed Market Gap", desc: "Most European and UK undertakings fall outside mandatory CSRD reporting, and many need a low-cost way to answer customer and lender requests." },
   { title: "Growing Stakeholder Interest", desc: "Buyers, banks and SMEs are looking for a standard format for sustainability data that does not depend on bespoke consultancy work." }
 ];
 
@@ -96,3 +96,4 @@ export const FAQS = [
   { q: "Does using VSMECAP make my business compliant with the law?", a: "No. VSMECAP helps you prepare a structured voluntary report. It does not certify compliance with any UK or EU law." },
   { q: "What is the Value Chain Cap?", a: "Under Directive (EU) 2026/470, companies in a reporting company’s value chain with up to 1,000 employees may decline information requests that go beyond the voluntary standard. Member States have until 19 March 2027 to bring the rules into national law." },
   { q: "Am I a protected undertaking?", a: "It depends on your size, who is asking and which country’s rules apply. The cap is EU law, so a UK company is not automatically covered. Take professional advice if you are unsure." },
+  { q: "Is the EU Recommendation binding?", a: "No. Commission Recommendation (EU) 2025/1710 encourages large companies and financial institutions to base their requests on the VSME standard as far as possible, but it is not binding." },
