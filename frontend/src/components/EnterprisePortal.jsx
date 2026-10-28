@@ -8,30 +8,26 @@ const SYSTEM_PARTNERS = [
 ];
 
 export const EnterprisePortal = () => {
-  const [activePartner, setActivePartner] = useState(SYSTEM_PARTNERS[0]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authProvider, setAuthProvider] = useState("");
-  const [sessionUser, setSessionUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const currentPartner = SYSTEM_PARTNERS[selectedIndex] || SYSTEM_PARTNERS[0];
 
   const handleProviderAuth = (provider) => {
     setIsLoading(true);
     setTimeout(() => {
       setIsAuthenticated(true);
       setAuthProvider(provider);
-      setSessionUser({
-        email: provider === "Google" ? "procurement.director@enterprise.io" : "auditor.lead@://apple.com",
-        role: provider === "Google" ? "Supply Chain Master" : "Third-Party Auditor"
-      });
       setIsLoading(false);
-    }, 500);
+    }, 400);
   };
 
   const handleDisconnect = () => {
     setIsAuthenticated(false);
     setAuthProvider("");
-    setSessionUser(null);
-    setActivePartner(SYSTEM_PARTNERS[0]);
+    setSelectedIndex(0);
   };
 
   return (
@@ -76,7 +72,7 @@ export const EnterprisePortal = () => {
                   <button
                     type="button"
                     onClick={() => handleProviderAuth("Google")}
-                    className="w-full flex items-center justify-center gap-3 bg-white border border-slate-200 px-4 py-3 rounded-xl text-xs font-bold text-slate-800 shadow-sm hover:bg-slate-50 transition-all font-sans"
+                    className="w-full bg-white border border-slate-200 px-4 py-3 rounded-xl text-xs font-bold text-slate-800 shadow-sm hover:bg-slate-50 transition-all font-sans"
                   >
                     Continue with Google Enterprise
                   </button>
@@ -84,7 +80,7 @@ export const EnterprisePortal = () => {
                   <button
                     type="button"
                     onClick={() => handleProviderAuth("Apple")}
-                    className="w-full flex items-center justify-center gap-3 bg-slate-900 border border-slate-800 px-4 py-3 rounded-xl text-xs font-bold text-white shadow-sm hover:bg-slate-800 transition-all font-sans"
+                    className="w-full bg-slate-900 border border-slate-800 px-4 py-3 rounded-xl text-xs font-bold text-white shadow-sm hover:bg-slate-800 transition-all font-sans"
                   >
                     Continue with Sign in with Apple
                   </button>
@@ -94,6 +90,7 @@ export const EnterprisePortal = () => {
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               
+              {/* LEFT PANEL */}
               <div className="lg:col-span-7 bg-slate-950 border border-slate-900 rounded-xl overflow-hidden shadow-2xl">
                 <div className="bg-slate-900 px-4 py-3.5 border-b border-slate-800 flex items-center justify-between">
                   <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
@@ -103,20 +100,18 @@ export const EnterprisePortal = () => {
                     onClick={handleDisconnect} 
                     className="text-[10px] text-slate-400 hover:text-red-400 transition-colors font-mono underline"
                   >
-                    Disconnect Session ({sessionUser?.role})
+                    Disconnect Session
                   </button>
                 </div>
                 
                 <div className="divide-y divide-slate-900 font-mono text-xs">
-                  {SYSTEM_PARTNERS.map((partner, index) => {
-                    const isSelected = activePartner.company === partner.company;
+                  {SYSTEM_PARTNERS.map((partner, idx) => {
+                    const isSelected = selectedIndex === idx;
                     return (
                       <div
-                        key={index}
-                        onClick={() => setActivePartner(partner)}
-                        className={`p-4 cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
-                          isSelected ? "bg-slate-900 border-l-4 border-[#EA580C] pl-3" : "hover:bg-slate-900/40"
-                        }`}
+                        key={idx}
+                        onClick={() => setSelectedIndex(idx)}
+                        className={isSelected ? "p-4 cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-slate-900 border-l-4 border-[#EA580C] pl-3" : "p-4 cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-slate-900/40"}
                       >
                         <div>
                           <div className="font-bold text-slate-200 text-[13px]">{partner.company}</div>
@@ -124,12 +119,8 @@ export const EnterprisePortal = () => {
                         </div>
                         
                         <div className="flex items-center gap-4 justify-between sm:justify-end">
-                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wide w-28 text-center uppercase ${
-                            partner.status === "VERIFIED" 
-                              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" 
-                              : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
-                          }`}>
-                            {partner.status.replace("_", " ")}
+                          <span className={partner.status === "VERIFIED" ? "px-2 py-0.5 rounded text-[10px] font-bold tracking-wide w-28 text-center uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "px-2 py-0.5 rounded text-[10px] font-bold tracking-wide w-28 text-center uppercase bg-rose-500/10 text-rose-400 border border-rose-500/20"}>
+                            {partner.status === "VERIFIED" ? "VERIFIED" : "EXCEPTION"}
                           </span>
                         </div>
                       </div>
@@ -138,13 +129,14 @@ export const EnterprisePortal = () => {
                 </div>
               </div>
 
+              {/* RIGHT PANEL */}
               <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl font-mono text-xs">
                 <div className="border-b border-slate-800 pb-3 mb-4">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
                     Audit Trail Deep-Dive
                   </span>
                   <h3 className="text-sm font-black text-slate-200 mt-1 truncate">
-                    {activePartner.company}
+                    {currentPartner.company}
                   </h3>
                 </div>
 
@@ -156,11 +148,11 @@ export const EnterprisePortal = () => {
                     <div className="grid grid-cols-2 gap-2 text-center text-slate-200">
                       <div className="bg-slate-950 border border-slate-800 p-2.5 rounded-lg">
                         <div className="text-[10px] text-slate-500 font-bold">SCOPE 1 (DIRECT)</div>
-                        <div className="text-[13px] font-black mt-0.5 text-slate-100">{activePartner.scope1}</div>
+                        <div className="text-[13px] font-black mt-0.5 text-slate-100">{currentPartner.scope1}</div>
                       </div>
                       <div className="bg-slate-950 border border-slate-800 p-2.5 rounded-lg">
                         <div className="text-[10px] text-slate-500 font-bold">SCOPE 2 (INDIRECT)</div>
-                        <div className="text-[13px] font-black mt-0.5 text-slate-100">{activePartner.scope2}</div>
+                        <div className="text-[13px] font-black mt-0.5 text-slate-100">{currentPartner.scope2}</div>
                       </div>
                     </div>
                   </div>
@@ -170,7 +162,20 @@ export const EnterprisePortal = () => {
                       Cryptographic Footprint
                     </span>
                     <div className="bg-slate-950 border border-slate-800 p-3 rounded-lg text-slate-400 text-[11px] break-all">
-                      {activePartner.status === "EXCEPTION_FLAGGED" ? (
+                      {currentPartner.status === "EXCEPTION_FLAGGED" ? (
                         <span className="text-rose-400 font-bold">⚠️ OVERRIDE: DATA SUSPENDED</span>
                       ) : (
-                        <>
+                        <span className="text-slate-300">BLOCK: {currentPartner.auditHash}</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          )}
+
+        </div>
+      </section>
+);
+};
