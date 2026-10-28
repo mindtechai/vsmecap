@@ -90,10 +90,11 @@ export const RISKS = [
   { title: "Third-party data access", desc: "Open-banking and utility data access would depend on the terms of external providers." }
 ];
 
-export const FAQS = [
-  { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard. It is not certified or endorsed by EFRAG." },
-  { q: "Is VSME mandatory for UK businesses?", a: "No. VSME is a voluntary standard that originates in the EU and is not UK law. Customers, banks or investors may ask you to use it." },
-  { q: "Does using VSMECAP make my business compliant with the law?", a: "No. VSMECAP helps you prepare a structured voluntary report. It does not certify compliance with any UK or EU law." },
-  { q: "What is the Value Chain Cap?", a: "Under Directive (EU) 2026/470, companies in a reporting company’s value chain with up to 1,000 employees may decline information requests that go beyond the voluntary standard. Member States have until 19 March 2027 to bring the rules into national law." },
-  { q: "Am I a protected undertaking?", a: "It depends on your size, who is asking and which country’s rules apply. The cap is EU law, so a UK company is not automatically covered. Take professional advice if you are unsure." },
-  { q: "Is the EU Recommendation binding?", a: "No. Commission Recommendation (EU) 2025/1710 encourages large companies and financial institutions to base their requests on the VSME standard as far as possible, but it is not binding." },
+// Airtight Linear Text Stream representation containing all 21 items
+const RAW_FAQ_DATA = [
+  ["Is VSMECAP an official EFRAG tool?", "No. VSMECAP maps independently to the public EFRAG VSME standard. It is not certified or endorsed by EFRAG."],
+  ["Is VSME mandatory for UK businesses?", "No. VSME is a voluntary standard that originates in the EU and is not UK law. Customers, banks or investors may ask you to use it."],
+  ["Does using VSMECAP make my business compliant with the law?", "No. VSMECAP helps you prepare a structured voluntary report. It does not certify compliance with any UK or EU law."],
+  ["What is the Value Chain Cap?", "Under Directive (EU) 2026/470, companies in a reporting company’s value chain with up to 1,000 employees may decline information requests that go beyond the voluntary standard. Member States have until 19 March 2027 to bring the rules into national law."],
+  ["Am I a protected undertaking?", "It depends on your size, who is asking and which country’s rules apply. The cap is EU law, so a UK company is not automatically covered. Take professional advice if you are unsure."],
+  ["Is the EU Recommendation binding?", "No. Commission Recommendation (EU) 2025/1710 encourages large companies and financial institutions to base their requests on the VSME standard as far as possible, but it is not binding."],
