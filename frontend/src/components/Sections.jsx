@@ -89,7 +89,7 @@ export const Product = () => (
             data-testid={`product-step-${s.step}`}
             className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm"
           >
-            <p className="font-mono text-[26px] font-bold text-[#00C08B]">{s.step}</p>
+            <p className="font-mono text-[26px] font-bold text-[#EA580C]">{s.step}</p>
             <h3 className="mt-3 text-[15px] font-bold text-[#26292e]">{s.title}</h3>
             <p className="mt-2 text-[13.5px] leading-relaxed text-[#4b5058]">{s.desc}</p>
           </div>
@@ -180,13 +180,13 @@ export const Market = () => (
         <div
           key={i}
           data-testid={`market-dynamic-card-${i}`}
-          className={`rounded-xl border p-6 bg-white ${i === 1 ? 'border-[#00C08B]' : 'border-[#e4e7ea]'}`}
+          className={`rounded-xl border p-6 bg-white ${i === 1 ? 'border-[#EA580C]' : 'border-[#e4e7ea]'}`}
         >
-          <p className={`text-[11px] font-bold tracking-[0.12em] ${i === 1 ? 'text-[#00996f]' : 'text-[#767c85]'}`}>
+          <p className={`text-[11px] font-bold tracking-[0.12em] ${i === 1 ? 'text-[#EA580C]' : 'text-[#767c85]'}`}>
             {i === 0 ? "SAM" : "SOM — ENTRY"}
           </p>
-          <p className="mt-3 text-[20px] font-bold text-[#26292e] leading-tight">{md.title}</p>
-          <p className="mt-2 text-[13.5px] text-[#4b5058] leading-relaxed">{md.desc}</p>
+          <h3 className="mt-3 text-[15px] font-bold text-[#0F172A]">{md.title}</h3>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-slate-500 font-medium">{md.desc}</p>
         </div>
       ))}
     </div>
