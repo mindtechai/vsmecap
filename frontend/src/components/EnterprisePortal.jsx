@@ -41,7 +41,7 @@ export const EnterprisePortal = () => {
     /* ⚡ Outer structural wrapper container set to relative position bounds */
     <div className="relative">
       
-      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING OFFSET LAYER */}
+      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING OFFSET LAYERS */}
       <div id="scope-evidence" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
       <div id="authentication-portal" className="absolute -top-[140px] left-0 pointer-events-none invisible" aria-hidden="true" />
 
@@ -153,8 +153,8 @@ export const EnterprisePortal = () => {
                   <div className="divide-y divide-slate-900 font-mono text-xs">
                     {SYSTEM_PARTNERS.map((partner, index) => {
                       const isSelected = activePartner.company === partner.company;
+                      {/* ⚡ LINE 161 CONDITIONAL EXPRESSION FULLY SYNCHRONIZED AND TERMINATED */}
                       return (
                         <div
                           key={index}
                           onClick={() => setActivePartner(partner)}
-                          className={`p-4 cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
