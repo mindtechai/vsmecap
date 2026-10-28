@@ -1,78 +1,23 @@
-import React from "react";
-
-const LOCAL_FAQS = [
-  { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard framework." },
-  { q: "What is the Value Chain Cap?", a: "Under Regulation (EU) 2026/1560, large corporate buyers cannot legally demand ESG metrics from you that exceed official VSME parameters." },
-  { q: "Am I classified as a protected undertaking?", a: "Yes. Directive (EU) 2026/470 shields non-listed firms under 1,000 employees from excessive custom questionnaire requests." },
-  { q: "What is a chain hash?", a: "Each data record is cryptographically hashed, allowing independent auditors to trace final numbers back to source documents without spreadsheet chaos." },
-  { q: "Is software installation required?", a: "No. VSMECAP runs as an automated web-based cloud pipeline via secure data ingestion streams." },
-  { q: "Is this platform free for small businesses?", a: "Yes, the platform features a permanently free reporting tier for true non-listed undertakings under 1,000 employees." },
-  { q: "What data points are required to start?", a: "Typically utility meter point identifiers (MPAN/MPRN), raw energy invoices, fleet fuel parameters, and basic payroll characteristics." },
-  { q: "Does a VSMECAP pack count as assurance?", a: "No. The pack is audit-ready and traceable. Formal external assurance must come from an independent, licensed assurance provider." },
-  { q: "How long does deployment take?", a: "Standard pipeline configurations complete ingestion mappings within 48 hours of source linking." },
-  { q: "Can we export reports for UK public tenders?", a: "Yes. All ledger exports structurally align with PPN 06/21 carbon reduction format guidelines." },
-  { q: "Who retains data governance?", a: "The reporting enterprise retains absolute data ownership. Profiles are hashed locally to eliminate third-party leaks." },
-  { q: "What happens if EFRAG modifies taxonomy specs?", a: "VSMECAP pipeline conversion tables update dynamically to ensure format parity with future schema versions." },
-  { q: "How do we initialize an account link?", a: "Sign-up and log-in options are handled seamlessly inside the Value Chain Evidence Portal via Google Enterprise Identity or Sign in with Apple callback links. No separate registration profile forms are required." }
-];
-
-export const Faqs = () => {
-  return (
-    /* ⚡ Outer structural wrapper container set to relative position bounds */
-    <div className="relative">
-      
-      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING OFFSET LAYER */}
-      <div id="faqs" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
-
-      {/* 🤖 AEO STRUCTURAL SCHEMA DATA (JSON-LD mapping for AI search discovery engines) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": LOCAL_FAQS.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })
-        }}
-      />
-
-      {/* Main section contents */}
-      <section className="py-16 bg-white border-t border-[#e4e7ea]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[11px] font-bold tracking-[0.12em] text-[#EA580C] uppercase">FAQS</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0F172A]">Frequently Asked Questions</h2>
-            <p className="mt-4 text-base text-slate-500 font-medium">
-              Comprehensive operational parameters, methodology disclosures, and strategic regulatory alignment guidelines.
-            </p>
-          </div>
-          
-          <div className="mx-auto max-w-[820px] space-y-4 font-sans">
-            {LOCAL_FAQS.map((f, i) => (
-              <div 
-                key={i} 
-                className="rounded-xl border border-[#e4e7ea] bg-white p-6 shadow-sm transition-all hover:border-[#EA580C]/30"
-              >
-                <h3 className="text-[15.5px] font-bold text-[#26292e] flex items-start gap-2">
-                  <span className="text-[#EA580C] font-mono font-bold text-[16px]">Q:</span>
-                  <span>{f.q}</span>
-                </h3>
-                <div className="mt-3 border-t border-gray-100/60 pt-3 text-[14px] leading-relaxed text-[#4b5058] pl-5 relative font-medium">
-                  <span className="absolute left-0 top-3 text-gray-400 font-mono text-[12px] font-bold">A:</span>
-                  <p>{f.a}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
+[
+  { "q": "Is VSMECAP an official EFRAG tool?", "a": "No. VSMECAP maps independently to the public EFRAG VSME standard. It is not certified or endorsed by EFRAG." },
+  { "q": "Is VSME mandatory for UK businesses?", "a": "No. VSME is a voluntary standard that originates in the EU and is not UK law. Customers, banks or investors may ask you to use it." },
+  { "q": "Does using VSMECAP make my business compliant with the law?", "a": "No. VSMECAP helps you prepare a structured voluntary report. It does not certify compliance with any UK or EU law." },
+  { "q": "What is the Value Chain Cap?", "a": "Under Directive (EU) 2026/470, companies in a reporting company’s value chain with up to 1,000 employees may decline information requests that go beyond the voluntary standard. Member States have until 19 March 2027 to bring the rules into national law." },
+  { "q": "Am I a protected undertaking?", "a": "It depends on your size, who is asking and which country’s rules apply. The cap is EU law, so a UK company is not automatically covered. Take professional advice if you are unsure." },
+  { "q": "Is the EU Recommendation binding?", "a": "No. Commission Recommendation (EU) 2025/1710 encourages large companies and financial institutions to base their requests on the VSME standard as far as possible, but it is not binding." },
+  { "q": "What are the Basic and Comprehensive modules?", "a": "The Basic module covers disclosures B1 to B11 and is the minimum level. The Comprehensive module adds C1 to C9 for companies that want or need to report in more detail." },
+  { "q": "Which module should I choose?", "a": "Start with Basic. Add Comprehensive when a customer, lender or investor asks for more detail." },
+  { "q": "Why are my customers asking for sustainability data?", "a": "Larger companies need information from their supply chains for their own reporting and risk reviews. VSME gives you a standard format for your answers." },
+  { "q": "Do I have to publish my report?", "a": "No. You decide who receives your report." },
+  { "q": "Are the figures checked or audited?", "a": "No. Reports are structured for review and show their source files, but they are not audited. Formal assurance must come from an independent, licensed assurance provider." },
+  { "q": "Is there a free tier?", "a": "A free tier is available for eligible non-listed undertakings with up to 1,000 employees. Companies above that size, and bid preparation under PPN 06/21, are on commercial terms. Please check current terms before you sign up." },
+  { "q": "What data do I need to start?", "a": "Typically 12 months of electricity, gas and water bills, including meter identifiers (MPAN/MPRN), plus basic headcount and policy information for the Basic module." },
+  { "q": "Which emission factors are used?", "a": "UK Government (DESNZ) greenhouse gas conversion factors. The edition used is stated in your report. Always confirm it matches your reporting year." },
+  { "q": "Where is my data processed?", "a": "The current version processes your files locally in your browser and does not upload them to a server. Your data is handled in line with UK GDPR. See the Privacy section for details." },
+  { "q": "Who owns my data?", "a": "You do. Please contact info@vsmecap.com with any questions about your data or to request deletion." },
+  { "q": "Which formats can I export?", "a": "JSON, CSV and a watermarked draft PDF are available now. Inline XBRL export is in development." },
+  { "q": "Can I use the reports for UK public tenders?", "a": "Reports are designed to support the information typically needed for PPN 06/21 carbon reduction plans. Always check the requirements of each tender." },
+  { "q": "Can my accountant or adviser use VSMECAP?", "a": "Please contact info@vsmecap.com to discuss access for your accountant or sustainability adviser." },
+  { "q": "Does VSMECAP replace professional advice?", "a": "No. VSMECAP provides reporting software and guidance. It is not legal, accounting or financial advice." },
+  { "q": "How do I get support or ask for a demo?", "a": "Email info@vsmecap.com and we will reply as soon as we can." }
+]
