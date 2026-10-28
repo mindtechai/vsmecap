@@ -1,3 +1,4 @@
+import React from "react";
 import { IngestionMatrix } from "@/components/IngestionMatrix";
 import { Header } from "@/components/Header";
 import { Ticker } from "@/components/Ticker";
