@@ -132,3 +132,8 @@ html {
         border-bottom-color: inherit;
     }
 }
+
+/* ⚡ GLOBAL BREAKOUT OVERRIDE: FORCE PERFECT ANCHOR ELEMENT VISIBILITY OFFSETS BYPASSING ALL INLINE OVERWRITES */
+[id] {
+    scroll-margin-top: 160px !important;
+}
