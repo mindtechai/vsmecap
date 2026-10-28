@@ -147,28 +147,29 @@ export const IngestionMatrix = () => {
                   else if (log.status === "SPIKE_WARN") statusClasses = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
                   else if (log.status === "CRITICAL_GAP") statusClasses = "bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse";
 
-                  let dotClasses = "bg-[#00C08B] animate-pulse";
-                  if (log.status === "CRITICAL_GAP") dotClasses = "bg-rose-500";
-                  else if (log.status === "SPIKE_WARN") dotClasses = "bg-amber-400";
-
                   return (
                     <div 
                       key={log.id} 
                       onClick={() => setSelectedLog(log)}
                       className={`flex flex-col sm:flex-row sm:items-center justify-between py-2.5 px-2 border-b border-slate-900/60 last:border-0 gap-y-1 cursor-pointer transition-all rounded-md ${
-                        isSelected ? "bg-slate-800/60 border-l-2 border-[#EA580C]" : "hover:bg-slate-800/30"
+                        isSelected ? "bg-slate-800/80 shadow-inner" : "hover:bg-slate-800/40"
                       }`}
                     >
-                      <div className="flex items-center gap-x-3 overflow-hidden">
-                        <span className={`h-2 w-2 rounded-full shrink-0 ${dotClasses}`} />
-                        <span className="text-slate-400 shrink-0">[{log.type}]</span>
-                        <span className="text-slate-100 font-bold truncate">{log.source}</span>
+                      <div className="flex items-center gap-3">
+                        <span className={`h-1.5 w-1.5 rounded-full ${
+                          log.status === "CRITICAL_GAP" ? "bg-rose-500" : log.status === "SPIKE_WARN" ? "bg-amber-400" : "bg-emerald-400"
+                        }`} />
+                        <span className="text-slate-400 font-sans text-xs w-28 shrink-0">{log.type}</span>
+                        <span className="text-slate-100 font-bold truncate max-w-[160px] sm:max-w-[200px]">{log.source}</span>
                       </div>
-                      <div className="flex items-center justify-between sm:justify-end gap-x-12">
-                        <span className={`px-2 py-0.5 rounded text-[11px] font-bold text-center w-24 tracking-wide shrink-0 ${statusClasses}`}>
-                          {log.status.replace("_", " ")}
+
+                      <div className="flex items-center justify-between sm:justify-end gap-x-12 mt-1 sm:mt-0">
+                        <span className={`text-[10px] px-2 py-0.5 rounded font-bold tracking-wide w-24 text-center ${statusClasses}`}>
+                          {log.status}
                         </span>
-                        <span className="text-slate-400 text-right w-36 text-[12px] font-mono truncate">{log.hash}</span>
+                        <span className="text-[11px] font-mono text-slate-500 text-right w-36 truncate">
+                          {log.hash}
+                        </span>
                       </div>
                     </div>
                   );
@@ -176,19 +177,15 @@ export const IngestionMatrix = () => {
               </div>
             </div>
 
-            {/* Interactive Auditor Dashboard Inspector Panel */}
-            <div className="lg:col-span-4 bg-white border border-[#e4e7ea] rounded-xl p-5 shadow-lg min-h-[340px] flex flex-col justify-between">
+            {/* Dynamic Interactive Stream Inspector panel */}
+            <div className="lg:col-span-4 bg-white rounded-xl border border-slate-200/80 p-5 shadow-sm min-h-[280px] flex flex-col justify-between">
               {renderInspectorContent()}
-              <div className="border-t border-slate-100 pt-3 mt-4">
-                <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest font-mono block text-center">
-                  Audit-Ready Control Layer
-                </span>
-              </div>
             </div>
 
           </div>
+
         </div>
       </section>
     </div>
-);
+  );
 };
