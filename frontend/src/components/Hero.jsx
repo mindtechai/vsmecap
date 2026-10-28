@@ -1,4 +1,5 @@
-import { CONTACT_MAILTO } from "../data/content";
+import React from "react";
+import { CONTACT_MAILTO } from "@/data/content";
 
 export const Hero = () => (
   <section
@@ -31,15 +32,16 @@ export const Hero = () => (
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* 🚀 ROUTED DIRECTLY TO THE SECURE MULTI-PROVIDER AUTH WORKSPACE HOOK */}
             <a 
-              href="#uk-companies" 
-              className="rounded-xl bg-[#0F172A] px-6 py-3.5 text-[14px] font-bold text-white hover:bg-slate-800 shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-0.5"
+              href="#authentication-portal" 
+              className="rounded-xl bg-gradient-to-r from-[#EA580C] to-orange-600 px-6 py-3.5 text-[14px] font-bold text-white hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-950/10 transition-all active:scale-98"
             >
               Start VS (VSME) for free →
             </a>
             <a 
               href={CONTACT_MAILTO}
-              className="rounded-xl bg-white border border-slate-200 px-6 py-3.5 text-[14px] font-bold text-slate-600 hover:bg-slate-50 shadow-sm transition-all hover:-translate-y-0.5"
+              className="rounded-xl bg-white border border-slate-200 px-6 py-3.5 text-[14px] font-bold text-slate-600 hover:bg-slate-50 shadow-sm transition-all"
             >
               Book Expert Demo
             </a>
