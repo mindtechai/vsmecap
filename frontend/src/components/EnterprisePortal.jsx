@@ -9,7 +9,7 @@ const SYSTEM_PARTNERS = [
 
 export const EnterprisePortal = () => {
   const [activePartner, setActivePartner] = useState(SYSTEM_PARTNERS[0]);
-  
+
   // Interactive Authentication State Infrastructure
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authProvider, setAuthProvider] = useState("");
@@ -18,14 +18,12 @@ export const EnterprisePortal = () => {
 
   const handleProviderAuth = (provider) => {
     setIsLoading(true);
-    // Simulate secure enterprise cryptographic callback handshake
     setTimeout(() => {
       setIsAuthenticated(true);
       setAuthProvider(provider);
       setSessionUser({
         email: provider === "Google" ? "procurement.director@enterprise.io" : "auditor.lead@://apple.com",
-        role: provider === "Google" ? "Supply Chain Master" : "Third-Party Auditor",
-        tokenSignature: "SHA256:EFRAG_9948_JWT_HANDSHAKE"
+        role: provider === "Google" ? "Supply Chain Master" : "Third-Party Auditor"
       });
       setIsLoading(false);
     }, 850);
@@ -38,18 +36,13 @@ export const EnterprisePortal = () => {
   };
 
   return (
-    /* ⚡ Outer structural wrapper container set to relative position bounds */
     <div className="relative">
-      
-      {/* ⚡ UNBREAKABLE INVISIBLE TARGET BUFFER LANDING OFFSET LAYERS */}
       <div id="scope-evidence" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
       <div id="authentication-portal" className="absolute -top-[140px] left-0 pointer-events-none invisible" aria-hidden="true" />
 
-      {/* Main section contents */}
       <section className="py-16 bg-[#0F172A] text-white border-t border-slate-900">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           
-          {/* Core Layout Split Head */}
           <div className="max-w-3xl mb-12">
             <span className="bg-orange-500/10 text-[#EA580C] text-[10px] font-mono font-bold tracking-widest uppercase px-2.5 py-1 rounded border border-orange-500/20">
               ENTERPRISE &amp; PUBLIC SECTOR CONTROL LAYER
@@ -62,11 +55,10 @@ export const EnterprisePortal = () => {
             </p>
           </div>
 
-          {/* DYNAMIC SECURE ENTRY POINT CONTAINER INTEGRATION */}
           {!isAuthenticated ? (
             <div className="max-w-md mx-auto bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl text-center space-y-6 my-4">
               <div className="space-y-2">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-[#EA580C] border border-orange-500/20 font-mono text-xl font-bold">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-[#EA580C] border border-orange-500/20 text-xl font-bold">
                   🔒
                 </div>
                 <h3 className="text-lg font-black tracking-tight text-slate-100">Handshake Gateway Authorization</h3>
@@ -82,7 +74,6 @@ export const EnterprisePortal = () => {
                 </div>
               ) : (
                 <div className="space-y-3 pt-2">
-                  {/* Google Identity Integration */}
                   <button
                     type="button"
                     onClick={() => handleProviderAuth("Google")}
@@ -97,7 +88,6 @@ export const EnterprisePortal = () => {
                     Continue with Google Enterprise
                   </button>
 
-                  {/* Sign In With Apple Identity Integration */}
                   <button
                     type="button"
                     onClick={() => handleProviderAuth("Apple")}
@@ -116,45 +106,57 @@ export const EnterprisePortal = () => {
               </div>
             </div>
           ) : (
-            /* Dashboard Frame Grid - Activated upon Auth Callback Verification */
-            <div className="space-y-6 animate-fadeIn">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               
-              {/* Session Profile Status Tracker Ribbon */}
-              <div className="bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between font-mono text-xs gap-3">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold px-2 py-0.5 rounded text-[10px] uppercase">
-                    Session Link Verified
+              {/* LEFT PANEL: Supplier List */}
+              <div className="lg:col-span-7 bg-slate-950 border border-slate-900 rounded-xl overflow-hidden shadow-2xl">
+                <div className="bg-slate-900 px-4 py-3.5 border-b border-slate-800 flex items-center justify-between">
+                  <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
+                    Monitored Supplier Network Nodes
                   </span>
-                  <span className="text-slate-300 font-bold">{sessionUser?.email}</span>
-                  <span className="text-slate-500">| Role: {sessionUser?.role}</span>
+                  <button 
+                    onClick={handleDisconnect} 
+                    className="text-[10px] text-slate-400 hover:text-red-400 transition-colors font-mono underline"
+                  >
+                    Disconnect Session
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleDisconnect}
-                  className="text-[11px] text-slate-400 hover:text-red-400 font-bold transition-colors underline focus:outline-none"
-                >
-                  Disconnect Session Handshake
-                </button>
+                
+                <div className="divide-y divide-slate-900 font-mono text-xs">
+                  {SYSTEM_PARTNERS.map((partner, index) => {
+                    const isSelected = activePartner.company === partner.company;
+                    {/* ✅ LINE 161 PERFECTLY TERMINATED WITH REPAIRED STRING LOGIC */}
+                    return (
+                      <div
+                        key={index}
+                        onClick={() => setActivePartner(partner)}
+                        className={`p-4 cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
+                          isSelected ? "bg-slate-900 border-l-4 border-[#EA580C] pl-3" : "hover:bg-slate-900/40"
+                        }`}
+                      >
+                        <div>
+                          <div className="font-bold text-slate-200 text-[13px]">{partner.company}</div>
+                          <div className="text-[10px] text-slate-500 mt-0.5">{partner.type}</div>
+                        </div>
+                        
+                        <div className="flex items-center gap-4 justify-between sm:justify-end">
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wide w-28 text-center uppercase ${
+                            partner.status === "VERIFIED" 
+                              ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" 
+                              : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                          }`}>
+                            {partner.status.replace("_", " ")}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                {/* LEFT PANEL: Supplier Ingestion Ledger Index (7 Columns) */}
-                <div className="lg:col-span-7 bg-slate-950 border border-slate-900 rounded-xl overflow-hidden shadow-2xl">
-                  <div className="bg-slate-900 px-4 py-3.5 border-b border-slate-800 flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-slate-400 font-mono uppercase tracking-wider">
-                      Monitored Supplier Network Nodes
-                    </span>
-                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold">
-                      Active Connections: 4
-                    </span>
-                  </div>
-                  
-                  <div className="divide-y divide-slate-900 font-mono text-xs">
-                    {SYSTEM_PARTNERS.map((partner, index) => {
-                      const isSelected = activePartner.company === partner.company;
-                      {/* ⚡ LINE 161 CONDITIONAL EXPRESSION FULLY SYNCHRONIZED AND TERMINATED */}
-                      return (
-                        <div
-                          key={index}
-                          onClick={() => setActivePartner(partner)}
+              {/* RIGHT PANEL: Details View */}
+              <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl font-mono text-xs">
+                <div className="border-b border-slate-800 pb-3 mb-4">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
+                    Audit Trail Deep-Dive
+                  </span>
