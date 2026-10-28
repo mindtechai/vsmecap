@@ -1,4 +1,5 @@
 import React from "react";
+import { LEGAL_BASIS } from "@/data/content";
 
 export const LegalAndInvest = () => {
   return (
