@@ -12,7 +12,8 @@ const LOCAL_FAQS = [
   { q: "How long does deployment take?", a: "Standard pipeline configurations complete ingestion mappings within 48 hours of source linking." },
   { q: "Can we export reports for UK public tenders?", a: "Yes. All ledger exports structurally align with PPN 06/21 carbon reduction format guidelines." },
   { q: "Who retains data governance?", a: "The reporting enterprise retains absolute data ownership. Profiles are hashed locally to eliminate third-party leaks." },
-  { q: "What happens if EFRAG modifies taxonomy specs?", a: "VSMECAP pipeline conversion tables update dynamically to ensure format parity with future schema versions." }
+  { q: "What happens if EFRAG modifies taxonomy specs?", a: "VSMECAP pipeline conversion tables update dynamically to ensure format parity with future schema versions." },
+  { q: "How do we initialize an account link?", a: "Sign-up and log-in options are handled seamlessly inside the Value Chain Evidence Portal via Google Enterprise Identity or Sign in with Apple callback links. No separate registration profile forms are required." }
 ];
 
 export const Faqs = () => {
