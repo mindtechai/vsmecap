@@ -1,23 +1,92 @@
-[
-  { "q": "Is VSMECAP an official EFRAG tool?", "a": "No. VSMECAP maps independently to the public EFRAG VSME standard. It is not certified or endorsed by EFRAG." },
-  { "q": "Is VSME mandatory for UK businesses?", "a": "No. VSME is a voluntary standard that originates in the EU and is not UK law. Customers, banks or investors may ask you to use it." },
-  { "q": "Does using VSMECAP make my business compliant with the law?", "a": "No. VSMECAP helps you prepare a structured voluntary report. It does not certify compliance with any UK or EU law." },
-  { "q": "What is the Value Chain Cap?", "a": "Under Directive (EU) 2026/470, companies in a reporting company’s value chain with up to 1,000 employees may decline information requests that go beyond the voluntary standard. Member States have until 19 March 2027 to bring the rules into national law." },
-  { "q": "Am I a protected undertaking?", "a": "It depends on your size, who is asking and which country’s rules apply. The cap is EU law, so a UK company is not automatically covered. Take professional advice if you are unsure." },
-  { "q": "Is the EU Recommendation binding?", "a": "No. Commission Recommendation (EU) 2025/1710 encourages large companies and financial institutions to base their requests on the VSME standard as far as possible, but it is not binding." },
-  { "q": "What are the Basic and Comprehensive modules?", "a": "The Basic module covers disclosures B1 to B11 and is the minimum level. The Comprehensive module adds C1 to C9 for companies that want or need to report in more detail." },
-  { "q": "Which module should I choose?", "a": "Start with Basic. Add Comprehensive when a customer, lender or investor asks for more detail." },
-  { "q": "Why are my customers asking for sustainability data?", "a": "Larger companies need information from their supply chains for their own reporting and risk reviews. VSME gives you a standard format for your answers." },
-  { "q": "Do I have to publish my report?", "a": "No. You decide who receives your report." },
-  { "q": "Are the figures checked or audited?", "a": "No. Reports are structured for review and show their source files, but they are not audited. Formal assurance must come from an independent, licensed assurance provider." },
-  { "q": "Is there a free tier?", "a": "A free tier is available for eligible non-listed undertakings with up to 1,000 employees. Companies above that size, and bid preparation under PPN 06/21, are on commercial terms. Please check current terms before you sign up." },
-  { "q": "What data do I need to start?", "a": "Typically 12 months of electricity, gas and water bills, including meter identifiers (MPAN/MPRN), plus basic headcount and policy information for the Basic module." },
-  { "q": "Which emission factors are used?", "a": "UK Government (DESNZ) greenhouse gas conversion factors. The edition used is stated in your report. Always confirm it matches your reporting year." },
-  { "q": "Where is my data processed?", "a": "The current version processes your files locally in your browser and does not upload them to a server. Your data is handled in line with UK GDPR. See the Privacy section for details." },
-  { "q": "Who owns my data?", "a": "You do. Please contact info@vsmecap.com with any questions about your data or to request deletion." },
-  { "q": "Which formats can I export?", "a": "JSON, CSV and a watermarked draft PDF are available now. Inline XBRL export is in development." },
-  { "q": "Can I use the reports for UK public tenders?", "a": "Reports are designed to support the information typically needed for PPN 06/21 carbon reduction plans. Always check the requirements of each tender." },
-  { "q": "Can my accountant or adviser use VSMECAP?", "a": "Please contact info@vsmecap.com to discuss access for your accountant or sustainability adviser." },
-  { "q": "Does VSMECAP replace professional advice?", "a": "No. VSMECAP provides reporting software and guidance. It is not legal, accounting or financial advice." },
-  { "q": "How do I get support or ask for a demo?", "a": "Email info@vsmecap.com and we will reply as soon as we can." }
-]
+import { useState } from "react";
+import { FAQS, CONTACT_MAILTO } from "@/data/content";
+
+// Structured data so search engines can show these questions and answers.
+const faqJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a }
+  }))
+}).replace(/</g, "\\u003c");
+
+export const Faqs = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (idx) => {
+    setOpenIndex(openIndex === idx ? null : idx);
+  };
+
+  return (
+    <section id="faqs" className="py-16 sm:py-20 bg-white border-t border-slate-200">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="max-w-3xl mb-10">
+          <span className="bg-slate-100 text-slate-600 text-[10px] font-mono font-bold tracking-widest uppercase px-2.5 py-1 rounded border border-slate-200">
+            FAQS
+          </span>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0F172A]">
+            Frequently asked questions
+          </h2>
+          <p className="mt-3 text-sm text-slate-600">
+            Answers about VSME reporting, the free tier, data handling and the limits of what VSMECAP provides. This is general information, not legal, accounting or financial advice.
+          </p>
+        </div>
+
+        <div className="divide-y divide-slate-200 border-y border-slate-200">
+          {FAQS.map((item, idx) => {
+            const isOpen = openIndex === idx;
+            const panelId = "faq-panel-" + idx;
+            const buttonId = "faq-button-" + idx;
+            return (
+              <div key={idx}>
+                <h3>
+                  <button
+                    type="button"
+                    id={buttonId}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => toggle(idx)}
+                    className="flex w-full min-h-[56px] items-center justify-between gap-4 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488]"
+                  >
+                    <span className="text-[15px] sm:text-base font-bold text-[#0F172A]">{item.q}</span>
+                    <svg
+                      className={"h-5 w-5 flex-shrink-0 text-slate-500 transition-transform " + (isOpen ? "rotate-180" : "")}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </h3>
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  hidden={!isOpen}
+                  className="pb-5 pr-9 text-sm leading-relaxed text-slate-600"
+                >
+                  {item.a}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="mt-8 text-sm text-slate-600">
+          Question not answered here?{" "}
+          <a href={CONTACT_MAILTO} className="font-bold text-[#0F172A] underline hover:text-[#00996f]">
+            Contact us
+          </a>
+          .
+        </p>
+      </div>
+    </section>
+  );
+};
