@@ -1,29 +1,25 @@
 import React, { useState } from "react";
 
-const SYSTEM_PARTNERS = [
-  { company: "Infrastructure Supply Ltd", type: "Tier 1 Vendor", scope1: "42.8 tCO2e", scope2: "112.4 tCO2e", status: "VERIFIED", auditHash: "sha256:8f3c...2a1a" },
-  { company: "Logistics Frameworks Corp", type: "Tier 1 Vendor", scope1: "894.1 tCO2e", scope2: "244.9 tCO2e", status: "VERIFIED", auditHash: "sha256:4e9b...7d3e" },
-  { company: "Precision Engineering Plc", type: "Tier 2 Subcontractor", scope1: "12.5 tCO2e", scope2: "38.2 tCO2e", status: "EXCEPTION_FLAGGED", auditHash: "BLOCK: METERS_PENDING" },
-  { company: "Midlands Distribution Ltd", type: "Tier 1 Vendor", scope1: "312.0 tCO2e", scope2: "105.1 tCO2e", status: "VERIFIED", auditHash: "sha256:1c7d...9b4f" }
+// Illustrative sample data only. These are not real companies or real measurements.
+const SAMPLE_PARTNERS = [
+  { company: "Sample Supplier A Ltd", type: "Tier 1 supplier", scope1: "42.8 tCO2e", scope2: "112.4 tCO2e", status: "SAMPLE: REVIEWED", auditHash: "illustrative value, not a real hash" },
+  { company: "Sample Supplier B Ltd", type: "Tier 1 supplier", scope1: "894.1 tCO2e", scope2: "244.9 tCO2e", status: "SAMPLE: REVIEWED", auditHash: "illustrative value, not a real hash" },
+  { company: "Sample Supplier C Ltd", type: "Tier 2 subcontractor", scope1: "12.5 tCO2e", scope2: "38.2 tCO2e", status: "SAMPLE: FLAGGED", auditHash: "Illustrative: meter data pending" },
+  { company: "Sample Supplier D Ltd", type: "Tier 1 supplier", scope1: "312.0 tCO2e", scope2: "105.1 tCO2e", status: "SAMPLE: REVIEWED", auditHash: "illustrative value, not a real hash" }
 ];
 
 export const EnterprisePortal = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
-  const currentPartner = SYSTEM_PARTNERS[selectedIndex] || SYSTEM_PARTNERS[0];
+  const currentPartner = SAMPLE_PARTNERS[selectedIndex] || SAMPLE_PARTNERS[0];
 
-  const handleProviderAuth = (provider) => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsAuthenticated(true);
-      setIsLoading(false);
-    }, 400);
+  const handleOpenPreview = () => {
+    setShowPreview(true);
   };
 
-  const handleDisconnect = () => {
-    setIsAuthenticated(false);
+  const handleClosePreview = () => {
+    setShowPreview(false);
     setSelectedIndex(0);
   };
 
@@ -31,49 +27,49 @@ export const EnterprisePortal = () => {
     <div className="relative">
       <div id="scope-evidence" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
       <div id="authentication-portal" className="absolute -top-[140px] left-0 pointer-events-none invisible" aria-hidden="true" />
-      
+
       <section className="py-16 bg-[#0F172A] text-white border-t border-slate-900">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="max-w-3xl mb-12">
             <span className="bg-orange-500/10 text-[#EA580C] text-[10px] font-mono font-bold tracking-widest uppercase px-2.5 py-1 rounded border border-orange-500/20">
-              ENTERPRISE &amp; PUBLIC SECTOR CONTROL LAYER
+              ENTERPRISE &amp; PUBLIC SECTOR PREVIEW
             </span>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-white">
-              Value Chain Evidence &amp; Verification Portal
+              Value Chain Evidence Portal
             </h2>
+            <p className="mt-3 text-sm text-slate-400">
+              Illustrative preview of a planned portal. The portal is in development. All companies and figures shown are sample data only.
+            </p>
           </div>
 
-          {!isAuthenticated ? (
+          {!showPreview ? (
             <div className="max-w-md mx-auto bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl text-center space-y-6">
-              <h3 className="text-lg font-black tracking-tight text-slate-100">Handshake Gateway Authorization</h3>
-              <p className="text-xs text-slate-400">Sign up or log in via enterprise identity credentials to inspect live metrics.</p>
-              {isLoading ? (
-                <p className="text-xs text-slate-500 font-mono">Verifying Handshake Handshake...</p>
-              ) : (
-                <div className="space-y-3">
-                  <button type="button" onClick={() => handleProviderAuth("Google")} className="w-full bg-white border px-4 py-3 rounded-xl text-xs font-bold text-slate-800">
-                    Continue with Google Enterprise
-                  </button>
-                  <button type="button" onClick={() => handleProviderAuth("Apple")} className="w-full bg-slate-900 border border-slate-800 px-4 py-3 rounded-xl text-xs font-bold text-white">
-                    Continue with Sign in with Apple
-                  </button>
-                </div>
-              )}
+              <h3 className="text-lg font-black tracking-tight text-slate-100">Preview the portal</h3>
+              <p className="text-xs text-slate-400">
+                View a sample of how supplier emissions evidence could be presented. No login is required and no real data is shown.
+              </p>
+              <button
+                type="button"
+                onClick={handleOpenPreview}
+                className="w-full bg-white border px-4 py-3 rounded-xl text-xs font-bold text-slate-800"
+              >
+                View sample data
+              </button>
             </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              
-              {/* LEFT PANEL: Static clean string assignments bypass esbuild expression scanner */}
+
+              {/* LEFT PANEL */}
               <div className="lg:col-span-7 bg-slate-950 border border-slate-900 rounded-xl overflow-hidden shadow-2xl">
                 <div className="bg-slate-900 px-4 py-3.5 border-b border-slate-800 flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-slate-400 font-mono uppercase">Monitored Subcontractors</span>
-                  <button type="button" onClick={handleDisconnect} className="text-[10px] text-slate-400 font-mono underline">Disconnect</button>
+                  <span className="text-[11px] font-bold text-slate-400 font-mono uppercase">Sample supplier list</span>
+                  <button type="button" onClick={handleClosePreview} className="text-[10px] text-slate-400 font-mono underline">Close preview</button>
                 </div>
                 <div className="divide-y divide-slate-900 font-mono text-xs">
-                  {SYSTEM_PARTNERS.map((partner, idx) => (
-                    <div 
-                      key={idx} 
-                      onClick={() => setSelectedIndex(idx)} 
+                  {SAMPLE_PARTNERS.map((partner, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => setSelectedIndex(idx)}
                       className={selectedIndex === idx ? "p-4 cursor-pointer bg-slate-900 border-l-4 border-[#EA580C] pl-3 flex justify-between items-center" : "p-4 cursor-pointer hover:bg-slate-900/40 flex justify-between items-center"}
                     >
                       <div>
@@ -100,9 +96,10 @@ export const EnterprisePortal = () => {
                   </div>
                 </div>
                 <div className="bg-slate-950 p-3 rounded text-[11px] break-all">
-                  <span className="text-emerald-400 block font-bold mb-1">HASH CHECKSUM</span>
+                  <span className="text-slate-400 block font-bold mb-1">INTEGRITY HASH (ILLUSTRATIVE)</span>
                   {currentPartner.auditHash}
                 </div>
+                <p className="text-[10px] text-slate-500">Sample data. Not real companies or measurements.</p>
               </div>
 
             </div>
