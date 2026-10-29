@@ -8,12 +8,12 @@ export const Hero = () => (
   >
     <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-left">
-        
-        {/* LEFT COLUMN: PURE COMMERCIAL USER HEADLINES */}
+
+        {/* LEFT COLUMN: HEADLINES */}
         <div className="lg:col-span-6 space-y-6 pt-2">
           <div className="flex">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-500 uppercase shadow-sm">
-              🛡️ EFRAG VOLUNTARY STANDARD VALUE CHAIN CAP COMPLIANT
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-bold tracking-widest text-slate-600 uppercase shadow-sm">
+              Based on the EFRAG VSME voluntary standard
             </span>
           </div>
 
@@ -21,51 +21,49 @@ export const Hero = () => (
             data-testid="hero-title"
             className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-[#0F172A] leading-[1.2] font-sans antialiased"
           >
-            AUDIT-READY OUTPUT • ENTERPRISE CONTROL LAYER • VSME B1-B11 CAP
+            Structured VSME reporting for UK SMEs
             <span className="block text-[#EA580C] text-[clamp(16px,2.2vw,22px)] font-black tracking-wide uppercase mt-4">
-              THE CAP THAT STOPS SPREADSHEET CHAOS.
+              From utility bills to a report you can share.
             </span>
           </h1>
-          
-          <p className="text-[15px] leading-relaxed text-slate-500 font-semibold max-w-[540px]">
-            VSMECAP is the Audit-Ready output for the enterprise control layer for VSME. The first-mover cap that standardizes B1-B11 and C1-C9 across UK Companies and Public Sector supply chains. Verifiable, exportable, enterprise-grade.
+
+          <p className="text-[15px] leading-relaxed text-slate-600 font-semibold max-w-[540px]">
+            VSMECAP helps businesses turn utility data into a structured sustainability report based on the EFRAG VSME standard: the Basic module (B1-B11) and the optional Comprehensive module (C1-C9). Reports are structured for review and are not audited.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            {/* 🚀 ROUTED DIRECTLY TO THE SECURE MULTI-PROVIDER AUTH WORKSPACE HOOK */}
-            <a 
-              href="#authentication-portal" 
-              className="rounded-xl bg-gradient-to-r from-[#EA580C] to-orange-600 px-6 py-3.5 text-[14px] font-bold text-white hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-950/10 transition-all active:scale-98"
+            <a
+              href="#authentication-portal"
+              className="rounded-xl bg-gradient-to-r from-[#EA580C] to-orange-600 px-6 py-3.5 text-[14px] font-bold text-white hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-950/10 transition-all active:scale-95"
             >
-              Start VS (VSME) for free →
+              See the portal preview →
             </a>
-            <a 
+            <a
               href={CONTACT_MAILTO}
               className="rounded-xl bg-white border border-slate-200 px-6 py-3.5 text-[14px] font-bold text-slate-600 hover:bg-slate-50 shadow-sm transition-all"
             >
-              Book Expert Demo
+              Request a demo
             </a>
           </div>
 
-          <div className="flex items-center gap-2 bg-[#f0fdfa] border border-[#ccfbf1] rounded-xl py-2 px-4 max-w-[500px] shadow-sm">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75"></span>
+          <div className="flex items-start gap-2 bg-[#f0fdfa] border border-[#ccfbf1] rounded-xl py-2.5 px-4 max-w-[500px] shadow-sm">
+            <span className="flex h-2 w-2 relative mt-1.5 flex-shrink-0">
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0d9488]"></span>
             </span>
             <p className="text-[11.5px] font-bold text-[#115e59]">
-              Tracking framework requirements from EFRAG's Brussels Summit (1,500+ Registered Enterprise Stakeholders)
+              Free tier available for eligible businesses with up to 1,000 employees. VSME is voluntary and is not UK law.
             </p>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: BRAND GRAPHIC OVERLAYING THE VERIFICATION CONSOLE */}
+        {/* RIGHT COLUMN: LOGO AND ILLUSTRATIVE WORKFLOW */}
         <div className="lg:col-span-6 flex flex-col gap-6">
-          
+
           <div className="w-full max-w-[320px] px-1 transform -translate-y-1">
-            <img 
-              className="w-full h-auto object-contain select-none" 
-              src="/vsmecap_logo_transparent_800.png" 
-              alt="VSMECAP Primary Brand Graphic Alignment" 
+            <img
+              className="w-full h-auto object-contain select-none"
+              src="/vsmecap_logo_transparent_800.png"
+              alt="VSMECAP logo"
             />
           </div>
 
@@ -79,21 +77,26 @@ export const Hero = () => (
                 <span className="h-2.5 w-2.5 rounded-full bg-[#F59E0B]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#10B981]" />
               </div>
-              <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest">
-                XBRL TRACE LOG • TEMPLATE V1.3
+              <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
+                Illustrative workflow
               </span>
             </div>
             <pre className="overflow-x-auto font-mono text-[12px] leading-relaxed text-[#00C08B]">
-{`$ vsmecap ingest --source ledger.csv --format open-banking
-  parsing operational data flows ........... [OK]
-$ vsmecap verify --chain-hash --taxonomy "2026-v1"
-  sha256: 9f2c...a41e -> linked to source .. [OK]
-  B3:efrg:vsm_e_B3_disclosure .............. [PASS]
-  C2:efrg:vsm_e_C2_disclosure .............. [PASS]
-$ vsmecap pack --format inline-xbrl --csv
-  generating audit-ready disclosures ....... [OK]
-  vsmecap_passport_2026.xhtml compiled ..... [READY]`}
+{`1. Upload 12 months of bills
+   electricity, gas, water ............ done
+2. Extract readings
+   kWh, m3, MPAN / MPRN ............... done
+3. Review and correct values
+   check against original bills ...... you
+4. Draft B3 energy and GHG
+   Scope 1 and 2 totals ............... draft
+5. Export
+   JSON, CSV, PDF (draft) ............. available
+   Inline XBRL ........................ in development`}
             </pre>
+            <p className="mt-3 text-[10px] font-mono text-slate-400">
+              Illustration only. Outputs are drafts, structured for review and not audited.
+            </p>
           </div>
         </div>
 
