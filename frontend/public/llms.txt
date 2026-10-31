@@ -1,0 +1,30 @@
+# VSMECAP
+
+> VSMECAP is early-stage software that helps UK SMEs prepare structured sustainability reports from utility bills, based on the EFRAG VSME standard (the Voluntary Sustainability Reporting Standard for non-listed SMEs). Reports are structured for review. They are not audited, and VSMECAP is not certified or endorsed by EFRAG. VSME is voluntary and is not UK law.
+
+"VSME" on this site means the sustainability reporting standard, not a stock ticker.
+
+## What works today
+- Upload 12 months of electricity, gas and water bills; extract kWh, m3 and meter numbers (MPAN/MPRN); review and correct the values.
+- Draft the Basic module (B1-B11) energy and Scope 1 and 2 greenhouse gas figures.
+- Export JSON, CSV and a watermarked draft PDF. Files are processed locally in the browser.
+- A free tier is available for eligible businesses with up to 1,000 employees.
+
+## In development (not yet available)
+- Integrity hashing (SHA-256), Inline XBRL export, automated utility data links.
+
+## Key facts
+- Basic module: B1-B11. Optional Comprehensive module: C1-C9.
+- Directive (EU) 2026/470 (Omnibus I) introduces a value chain cap for undertakings with up to 1,000 employees, subject to national implementation by 19 March 2027. It is EU law, so UK companies are not automatically covered.
+- Commission Recommendation (EU) 2025/1710 (30 July 2025) recommends the VSME for voluntary use. It is not binding.
+- UK public sector: PPN 006 applies to procurements under the Procurement Act 2023; PPN 06/21 applies to earlier ones.
+
+## Sources
+- [Commission Recommendation (EU) 2025/1710](https://eur-lex.europa.eu/eli/reco/2025/1710/oj/eng)
+- [EFRAG: SMEs and sustainability reporting](https://www.efrag.org/en/smes-and-sustainability-reporting)
+- [UK PPN 006: Carbon Reduction Plans](https://www.procurementpathway.civilservice.gov.uk/documents/ppn/ppn-006-taking-account-of-carbon-reduction-plans-in-the-procurement-of-major-government-contracts)
+- [UK Government GHG conversion factors 2026](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026)
+
+## Site
+- [Home and FAQs](https://www.vsmecap.com/#faqs)
+- Contact: info@vsmecap.com
