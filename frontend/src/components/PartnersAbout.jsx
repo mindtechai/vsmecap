@@ -15,11 +15,8 @@ export const PartnersAbout = () => {
   return (
     <div className="relative">
 
-      <div id="partners" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
-      <div id="about" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
-
       {/* PARTNERS */}
-      <section className="py-16 bg-white border-t border-[#e4e7ea]">
+      <section id="partners" className="py-16 bg-white border-t border-[#e4e7ea]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[11px] font-bold tracking-[0.12em] text-[#EA580C] uppercase">PARTNERS</p>
@@ -50,7 +47,7 @@ export const PartnersAbout = () => {
       </section>
 
       {/* ABOUT */}
-      <section className="py-16 bg-[#fafafa] border-t border-[#e4e7ea]">
+      <section id="about" className="py-16 bg-[#fafafa] border-t border-[#e4e7ea]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[11px] font-bold tracking-[0.12em] text-[#EA580C] uppercase">ABOUT US</p>
