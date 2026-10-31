@@ -51,6 +51,16 @@ export const LegalAndInvest = () => {
 
         </div>
 
+        <div className="mt-10 text-xs font-sans text-slate-700 leading-relaxed">
+          <h4 className="font-mono font-bold text-slate-900 uppercase text-[11px] tracking-wide mb-2">Sources</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><a className="text-[#0D9488] font-semibold hover:underline" href="https://eur-lex.europa.eu/eli/reco/2025/1710/oj/eng" target="_blank" rel="noopener noreferrer">Commission Recommendation (EU) 2025/1710 (EUR-Lex)</a></li>
+            <li><a className="text-[#0D9488] font-semibold hover:underline" href="https://www.efrag.org/en/smes-and-sustainability-reporting" target="_blank" rel="noopener noreferrer">EFRAG: SMEs and sustainability reporting</a></li>
+            <li><a className="text-[#0D9488] font-semibold hover:underline" href="https://www.procurementpathway.civilservice.gov.uk/documents/ppn/ppn-006-taking-account-of-carbon-reduction-plans-in-the-procurement-of-major-government-contracts" target="_blank" rel="noopener noreferrer">UK PPN 006: Carbon Reduction Plans</a></li>
+            <li><a className="text-[#0D9488] font-semibold hover:underline" href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026" target="_blank" rel="noopener noreferrer">UK Government GHG conversion factors 2026</a></li>
+          </ul>
+        </div>
+
         <div className="mt-12 p-5 bg-slate-50 border border-slate-200 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[11px]">
           <div className="text-slate-600">
             <strong className="block text-slate-900 font-bold uppercase tracking-wide mb-0.5">
