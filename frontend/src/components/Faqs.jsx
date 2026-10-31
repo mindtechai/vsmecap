@@ -1,17 +1,6 @@
 import { useState } from "react";
 import { FAQS, CONTACT_MAILTO } from "@/data/content";
 
-// Structured data so search engines can show these questions and answers.
-const faqJsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQS.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a }
-  }))
-}).replace(/</g, "\\u003c");
-
 export const Faqs = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -21,8 +10,6 @@ export const Faqs = () => {
 
   return (
     <section id="faqs" className="py-16 sm:py-20 bg-white border-t border-slate-200">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
-
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="max-w-3xl mb-10">
           <span className="bg-slate-100 text-slate-600 text-[10px] font-mono font-bold tracking-widest uppercase px-2.5 py-1 rounded border border-slate-200">
