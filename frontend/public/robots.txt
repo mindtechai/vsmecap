@@ -1,0 +1,8 @@
+# VSMECAP robots.txt
+# All crawlers are welcome, including search and AI answer engines.
+# To opt out of AI model training only, add Disallow rules for GPTBot, Google-Extended,
+# CCBot and ClaudeBot here. Search and answer bots (OAI-SearchBot, PerplexityBot) should stay allowed.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vsmecap.com/sitemap.xml
