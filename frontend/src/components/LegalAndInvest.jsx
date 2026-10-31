@@ -11,7 +11,7 @@ const Item = ({ n, title, children }) => (
 
 export const LegalAndInvest = () => {
   return (
-    <section id="legal-basis" className="py-16 bg-white border-t border-slate-100 scroll-mt-[130px]">
+    <section id="legal-basis" className="py-16 bg-white border-t border-slate-100">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
         <div className="max-w-3xl mb-12">
