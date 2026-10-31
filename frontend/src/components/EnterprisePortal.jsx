@@ -24,9 +24,9 @@ export const EnterprisePortal = () => {
   };
 
   return (
-    <div className="relative">
-      <div id="scope-evidence" className="absolute -top-[160px] left-0 pointer-events-none invisible" aria-hidden="true" />
-      <div id="authentication-portal" className="absolute -top-[140px] left-0 pointer-events-none invisible" aria-hidden="true" />
+    <div id="scope-evidence" className="relative">
+      {/* Zero-height anchor at the very top of this block, so both links land in the same place */}
+      <div id="authentication-portal" aria-hidden="true" />
 
       <section className="py-16 bg-[#0F172A] text-white border-t border-slate-900">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
