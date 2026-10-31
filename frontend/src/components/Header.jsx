@@ -1,14 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { CONTACT_MAILTO } from "@/data/content";
 
 export const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const stickyRef = useRef(null);
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
+  }, []);
+
+  // Measure the real height of the sticky banner + header so that every in-page link
+  // lands exactly below it, whatever the screen size or banner wrapping.
+  useEffect(() => {
+    const el = stickyRef.current;
+    if (!el) return undefined;
+    const apply = () => {
+      document.documentElement.style.setProperty("--header-h", el.offsetHeight + "px");
+    };
+    apply();
+    let ro;
+    if ("ResizeObserver" in window) {
+      ro = new ResizeObserver(apply);
+      ro.observe(el);
+    }
+    window.addEventListener("resize", apply);
+    return () => {
+      if (ro) ro.disconnect();
+      window.removeEventListener("resize", apply);
+    };
+  }, []);
+
+  // When the page is opened with a #section in the address (for example vsmecap.com/#faqs),
+  // the browser tries to jump before React has drawn the page. Jump again once it has.
+  useEffect(() => {
+    const jump = () => {
+      const id = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView();
+    };
+    const t = window.setTimeout(jump, 0);
+    window.addEventListener("load", jump);
+    return () => {
+      window.clearTimeout(t);
+      window.removeEventListener("load", jump);
+    };
   }, []);
 
   // Close the mobile menu with Escape, or when the screen grows to desktop size
@@ -40,7 +79,7 @@ export const Header = () => {
   const allNavItems = navMenu.flatMap((menu) => menu.items);
 
   return (
-    <div className="w-full sticky top-0 z-50">
+    <div ref={stickyRef} className="w-full sticky top-0 z-50">
 
       {/* Navigation index for search and AI assistants */}
       <script
@@ -62,8 +101,9 @@ export const Header = () => {
       />
 
       <style dangerouslySetInnerHTML={{__html: `
-        html { scroll-padding-top: 112px; }
-        @media (min-width: 1024px) { html { scroll-padding-top: 130px; } }
+        html { scroll-padding-top: calc(var(--header-h, 112px) + 8px); }
+        /* One rule for anchor offsets: ignore any per-section scroll margins */
+        [id] { scroll-margin-top: 0 !important; }
       `}} />
 
       {/* TOP BANNER: static and one line on every screen size */}
