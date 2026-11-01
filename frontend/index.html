@@ -1,96 +1,47 @@
 <!doctype html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO + AEO + ASO optimized: 35 chars, covers all market -->
-  <title>VS (VSME) Reporting for SMEs | VSMECAP</title>
-  <meta name="description" content="Collect, structure, validate VSME data. Basic B1-B11 + Comprehensive C1-C9 for UK & EU SMEs. UK: DESNZ factors, PPN 006, MPAN/MPRN. EU: DEFRA/IEA. Local browser processing, only hash/metadata stored. Not audited, not endorsed by EFRAG." />
-  <link rel="canonical" href="https://www.vsmecap.com/" />
-  <link rel="icon" type="image/png" href="/vsmecap_favicon_transparent_512.png" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="VSMECAP" />
-  <meta property="og:title" content="VSMECAP — Enterprise-grade sustainability data infrastructure for SMEs and their value chains" />
-  <meta property="og:description" content="Collect, structure, validate and securely exchange sustainability information using the VSME framework. Based on EFRAG VSME Dec 2024, EU 2025/1710, EU 2026/470." />
-  <meta property="og:url" content="https://www.vsmecap.com/" />
-  <meta property="og:image" content="https://www.vsmecap.com/vsmecap_logo_transparent_800.png" />
-  <meta name="twitter:card" content="summary" />
+        <title>VSMECAP — Structured VSME Reporting for UK SMEs</title>
+        <meta name="description" content="Prepare structured VSME sustainability reports from your utility bills. Basic B1-B11 and optional C1-C9 modules for UK SMEs. Not audited; not endorsed by EFRAG." />
+        <link rel="canonical" href="https://www.vsmecap.com/" />
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"VSMECAP",
-    "operatingSystem":"Web browser",
-    "applicationCategory":"BusinessApplication",
-    "description":"Software for preparing structured VSME sustainability reports from utility bills. Reports structured for review and not audited.",
-    "url":"https://www.vsmecap.com/",
-    "publisher":{"@type":"Organization","name":"VSMECAP","url":"https://www.vsmecap.com/","email":"info@vsmecap.com"}
-  }
-  </script>
+        <link rel="icon" type="image/png" href="/vsmecap_favicon_transparent_512.png" />
 
-  <style>
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:#F6F8FA;color:#14243A}
-    .topbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:76px;padding:0 24px;background:#fff;border-bottom:1px solid #E5E7EB}
-    .logo{height:56px;width:auto;max-width:420px;image-rendering:-webkit-optimize-contrast}
-    @media(min-width:768px){.logo{height:68px}}
-    .nav a{margin-left:20px;text-decoration:none;color:#526579;font-weight:600}
-    .nav a:hover{color:#EA580C}
-    .hero{max-width:1100px;margin:32px auto;padding:0 24px}
-    .hero h1{font-size:32px;line-height:1.2;margin:0 0 12px;color:#14243A}
-    .hero p{color:#526579;font-size:18px;line-height:1.5}
-    .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;background:#FFF7ED;color:#EA580C;border:1px solid #FFEDD5;margin-left:8px}
-    .card{background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:16px}
-    #up{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:999px;background:#EA580C;color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:20px;z-index:200;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-    #up.show{display:flex}
-  </style>
-</head>
-<body>
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
-  <!-- White bar + orange clean, bigger logo top-left above sidebar, embedded top -->
-  <header class="topbar">
-    <img class="logo" src="/vsmecap_logo_transparent_800.png" alt="VSMECAP — green V + blue chain" width="420" height="100" loading="eager" />
-    <nav class="nav">
-      <a href="/#overview">Overview</a>
-      <a href="/tool">Platform</a>
-      <a href="/security">Security</a>
-    </nav>
-  </header>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="VSMECAP" />
+        <meta property="og:title" content="VSMECAP — Structured VSME Reporting for UK SMEs" />
+        <meta property="og:description" content="Prepare structured VSME sustainability reports from your utility bills. Basic B1-B11 and optional C1-C9 modules for UK SMEs. Not audited; not endorsed by EFRAG." />
+        <meta property="og:url" content="https://www.vsmecap.com/" />
+        <meta property="og:image" content="https://www.vsmecap.com/vsmecap_logo_transparent_800.png" />
+        <meta name="twitter:card" content="summary" />
 
-  <!-- Static content for Google + AEO (Profound) — React hides after mount -->
-  <main id="static-content" class="hero">
-    <h1>VSMECAP — Enterprise-grade sustainability data infrastructure for SMEs and their value chains</h1>
-    <p>Collect, structure, validate and securely exchange sustainability information using the VSME framework. Based on EFRAG VSME Dec 2024, EU 2025/1710, EU 2026/470. Reports structured for review, not audited, not certified by EFRAG.</p>
-    <p><strong>Basic B1-B11</strong> <span class="pill">Partly automated</span> and optional <strong>Comprehensive C1-C9</strong> <span class="pill">Guidance only</span>. Upload utility bills provided by the user — processed locally in browser, only hash/metadata stored. No commercial supplier verification implied. UK: DESNZ, PPN 006, MPAN/MPRN. EU: DEFRA/IEA.</p>
-
-    <h2 id="overview">Basic module (B1-B11)</h2>
-    <div class="card">B1 Basis • B2 Practices • B3 Energy and GHG Scope 1-2 (drafts from bills) • B4 Pollution • B5 Biodiversity • B6 Water • B7 Resource/waste • B8 Workforce general • B9 Health & safety • B10 Remuneration • B11 Corruption</div>
-    <h2>Comprehensive module (C1-C9, optional)</h2>
-    <div class="card">C1 Strategy • C2 Practices • C3 GHG targets • C4 Climate risks • C5 Workforce • C6 Human rights policies • C7 Severe incidents • C8 Sector revenues • C9 Gender diversity — Optional when customer, lender or investor asks for more than Basic.</div>
-    <h2>How it works</h2>
-    <p>1. Ingest — Upload bills, meter identifiers extracted. 2. Integrity — Source files listed alongside every figure. 3. Output — JSON, CSV, PDF. XBRL in development. Free tier ≤1000 employees, commercial >1000 + PPN 006.</p>
-    <p>Contact: info@vsmecap.com — Based on EFRAG VSME standard. Not audited. Not endorsed by EFRAG. Not legal advice.</p>
-  </main>
-
-  <!-- React app -->
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-
-  <!-- Up arrow orange bottom-right + guide on scroll -->
-  <button id="up" aria-label="Scroll to top">↑</button>
-  <script>
-    const up=document.getElementById('up');
-    window.addEventListener('scroll',()=>{ if(window.scrollY>300) up.classList.add('show'); else up.classList.remove('show'); });
-    up.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
-    window.addEventListener('load',()=>{
-      const root=document.getElementById('root');
-      if(root && root.children.length>0){
-        // Keep static hero for SEO but hide duplicate after React mounts? Comment out if you want both visible.
-        // document.getElementById('static-content').style.display='none';
-      }
-    });
-  </script>
-</body>
+        <!-- Structured data. The build step (scripts/seo-postbuild.mjs) replaces this with the full set. -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "VSMECAP",
+          "operatingSystem": "Web browser",
+          "applicationCategory": "BusinessApplication",
+          "description": "Software for preparing structured VSME sustainability reports from utility bills. Reports are structured for review and are not audited.",
+          "url": "https://www.vsmecap.com/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "VSMECAP",
+            "url": "https://www.vsmecap.com/",
+            "email": "info@vsmecap.com"
+          }
+        }
+        </script>
+    </head>
+    <body>
+        <noscript>JavaScript is needed for the interactive parts of this site. The main content is shown below.</noscript>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
