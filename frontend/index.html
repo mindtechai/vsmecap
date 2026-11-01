@@ -1,47 +1,79 @@
 <!doctype html>
 <html lang="en-GB">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>VSMECAP — Structured VSME Reporting for UK SMEs</title>
-        <meta name="description" content="Prepare structured VSME sustainability reports from your utility bills. Basic B1-B11 and optional C1-C9 modules for UK SMEs. Not audited; not endorsed by EFRAG." />
-        <link rel="canonical" href="https://www.vsmecap.com/" />
+    <title>VSMECAP — Enterprise-grade sustainability data infrastructure | Structured VSME Reporting B1-B11 C1-C9</title>
+    <meta name="description" content="Collect, structure, validate and securely exchange sustainability information using the VSME framework. Basic B1-B11 and optional Comprehensive C1-C9 for UK SMEs. Reports structured for review, not audited, not endorsed by EFRAG." />
+    <link rel="canonical" href="https://www.vsmecap.com/" />
+    <link rel="icon" type="image/png" href="/vsmecap_favicon_transparent_512.png" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VSMECAP" />
+    <meta property="og:title" content="VSMECAP — Enterprise-grade sustainability data infrastructure for SMEs and their value chains" />
+    <meta property="og:description" content="Collect, structure, validate and securely exchange sustainability information using the VSME framework." />
+    <meta property="og:url" content="https://www.vsmecap.com/" />
+    <meta property="og:image" content="https://www.vsmecap.com/vsmecap_logo_transparent_800.png" />
+    <meta name="twitter:card" content="summary" />
 
-        <link rel="icon" type="image/png" href="/vsmecap_favicon_transparent_512.png" />
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"SoftwareApplication",
+      "name":"VSMECAP",
+      "operatingSystem":"Web browser",
+      "applicationCategory":"BusinessApplication",
+      "description":"Software for preparing structured VSME sustainability reports from utility bills. Reports structured for review and not audited.",
+      "url":"https://www.vsmecap.com/",
+      "publisher":{"@type":"Organization","name":"VSMECAP","url":"https://www.vsmecap.com/","email":"info@vsmecap.com"}
+    }
+    </script>
+    <style>
+      /* Enterprise restrained — logo top-left fixed */
+      body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#F6F8FA;color:#14243A}
+      .header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;background:#fff;border-bottom:1px solid #e5e7eb}
+      .logo-wrap{display:flex;align-items:center;gap:12px}
+      .logo-wrap img{height:40px;width:auto;max-width:320px;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;display:block}
+      @media(min-width:768px){.logo-wrap img{height:48px}}
+      .nav a{margin-left:20px;text-decoration:none;color:#526579;font-weight:500}
+      .hero{max-width:1100px;margin:40px auto;padding:0 24px}
+      .hero h1{font-size:32px;line-height:1.2;color:#14243A;margin:0 0 12px}
+      .hero p{color:#526579;font-size:18px}
+    </style>
+  </head>
+  <body>
+    <!-- Static header — Google sees logo + H1 without JS -->
+    <header class="header">
+      <div class="logo-wrap">
+        <img src="/vsmecap_logo_transparent_800.png" alt="VSMECAP — green V + blue chain" width="320" height="80" loading="eager" />
+      </div>
+      <nav class="nav">
+        <a href="/#overview">Overview</a>
+        <a href="/tool">Platform</a>
+        <a href="/security">Security</a>
+      </nav>
+    </header>
 
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <!-- Static content for crawlers — React will hide this after mount -->
+    <main id="static-content" class="hero">
+      <h1>VSMECAP — Enterprise-grade sustainability data infrastructure for SMEs and their value chains</h1>
+      <p>Collect, structure, validate and securely exchange sustainability information using the VSME framework. Based on EFRAG VSME Dec 2024, EU 2025/1710, EU 2026/470. Reports structured for review, not audited, not certified by EFRAG.</p>
+      <p><strong>Basic B1-B11</strong> and optional <strong>Comprehensive C1-C9</strong>. Upload utility bills provided by the user — processed locally in browser, only hash/metadata stored. No commercial supplier verification implied.</p>
+    </main>
 
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="VSMECAP" />
-        <meta property="og:title" content="VSMECAP — Structured VSME Reporting for UK SMEs" />
-        <meta property="og:description" content="Prepare structured VSME sustainability reports from your utility bills. Basic B1-B11 and optional C1-C9 modules for UK SMEs. Not audited; not endorsed by EFRAG." />
-        <meta property="og:url" content="https://www.vsmecap.com/" />
-        <meta property="og:image" content="https://www.vsmecap.com/vsmecap_logo_transparent_800.png" />
-        <meta name="twitter:card" content="summary" />
-
-        <!-- Structured data. The build step (scripts/seo-postbuild.mjs) replaces this with the full set. -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "VSMECAP",
-          "operatingSystem": "Web browser",
-          "applicationCategory": "BusinessApplication",
-          "description": "Software for preparing structured VSME sustainability reports from utility bills. Reports are structured for review and are not audited.",
-          "url": "https://www.vsmecap.com/",
-          "publisher": {
-            "@type": "Organization",
-            "name": "VSMECAP",
-            "url": "https://www.vsmecap.com/",
-            "email": "info@vsmecap.com"
-          }
+    <!-- Your React app mounts here -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // After React loads, hide static fallback to avoid duplicate
+      window.addEventListener('load', function(){
+        var app = document.getElementById('root');
+        if(app && app.children.length>0){
+          var s = document.getElementById('static-content');
+          if(s) s.style.display='none';
         }
-        </script>
-    </head>
-    <body>
-        <noscript>JavaScript is needed for the interactive parts of this site. The main content is shown below.</noscript>
-        <div id="root"></div>
-        <script type="module" src="/src/main.jsx"></script>
-    </body>
+      });
+    </script>
+  </body>
 </html>
