@@ -9,8 +9,8 @@ import { fileURLToPath } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
 const SITE = "https://www.vsmecap.com";
-const TITLE = "VSMECAP — Structured VSME Reporting for UK SMEs";
-const DESC = "Prepare structured VSME sustainability reports from your utility bills. Basic B1-B11 and optional C1-C9 modules for UK SMEs. Not audited; not endorsed by EFRAG.";
+const TITLE = "VSMECAP — Sustainability Data Infrastructure for UK & EU SMEs";
+const DESC = "Collect, structure and validate UK and EU VSME data (B1-B11, C1-C9) from your energy bills, processed locally in your browser. Not audited or EFRAG-endorsed.";
 const MARK = "<!-- seo-postbuild -->";
 
 try {
@@ -59,11 +59,12 @@ try {
 
   const li = (arr) => arr.map((m) => `<li><strong>${esc(m.code)} ${esc(m.title)}.</strong> ${esc(m.desc)}</li>`).join("");
   const body = `<main style="max-width:760px;margin:40px auto;padding:0 16px;font-family:system-ui,sans-serif;color:#0F172A;line-height:1.55">
-<h1>VSMECAP: structured VSME reporting for UK SMEs</h1>
-<p>VSMECAP helps businesses turn utility data into a structured sustainability report based on the EFRAG VSME standard (the Voluntary Sustainability Reporting Standard for non-listed SMEs): the Basic module (B1-B11) and the optional Comprehensive module (C1-C9). Reports are structured for review and are not audited. VSMECAP is not certified or endorsed by EFRAG. VSME is voluntary and is not UK law.</p>
+<h1>VSMECAP — Sustainability data infrastructure for SMEs and their value chains</h1>
+<p>Collect, structure and validate UK and EU VSME data (Basic B1-B11 and Comprehensive C1-C9) from your electricity, gas and water bills. Meter checks (MPAN/MPRN) and UK Government (DESNZ) emission factors are built in. Files are processed locally in your browser, so no raw files leave your device. Reports are structured for review and are not audited. VSMECAP is not certified or endorsed by EFRAG. VSME is voluntary and is not UK law.</p>
 <h2>How it works</h2><ol>${D.PRODUCT_STEPS.map((s) => `<li><strong>${esc(s.title)}.</strong> ${esc(s.desc)}</li>`).join("")}</ol>
 <h2>Basic module (B1-B11)</h2><ul>${li(D.BASIC_MODULES)}</ul>
 <h2>Comprehensive module (C1-C9, optional)</h2><ul>${li(D.COMPREHENSIVE_MODULES)}</ul>
+<h2>Market</h2><p>The European Commission counts about 34 million SMEs in the EU (Annual Report on European SMEs 2025/2026). The UK had 5.7 million private-sector businesses at the start of 2025, about 1.4 million of them with employers. Today VSMECAP reads UK utility bills; EU country support is planned.</p>
 <h2>Legal basis</h2><ul>${D.LEGAL_BASIS.map((l) => `<li><strong>${esc(l.title)}.</strong> ${esc(l.desc)}</li>`).join("")}</ul>
 <h2>Frequently asked questions</h2>${D.FAQS.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join("")}
 <h2>Risks and limitations</h2><ul>${D.RISKS.map((r) => `<li><strong>${esc(r.title)}.</strong> ${esc(r.desc)}</li>`).join("")}</ul>
