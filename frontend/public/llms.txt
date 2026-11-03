@@ -1,14 +1,19 @@
 # VSMECAP
 
-> VSMECAP is early-stage software that helps UK SMEs prepare structured sustainability reports from utility bills, based on the EFRAG VSME standard (the Voluntary Sustainability Reporting Standard for non-listed SMEs). Reports are structured for review. They are not audited, and VSMECAP is not certified or endorsed by EFRAG. VSME is voluntary and is not UK law.
+> VSMECAP is early-stage software that helps UK and EU SMEs prepare structured sustainability reports from utility bills, based on the EFRAG VSME standard (the Voluntary Sustainability Reporting Standard for non-listed SMEs). Reports are structured for review. They are not audited, and VSMECAP is not certified or endorsed by EFRAG. VSME is voluntary and is not UK law.
 
 "VSME" on this site means the sustainability reporting standard, not a stock ticker.
 
 ## What works today
-- Upload 12 months of electricity, gas and water bills; extract kWh, m3 and meter numbers (MPAN/MPRN); review and correct the values.
+- Upload 12 months of UK electricity, gas and water bills; extract kWh, m3 and meter numbers (MPAN/MPRN); review and correct the values.
 - Draft the Basic module (B1-B11) energy and Scope 1 and 2 greenhouse gas figures.
 - Export JSON, CSV and a watermarked draft PDF. Files are processed locally in the browser.
 - A free tier is available for eligible businesses with up to 1,000 employees.
+
+## Coverage
+- Today: UK utility bills (MPAN/MPRN) and UK Government emission factors.
+- Planned: EU country support (meter formats, national emission factors, bill languages).
+- Market context: about 34 million SMEs in the EU (European Commission, 2025/2026 report) and 5.7 million private-sector businesses in the UK, about 1.4 million of them employers (DBT, 2025).
 
 ## In development (not yet available)
 - Integrity hashing (SHA-256), Inline XBRL export, automated utility data links.
