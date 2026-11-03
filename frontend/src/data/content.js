@@ -71,7 +71,7 @@ export const WHY_NOW_SECTIONS = [
 ];
 
 export const MARKET_DYNAMICS = [
-  { title: "The Non-Listed Market Gap", desc: "Most European and UK undertakings fall outside mandatory CSRD reporting, and many need a low-cost way to answer customer and lender requests." },
+  { title: "A UK and EU market", desc: "The European Commission counts about 34 million SMEs in the EU (Annual Report on European SMEs 2025/2026). The UK had 5.7 million private-sector businesses at the start of 2025 (Department for Business and Trade), about 1.4 million of them with employees. Most are micro businesses that are not asked for sustainability data, and many need a low-cost way to answer customer and lender requests." },
   { title: "Growing Stakeholder Interest", desc: "Buyers, banks and SMEs are looking for a standard format for sustainability data that does not depend on bespoke consultancy work." }
 ];
 
@@ -92,6 +92,7 @@ export const RISKS = [
 
 export const FAQS = [
   { q: "Is VSMECAP an official EFRAG tool?", a: "No. VSMECAP maps independently to the public EFRAG VSME standard. It is not certified or endorsed by EFRAG." },
+  { q: "Is VSME mandatory in the EU?", a: "No. VSME is a voluntary standard, and Commission Recommendation (EU) 2025/1710 is not binding. EU companies in the value chains of larger reporting companies are more likely to be asked for it. Directive (EU) 2026/470 limits what those companies can request from undertakings with up to 1,000 employees, subject to national implementation by 19 March 2027." },
   { q: "Is VSME mandatory for UK businesses?", a: "No. VSME is a voluntary standard that originates in the EU and is not UK law. Customers, banks or investors may ask you to use it." },
   { q: "Does using VSMECAP make my business compliant with the law?", a: "No. VSMECAP helps you prepare a structured voluntary report. It does not certify compliance with any UK or EU law." },
   { q: "What is the Value Chain Cap?", a: "Under Directive (EU) 2026/470, companies in a reporting company’s value chain with up to 1,000 employees may decline information requests that go beyond the voluntary standard. Member States have until 19 March 2027 to bring the rules into national law." },
@@ -103,6 +104,7 @@ export const FAQS = [
   { q: "Do I have to publish my report?", a: "No. You decide who receives your report." },
   { q: "Are the figures checked or audited?", a: "No. Reports are structured for review and show their source files, but they are not audited. Formal assurance must come from an independent, licensed assurance provider." },
   { q: "Is there a free tier?", a: "A free tier is available for eligible non-listed undertakings with up to 1,000 employees. Companies above that size, and public-sector bid preparation under PPN 006, are on commercial terms. Please check current terms before you sign up." },
+  { q: "Which countries does VSMECAP support?", a: "Today the tool reads UK electricity, gas and water bills (MPAN/MPRN meter numbers) and uses UK Government emission factors. The VSME standard applies across the EU and the UK. Support for EU countries, meaning meter formats, national emission factors and bill languages, is planned." },
   { q: "What data do I need to start?", a: "Typically 12 months of electricity, gas and water bills, including meter identifiers (MPAN/MPRN), plus basic headcount and policy information for the Basic module." },
   { q: "Which emission factors are used?", a: "UK Government (DESNZ) greenhouse gas conversion factors. The edition used is stated in your report. Always confirm it matches your reporting year." },
   { q: "Where is my data processed?", a: "The current version processes your files locally in your browser and does not upload them to a server. Your data is handled in line with UK GDPR. See the Privacy section for details." },
