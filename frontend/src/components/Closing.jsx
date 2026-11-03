@@ -26,7 +26,7 @@ export const Footer = () => (
       </div>
 
       <div className="text-[12px] text-slate-600 space-y-2 max-w-[640px]">
-        <p className="font-semibold text-slate-700">VSMECAP — Structured VSME reporting for UK SMEs</p>
+        <p className="font-semibold text-slate-700">VSMECAP — Sustainability data infrastructure for UK and EU SMEs</p>
         <p>
           VSME is a voluntary standard and is not UK law. VSMECAP is not certified or endorsed by EFRAG, and its reports are structured for review and are not audited. Nothing on this site is legal, accounting or financial advice.
         </p>
@@ -37,9 +37,9 @@ export const Footer = () => (
           </p>
         )}
         <p>
-          <a href={CONTACT_MAILTO} className="font-semibold text-slate-700 underline hover:text-[#00996f]">info@vsmecap.com</a>
+          <a href={CONTACT_MAILTO} className="font-semibold text-slate-700 underline hover:text-[#C2410C]">info@vsmecap.com</a>
           {" · "}
-          <a href="#privacy" className="font-semibold text-slate-700 underline hover:text-[#00996f]">Privacy notice</a>
+          <a href="#privacy" className="font-semibold text-slate-700 underline hover:text-[#C2410C]">Privacy notice</a>
         </p>
         <p>© 2026 VSMECAP. All rights reserved.</p>
       </div>
@@ -48,13 +48,13 @@ export const Footer = () => (
 );
 
 const H3 = ({ children }) => (
-  <h3 className="text-[14px] font-bold text-[#0F172A] pt-2">{children}</h3>
+  <h3 className="text-[14px] font-bold text-[#0A2F6B] pt-2">{children}</h3>
 );
 
 export const Privacy = () => (
   <section id="privacy" className="bg-white py-16 border-t border-gray-100">
     <div className="mx-auto max-w-[840px] px-4 text-left space-y-6">
-      <h2 className="text-[20px] font-bold text-[#0F172A] tracking-tight border-b border-slate-100 pb-2">
+      <h2 className="text-[20px] font-bold text-[#0A2F6B] tracking-tight border-b border-slate-100 pb-2">
         Privacy notice
       </h2>
 
@@ -65,7 +65,7 @@ export const Privacy = () => (
 
         <H3>Who we are</H3>
         <p>
-          VSMECAP is the controller of the personal data described here. You can contact us at <a href={CONTACT_MAILTO} className="text-[#0D9488] font-bold hover:underline">info@vsmecap.com</a> about anything in this notice.
+          VSMECAP is the controller of the personal data described here. You can contact us at <a href={CONTACT_MAILTO} className="text-[#0A55D6] font-bold hover:underline">info@vsmecap.com</a> about anything in this notice.
         </p>
 
         <H3>What this website collects</H3>
